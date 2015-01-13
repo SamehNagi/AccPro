@@ -1,8 +1,11 @@
 AccPro::Application.routes.draw do
-  resources :transactions
-
-
   resources :accounts
+
+
+  resources :account_types
+
+
+  resources :transactions
 
 
   # The priority is based upon order of creation:

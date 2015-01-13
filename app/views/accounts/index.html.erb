@@ -3,7 +3,6 @@
 <table>
   <tr>
     <th>Account no</th>
-    <th>Account type</th>
     <th>Balance type</th>
     <th></th>
     <th></th>
@@ -13,7 +12,6 @@
 <% @accounts.each do |account| %>
   <tr>
     <td><%= account.account_no %></td>
-    <td><%= account.account_type %></td>
     <td><%= account.balance_type %></td>
     <td><%= link_to 'Show', account %></td>
     <td><%= link_to 'Edit', edit_account_path(account) %></td>

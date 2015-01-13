@@ -12,6 +12,6 @@ account_types = [{:type => 'Assets'},
     	  {:title => 'Equity'},
       	  {:title => 'Expenses'}]
 
-account_types.each do |type|
-  AccountType.create!(type)
+account_types.each do |movie|
+  AccountType.create!(movie)
 end

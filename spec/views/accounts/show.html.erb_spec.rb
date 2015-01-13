@@ -4,7 +4,6 @@ RSpec.describe "accounts/show", :type => :view do
   before(:each) do
     @account = assign(:account, Account.create!(
       :account_no => "Account No",
-      :account_type => "Account Type",
       :balance_type => "Balance Type"
     ))
   end
@@ -12,7 +11,6 @@ RSpec.describe "accounts/show", :type => :view do
   it "renders attributes in <p>" do
     render
     expect(rendered).to match(/Account No/)
-    expect(rendered).to match(/Account Type/)
     expect(rendered).to match(/Balance Type/)
   end
 end
