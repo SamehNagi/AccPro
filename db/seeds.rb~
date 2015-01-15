@@ -7,11 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-account_types = [{:type => 'Assets'},
-    	  {:title => 'Liabilities'},
-    	  {:title => 'Equity'},
-      	  {:title => 'Expenses'}]
+account_types = [{:account_type => 'Assets'},
+    	  {:account_type => 'Liabilities'},
+    	  {:account_type => 'Equity'},
+      	  {:account_type => 'Expenses'}]
 
-account_types.each do |movie|
-  AccountType.create!(movie)
+account_types.each do |type|
+  AccountType.create!(type)
 end

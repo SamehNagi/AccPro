@@ -42,6 +42,9 @@ gem 'jquery-rails'
 # To use debugger
 gem 'debugger'
 
+# To use simple_form
+gem 'simple_form'
+
 gem 'haml'
 
 # To use authorisation

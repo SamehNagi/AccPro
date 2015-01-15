@@ -5,7 +5,6 @@ RSpec.describe "transactions/new", :type => :view do
     assign(:transaction, Transaction.new(
       :from_account => "MyString",
       :to_account => "MyString",
-      :user => "MyString",
       :account => nil
     ))
   end
@@ -18,8 +17,6 @@ RSpec.describe "transactions/new", :type => :view do
       assert_select "input#transaction_from_account[name=?]", "transaction[from_account]"
 
       assert_select "input#transaction_to_account[name=?]", "transaction[to_account]"
-
-      assert_select "input#transaction_user[name=?]", "transaction[user]"
 
       assert_select "input#transaction_account[name=?]", "transaction[account]"
     end

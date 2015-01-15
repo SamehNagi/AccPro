@@ -1,0 +1,6 @@
+class Account < ActiveRecord::Base
+  belongs_to :account_type
+  belongs_to :user
+  validates :account_number, presence: true, uniqueness: true
+  attr_accessible :account_number, :balance_type
+end

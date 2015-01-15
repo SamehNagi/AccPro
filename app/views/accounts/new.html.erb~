@@ -1,0 +1,8 @@
+<h1>New account</h1>
+
+<%= simple_form_for @account do |f| %>
+  <%= f.input :account_number %>
+  <%= f.input :balance_type %>
+  <%= f.association :account_type %>
+  <%= f.button :submit %>
+<% end %>

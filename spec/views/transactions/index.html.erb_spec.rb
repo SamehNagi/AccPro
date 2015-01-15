@@ -6,13 +6,11 @@ RSpec.describe "transactions/index", :type => :view do
       Transaction.create!(
         :from_account => "From Account",
         :to_account => "To Account",
-        :user => "User",
         :account => nil
       ),
       Transaction.create!(
         :from_account => "From Account",
         :to_account => "To Account",
-        :user => "User",
         :account => nil
       )
     ])
@@ -22,7 +20,6 @@ RSpec.describe "transactions/index", :type => :view do
     render
     assert_select "tr>td", :text => "From Account".to_s, :count => 2
     assert_select "tr>td", :text => "To Account".to_s, :count => 2
-    assert_select "tr>td", :text => "User".to_s, :count => 2
     assert_select "tr>td", :text => nil.to_s, :count => 2
   end
 end

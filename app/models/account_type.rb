@@ -1,4 +1,5 @@
 class AccountType < ActiveRecord::Base
-  belongs_to :account
-  attr_accessible :type
+  has_many :accounts, :dependent => :destroy
+
+  attr_accessible :account_type
 end
