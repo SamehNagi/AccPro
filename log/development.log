@@ -513,3 +513,1848 @@ Served asset /transactions.js - 304 Not Modified (3ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-14 19:03:27 -0400
 Served asset /application.js - 304 Not Modified (10ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (36.3ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (20.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (11.6ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateAccounts (20150113214141)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "account_no" varchar(255), "balance_type" varchar(255), "total_amount" integer, "account_type_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE INDEX "index_accounts_on_account_type_id" ON "accounts" ("account_type_id")[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150113214141')
+  [1m[36m (24.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateTransactions (20150113214333)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (4.1ms)[0m  [1mCREATE TABLE "transactions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "from_account" varchar(255), "to_account" varchar(255), "amount" integer, "description" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150113214333')
+  [1m[36m (71.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateAccountTypes (20150113220146)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.3ms)[0m  [1mCREATE TABLE "account_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "account_type" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150113220146')
+  [1m[36m (38.1ms)[0m  [1mcommit transaction[0m
+Migrating to DeviseCreateUsers (20150114224011)
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.6ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150114224011')
+  [1m[36m (40.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (7.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (13.7ms)[0m  [1mINSERT INTO "account_types" ("account_type", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["account_type", "Assets"], ["created_at", Thu, 15 Jan 2015 21:36:33 UTC +00:00], ["updated_at", Thu, 15 Jan 2015 21:36:33 UTC +00:00]]
+  [1m[35m (38.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "account_types" ("account_type", "created_at", "updated_at") VALUES (?, ?, ?)  [["account_type", "Liabilities"], ["created_at", Thu, 15 Jan 2015 21:36:33 UTC +00:00], ["updated_at", Thu, 15 Jan 2015 21:36:33 UTC +00:00]]
+  [1m[36m (17.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "account_types" ("account_type", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["account_type", "Equity"], ["created_at", Thu, 15 Jan 2015 21:36:33 UTC +00:00], ["updated_at", Thu, 15 Jan 2015 21:36:33 UTC +00:00]]
+  [1m[35m (34.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "account_types" ("account_type", "created_at", "updated_at") VALUES (?, ?, ?)  [["account_type", "Expenses"], ["created_at", Thu, 15 Jan 2015 21:36:33 UTC +00:00], ["updated_at", Thu, 15 Jan 2015 21:36:33 UTC +00:00]]
+  [1m[36m (22.1ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-15 17:36:36 -0400
+Processing by AccountsController#index as HTML
+  [1m[36mAccount Load (0.4ms)[0m  [1mSELECT "accounts".* FROM "accounts" [0m
+  Rendered accounts/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 335.8ms (Views: 168.8ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-15 17:36:37 -0400
+Served asset /application.css - 200 OK (122ms)
+
+
+Started GET "/assets/accounts.css?body=1" for 127.0.0.1 at 2015-01-15 17:36:37 -0400
+Served asset /accounts.css - 304 Not Modified (16ms)
+
+
+Started GET "/assets/account_types.css?body=1" for 127.0.0.1 at 2015-01-15 17:36:37 -0400
+Served asset /account_types.css - 304 Not Modified (16ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-15 17:36:37 -0400
+Served asset /scaffolds.css - 304 Not Modified (17ms)
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-15 17:36:37 -0400
+Served asset /transactions.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-15 17:36:37 -0400
+Served asset /jquery.js - 304 Not Modified (55ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-15 17:36:37 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-15 17:36:37 -0400
+Served asset /accounts.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/account_types.js?body=1" for 127.0.0.1 at 2015-01-15 17:36:37 -0400
+Served asset /account_types.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-15 17:36:37 -0400
+Served asset /transactions.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-15 17:36:37 -0400
+Served asset /application.js - 304 Not Modified (42ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2015-01-15 17:36:39 -0400
+Processing by AccountsController#new as HTML
+  Rendered accounts/new.html.erb within layouts/application (519.8ms)
+Completed 500 Internal Server Error in 564.5ms
+
+ActionView::Template::Error (undefined method `account_number' for #<Account:0xa8a3734>):
+    1: <h1>New account</h1>
+    2: 
+    3: <%= simple_form_for @account do |f| %>
+    4:   <%= f.input :account_number %>
+    5:   <%= f.association :account_type %>
+    6:   <%= f.button :submit %>
+    7: <% end %>
+  app/views/accounts/new.html.erb:4:in `block in _app_views_accounts_new_html_erb__463201471_80955670'
+  app/views/accounts/new.html.erb:3:in `_app_views_accounts_new_html_erb__463201471_80955670'
+  app/controllers/accounts_controller.rb:17:in `new'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (29.1ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (36.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (54.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (28.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateAccounts (20150113214141)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (6.5ms)[0m  CREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "account_number" varchar(255), "balance_type" varchar(255), "total_amount" integer, "account_type_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (3.3ms)[0m  [1mCREATE INDEX "index_accounts_on_account_type_id" ON "accounts" ("account_type_id")[0m
+  [1m[35m (1.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150113214141')
+  [1m[36m (50.1ms)[0m  [1mcommit transaction[0m
+Migrating to CreateTransactions (20150113214333)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (4.0ms)[0m  [1mCREATE TABLE "transactions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "from_account" varchar(255), "to_account" varchar(255), "amount" integer, "description" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150113214333')
+  [1m[36m (27.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreateAccountTypes (20150113220146)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (37.4ms)[0m  [1mCREATE TABLE "account_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "account_type" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150113220146')
+  [1m[36m (54.4ms)[0m  [1mcommit transaction[0m
+Migrating to DeviseCreateUsers (20150114224011)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (3.1ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.7ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20150114224011')
+  [1m[36m (38.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (44.9ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (74.2ms)[0m  [1mINSERT INTO "account_types" ("account_type", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["account_type", "Assets"], ["created_at", Thu, 15 Jan 2015 21:38:02 UTC +00:00], ["updated_at", Thu, 15 Jan 2015 21:38:02 UTC +00:00]]
+  [1m[35m (112.0ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (9.4ms)[0m  INSERT INTO "account_types" ("account_type", "created_at", "updated_at") VALUES (?, ?, ?)  [["account_type", "Liabilities"], ["created_at", Thu, 15 Jan 2015 21:38:02 UTC +00:00], ["updated_at", Thu, 15 Jan 2015 21:38:02 UTC +00:00]]
+  [1m[36m (42.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.8ms)[0m  [1mINSERT INTO "account_types" ("account_type", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["account_type", "Equity"], ["created_at", Thu, 15 Jan 2015 21:38:02 UTC +00:00], ["updated_at", Thu, 15 Jan 2015 21:38:02 UTC +00:00]]
+  [1m[35m (31.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "account_types" ("account_type", "created_at", "updated_at") VALUES (?, ?, ?)  [["account_type", "Expenses"], ["created_at", Thu, 15 Jan 2015 21:38:02 UTC +00:00], ["updated_at", Thu, 15 Jan 2015 21:38:02 UTC +00:00]]
+  [1m[36m (35.9ms)[0m  [1mcommit transaction[0m
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-15 17:38:22 -0400
+Processing by AccountsController#index as HTML
+  [1m[36mAccount Load (0.3ms)[0m  [1mSELECT "accounts".* FROM "accounts" [0m
+  Rendered accounts/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 378.4ms (Views: 210.8ms | ActiveRecord: 17.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-15 17:38:23 -0400
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/account_types.css?body=1" for 127.0.0.1 at 2015-01-15 17:38:23 -0400
+Served asset /account_types.css - 304 Not Modified (18ms)
+
+
+Started GET "/assets/accounts.css?body=1" for 127.0.0.1 at 2015-01-15 17:38:23 -0400
+Served asset /accounts.css - 304 Not Modified (44ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-15 17:38:23 -0400
+Served asset /scaffolds.css - 304 Not Modified (38ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-15 17:38:23 -0400
+Served asset /jquery.js - 304 Not Modified (56ms)
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-15 17:38:23 -0400
+Served asset /transactions.css - 304 Not Modified (17ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-15 17:38:23 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (34ms)
+
+
+Started GET "/assets/account_types.js?body=1" for 127.0.0.1 at 2015-01-15 17:38:23 -0400
+Served asset /account_types.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-15 17:38:23 -0400
+Served asset /accounts.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-15 17:38:23 -0400
+Served asset /transactions.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-15 17:38:23 -0400
+Served asset /application.js - 304 Not Modified (73ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2015-01-15 17:38:25 -0400
+Processing by AccountsController#new as HTML
+  [1m[35mAccountType Load (4.4ms)[0m  SELECT "account_types".* FROM "account_types" 
+  Rendered accounts/new.html.erb within layouts/application (576.6ms)
+Completed 200 OK in 617.2ms (Views: 586.9ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-15 17:38:26 -0400
+Served asset /application.css - 304 Not Modified (55ms)
+
+
+Started GET "/assets/account_types.css?body=1" for 127.0.0.1 at 2015-01-15 17:38:26 -0400
+Served asset /account_types.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-15 17:38:26 -0400
+Served asset /transactions.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/accounts.css?body=1" for 127.0.0.1 at 2015-01-15 17:38:26 -0400
+Served asset /accounts.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-15 17:38:26 -0400
+Served asset /jquery.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-15 17:38:26 -0400
+Served asset /scaffolds.css - 304 Not Modified (21ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-15 17:38:26 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (19ms)
+
+
+Started GET "/assets/account_types.js?body=1" for 127.0.0.1 at 2015-01-15 17:38:26 -0400
+Served asset /account_types.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-15 17:38:26 -0400
+Served asset /accounts.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-15 17:38:26 -0400
+Served asset /transactions.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-15 17:38:26 -0400
+Served asset /application.js - 304 Not Modified (14ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-15 17:42:47 -0400
+Processing by AccountsController#index as HTML
+  [1m[36mAccount Load (14.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" [0m
+  Rendered accounts/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 87.6ms (Views: 70.6ms | ActiveRecord: 14.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-15 17:42:48 -0400
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-15 17:42:48 -0400
+Served asset /scaffolds.css - 304 Not Modified (26ms)
+
+
+Started GET "/assets/accounts.css?body=1" for 127.0.0.1 at 2015-01-15 17:42:48 -0400
+Served asset /accounts.css - 304 Not Modified (16ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-15 17:42:48 -0400
+Served asset /jquery.js - 304 Not Modified (24ms)
+
+
+Started GET "/assets/account_types.css?body=1" for 127.0.0.1 at 2015-01-15 17:42:48 -0400
+Served asset /account_types.css - 304 Not Modified (13ms)
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-15 17:42:48 -0400
+Served asset /transactions.css - 304 Not Modified (18ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-15 17:42:48 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/account_types.js?body=1" for 127.0.0.1 at 2015-01-15 17:42:48 -0400
+Served asset /account_types.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-15 17:42:48 -0400
+Served asset /accounts.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-15 17:42:48 -0400
+Served asset /transactions.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-15 17:42:48 -0400
+Served asset /application.js - 304 Not Modified (22ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2015-01-15 17:42:50 -0400
+Processing by AccountsController#new as HTML
+  [1m[35mAccountType Load (0.5ms)[0m  SELECT "account_types".* FROM "account_types" 
+  Rendered accounts/new.html.erb within layouts/application (33.4ms)
+Completed 200 OK in 158.4ms (Views: 156.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-15 17:42:50 -0400
+Served asset /application.css - 304 Not Modified (13ms)
+
+
+Started GET "/assets/account_types.css?body=1" for 127.0.0.1 at 2015-01-15 17:42:50 -0400
+Served asset /account_types.css - 304 Not Modified (28ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-15 17:42:50 -0400
+Served asset /scaffolds.css - 304 Not Modified (30ms)
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-15 17:42:50 -0400
+Served asset /transactions.css - 304 Not Modified (31ms)
+
+
+Started GET "/assets/accounts.css?body=1" for 127.0.0.1 at 2015-01-15 17:42:50 -0400
+Served asset /accounts.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-15 17:42:50 -0400
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-15 17:42:50 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (19ms)
+
+
+Started GET "/assets/account_types.js?body=1" for 127.0.0.1 at 2015-01-15 17:42:50 -0400
+Served asset /account_types.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-15 17:42:50 -0400
+Served asset /accounts.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-15 17:42:50 -0400
+Served asset /transactions.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-15 17:42:50 -0400
+Served asset /application.js - 304 Not Modified (15ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2015-01-15 17:48:12 -0400
+Processing by AccountsController#new as HTML
+  [1m[36mAccountType Load (2.8ms)[0m  [1mSELECT "account_types".* FROM "account_types" [0m
+  Rendered accounts/new.html.erb within layouts/application (80.5ms)
+Completed 500 Internal Server Error in 105.8ms
+
+ActionView::Template::Error (can't convert Symbol into Integer):
+    2: 
+    3: <%= simple_form_for @account do |f| %>
+    4:   <%= f.input :account_number %>
+    5:   <%= f.association :account_type, AccountType.all %>
+    6: 
+    7: <%= f.association :services, collection: @account.company.services, as: :check_boxes, label_method: :description %>
+    8: 
+  app/views/accounts/new.html.erb:5:in `block in _app_views_accounts_new_html_erb__406942260__621180728'
+  app/views/accounts/new.html.erb:3:in `_app_views_accounts_new_html_erb__406942260__621180728'
+  app/controllers/accounts_controller.rb:17:in `new'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (33.2ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2015-01-15 17:48:24 -0400
+Processing by AccountsController#new as HTML
+  [1m[35mAccountType Load (4.9ms)[0m  SELECT "account_types".* FROM "account_types" 
+  Rendered accounts/new.html.erb within layouts/application (22.4ms)
+Completed 500 Internal Server Error in 32.8ms
+
+ActionView::Template::Error (undefined method `company' for #<Account:0xc5306e0>):
+    4:   <%= f.input :account_number %>
+    5:   <%= f.association :account_type %>
+    6: 
+    7: <%= f.association :services, collection: @account.company.services, as: :check_boxes, label_method: :description %>
+    8: 
+    9:   <%= f.button :submit %>
+    10: <% end %>
+  app/views/accounts/new.html.erb:7:in `block in _app_views_accounts_new_html_erb__406942260_103380380'
+  app/views/accounts/new.html.erb:3:in `_app_views_accounts_new_html_erb__406942260_103380380'
+  app/controllers/accounts_controller.rb:17:in `new'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (31.4ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2015-01-15 17:49:07 -0400
+Processing by AccountsController#new as HTML
+  [1m[36mAccountType Load (0.5ms)[0m  [1mSELECT "account_types".* FROM "account_types" [0m
+  Rendered accounts/new.html.erb within layouts/application (26.9ms)
+Completed 500 Internal Server Error in 32.5ms
+
+ActionView::Template::Error (undefined method `description' for #<AccountType:0xbcf96d4>):
+    2: 
+    3: <%= simple_form_for @account do |f| %>
+    4:   <%= f.input :account_number %>
+    5:   <%= f.association :account_type, collection: AccountType.all, as: :check_boxes, label_method: :description %>
+    6:   <%= f.button :submit %>
+    7: <% end %>
+  app/views/accounts/new.html.erb:5:in `block in _app_views_accounts_new_html_erb__406942260_105769030'
+  app/views/accounts/new.html.erb:3:in `_app_views_accounts_new_html_erb__406942260_105769030'
+  app/controllers/accounts_controller.rb:17:in `new'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (25.3ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2015-01-15 17:49:21 -0400
+Processing by AccountsController#new as HTML
+  [1m[35mAccountType Load (0.9ms)[0m  SELECT "account_types".* FROM "account_types" 
+  Rendered accounts/new.html.erb within layouts/application (36.2ms)
+Completed 500 Internal Server Error in 54.8ms
+
+ActionView::Template::Error (undefined method `new' for #<AccountType:0xcaa43d8>):
+    2: 
+    3: <%= simple_form_for @account do |f| %>
+    4:   <%= f.input :account_number %>
+    5:   <%= f.association :account_type, collection: AccountType.all, as: :check_boxes, label_method: :new %>
+    6:   <%= f.button :submit %>
+    7: <% end %>
+  app/views/accounts/new.html.erb:5:in `block in _app_views_accounts_new_html_erb__406942260_105206600'
+  app/views/accounts/new.html.erb:3:in `_app_views_accounts_new_html_erb__406942260_105206600'
+  app/controllers/accounts_controller.rb:17:in `new'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (32.4ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2015-01-15 17:49:34 -0400
+Processing by AccountsController#new as HTML
+  [1m[36mAccountType Load (0.6ms)[0m  [1mSELECT "account_types".* FROM "account_types" [0m
+  Rendered accounts/new.html.erb within layouts/application (44.7ms)
+Completed 200 OK in 94.0ms (Views: 87.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-15 17:49:35 -0400
+Served asset /application.css - 304 Not Modified (22ms)
+
+
+Started GET "/assets/account_types.css?body=1" for 127.0.0.1 at 2015-01-15 17:49:35 -0400
+Served asset /account_types.css - 304 Not Modified (14ms)
+
+
+Started GET "/assets/accounts.css?body=1" for 127.0.0.1 at 2015-01-15 17:49:35 -0400
+Served asset /accounts.css - 304 Not Modified (29ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-15 17:49:35 -0400
+Served asset /scaffolds.css - 304 Not Modified (18ms)
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-15 17:49:35 -0400
+Served asset /transactions.css - 304 Not Modified (22ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-15 17:49:35 -0400
+Served asset /jquery.js - 304 Not Modified (18ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-15 17:49:35 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/account_types.js?body=1" for 127.0.0.1 at 2015-01-15 17:49:35 -0400
+Served asset /account_types.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-15 17:49:35 -0400
+Served asset /accounts.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-15 17:49:35 -0400
+Served asset /transactions.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-15 17:49:35 -0400
+Served asset /application.js - 304 Not Modified (25ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2015-01-15 17:49:47 -0400
+Processing by AccountsController#new as HTML
+  [1m[35mAccountType Load (0.5ms)[0m  SELECT "account_types".* FROM "account_types" 
+  Rendered accounts/new.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 76.9ms (Views: 75.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-15 17:49:48 -0400
+Served asset /application.css - 304 Not Modified (34ms)
+
+
+Started GET "/assets/account_types.css?body=1" for 127.0.0.1 at 2015-01-15 17:49:48 -0400
+Served asset /account_types.css - 304 Not Modified (86ms)
+
+
+Started GET "/assets/accounts.css?body=1" for 127.0.0.1 at 2015-01-15 17:49:48 -0400
+Served asset /accounts.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-15 17:49:48 -0400
+Served asset /scaffolds.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-15 17:49:48 -0400
+Served asset /transactions.css - 304 Not Modified (19ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-15 17:49:48 -0400
+Served asset /jquery.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-15 17:49:48 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (24ms)
+
+
+Started GET "/assets/account_types.js?body=1" for 127.0.0.1 at 2015-01-15 17:49:48 -0400
+Served asset /account_types.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-15 17:49:48 -0400
+Served asset /accounts.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-15 17:49:48 -0400
+Served asset /transactions.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-15 17:49:48 -0400
+Served asset /application.js - 304 Not Modified (18ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2015-01-15 17:52:14 -0400
+Processing by AccountsController#new as HTML
+  [1m[36mAccountType Load (0.6ms)[0m  [1mSELECT "account_types".* FROM "account_types" [0m
+  Rendered accounts/new.html.erb within layouts/application (20.8ms)
+Completed 500 Internal Server Error in 34.1ms
+
+ActionView::Template::Error (undefined method `fname' for #<AccountType:0xb568c3f0>):
+    2: 
+    3: <%= simple_form_for @account do |f| %>
+    4:   <%= f.input :account_number %>
+    5:   <%= f.collection_select(:account_type_id, AccountType.all, :id, :fname) %>
+    6:   <%= f.button :submit %>
+    7: <% end %>
+  app/views/accounts/new.html.erb:5:in `block in _app_views_accounts_new_html_erb__406942260_103372490'
+  app/views/accounts/new.html.erb:3:in `_app_views_accounts_new_html_erb__406942260_103372490'
+  app/controllers/accounts_controller.rb:17:in `new'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (8.0ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (33.5ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2015-01-15 17:52:30 -0400
+Processing by AccountsController#new as HTML
+  [1m[35mAccountType Load (0.4ms)[0m  SELECT "account_types".* FROM "account_types" 
+  Rendered accounts/new.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 64.3ms (Views: 63.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-15 17:52:30 -0400
+Served asset /application.css - 304 Not Modified (17ms)
+
+
+Started GET "/assets/account_types.css?body=1" for 127.0.0.1 at 2015-01-15 17:52:30 -0400
+Served asset /account_types.css - 304 Not Modified (17ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-15 17:52:30 -0400
+Served asset /scaffolds.css - 304 Not Modified (27ms)
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-15 17:52:30 -0400
+Served asset /transactions.css - 304 Not Modified (25ms)
+
+
+Started GET "/assets/accounts.css?body=1" for 127.0.0.1 at 2015-01-15 17:52:31 -0400
+Served asset /accounts.css - 304 Not Modified (29ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-15 17:52:31 -0400
+Served asset /jquery.js - 304 Not Modified (22ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-15 17:52:31 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/account_types.js?body=1" for 127.0.0.1 at 2015-01-15 17:52:31 -0400
+Served asset /account_types.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-15 17:52:31 -0400
+Served asset /accounts.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-15 17:52:31 -0400
+Served asset /transactions.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-15 17:52:31 -0400
+Served asset /application.js - 304 Not Modified (9ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2015-01-15 17:53:34 -0400
+Processing by AccountsController#new as HTML
+ERROR: compiling _app_views_accounts_new_html_erb__406942260_105449660 RAISED /home/saasbook/AccPro/app/views/accounts/new.html.erb:5: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...count_type, label: Account type) );@output_buffer.safe_conca...
+...                               ^
+Function body:           def _app_views_accounts_new_html_erb__406942260_105449660(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "accounts/new";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('<h1>New account</h1>
+
+');@output_buffer.append=  simple_form_for @account do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( f.input :account_number );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( f.collection_select(:account_type_id, AccountType.all, :id, :account_type, label: Account type) );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( f.button :submit );@output_buffer.safe_concat('
+'); end 
+@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/template.rb:297:in `module_eval'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/template.rb:297:in `compile'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/template.rb:244:in `block in compile!'
+<internal:prelude>:10:in `synchronize'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/template.rb:232:in `compile!'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/template.rb:144:in `block in render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications.rb:125:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/template.rb:143:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications.rb:123:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/template_renderer.rb:18:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/renderer.rb:17:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/rendering.rb:88:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/rendering.rb:16:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.2.18/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/responder.rb:232:in `default_render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/responder.rb:160:in `to_html'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/responder.rb:153:in `respond'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/responder.rb:146:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/mime_responds.rb:239:in `respond_with'
+/home/saasbook/AccPro/app/controllers/accounts_controller.rb:17:in `new'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/base.rb:167:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:414:in `_run__148095654__process_action__705021978__callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications.rb:123:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.2.18/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/base.rb:121:in `process'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/rendering.rb:45:in `process'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal.rb:203:in `dispatch'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal.rb:246:in `block in action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/routing/route_set.rb:73:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/routing/route_set.rb:36:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/journey-1.0.4/lib/journey/router.rb:56:in `each'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/journey-1.0.4/lib/journey/router.rb:56:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/routing/route_set.rb:608:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/warden-1.2.3/lib/warden/manager.rb:35:in `block in call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/warden-1.2.3/lib/warden/manager.rb:34:in `catch'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/warden-1.2.3/lib/warden/manager.rb:34:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/etag.rb:23:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.2.18/lib/active_record/query_cache.rb:64:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.2.18/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:405:in `_run__762575748__call__949400408__callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.18/lib/rails/rack/logger.rb:32:in `call_app'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.18/lib/rails/rack/logger.rb:16:in `block in call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/tagged_logging.rb:22:in `tagged'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.18/lib/rails/rack/logger.rb:16:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/static.rb:63:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.18/lib/rails/engine.rb:484:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.18/lib/rails/application.rb:231:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.18/lib/rails/rack/log_tailer.rb:17:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+/home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+/home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+/home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+  Rendered accounts/new.html.erb within layouts/application (7.0ms)
+Completed 500 Internal Server Error in 16.3ms
+
+ActionView::Template::Error (/home/saasbook/AccPro/app/views/accounts/new.html.erb:5: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...count_type, label: Account type) );@output_buffer.safe_conca...
+...                               ^):
+    2: 
+    3: <%= simple_form_for @account do |f| %>
+    4:   <%= f.input :account_number %>
+    5:   <%= f.collection_select(:account_type_id, AccountType.all, :id, :account_type, label: Account type) %>
+    6:   <%= f.button :submit %>
+    7: <% end %>
+  app/controllers/accounts_controller.rb:17:in `new'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (33.9ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2015-01-15 17:53:53 -0400
+Processing by AccountsController#new as HTML
+  [1m[36mAccountType Load (0.8ms)[0m  [1mSELECT "account_types".* FROM "account_types" [0m
+  Rendered accounts/new.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 36.6ms (Views: 35.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-15 17:53:53 -0400
+Served asset /application.css - 304 Not Modified (41ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-15 17:53:53 -0400
+Served asset /scaffolds.css - 304 Not Modified (33ms)
+
+
+Started GET "/assets/accounts.css?body=1" for 127.0.0.1 at 2015-01-15 17:53:53 -0400
+Served asset /accounts.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-15 17:53:53 -0400
+Served asset /transactions.css - 304 Not Modified (34ms)
+
+
+Started GET "/assets/account_types.css?body=1" for 127.0.0.1 at 2015-01-15 17:53:53 -0400
+Served asset /account_types.css - 304 Not Modified (19ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-15 17:53:53 -0400
+Served asset /jquery.js - 304 Not Modified (36ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-15 17:53:53 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (21ms)
+
+
+Started GET "/assets/account_types.js?body=1" for 127.0.0.1 at 2015-01-15 17:53:53 -0400
+Served asset /account_types.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-15 17:53:53 -0400
+Served asset /accounts.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-15 17:53:53 -0400
+Served asset /transactions.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-15 17:53:53 -0400
+Served asset /application.js - 304 Not Modified (20ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2015-01-15 17:54:23 -0400
+Processing by AccountsController#new as HTML
+ERROR: compiling _app_views_accounts_new_html_erb__406942260_107180000 RAISED /home/saasbook/AccPro/app/views/accounts/new.html.erb:5: syntax error, unexpected ',', expecting ')'
+...tType.all, :id, :account_type), label: 'Account type' );@out...
+...                               ^
+Function body:           def _app_views_accounts_new_html_erb__406942260_107180000(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "accounts/new";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('<h1>New account</h1>
+
+');@output_buffer.append=  simple_form_for @account do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( f.input :account_number );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( f.collection_select(:account_type_id, AccountType.all, :id, :account_type), label: 'Account type' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( f.button :submit );@output_buffer.safe_concat('
+'); end 
+@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/template.rb:297:in `module_eval'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/template.rb:297:in `compile'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/template.rb:244:in `block in compile!'
+<internal:prelude>:10:in `synchronize'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/template.rb:232:in `compile!'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/template.rb:144:in `block in render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications.rb:125:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/template.rb:143:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications.rb:123:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/template_renderer.rb:18:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/renderer.rb:17:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/rendering.rb:88:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/rendering.rb:16:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.2.18/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/responder.rb:232:in `default_render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/responder.rb:160:in `to_html'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/responder.rb:153:in `respond'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/responder.rb:146:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/mime_responds.rb:239:in `respond_with'
+/home/saasbook/AccPro/app/controllers/accounts_controller.rb:17:in `new'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/base.rb:167:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:414:in `_run__148095654__process_action__705021978__callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications.rb:123:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.2.18/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/base.rb:121:in `process'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/rendering.rb:45:in `process'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal.rb:203:in `dispatch'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal.rb:246:in `block in action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/routing/route_set.rb:73:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/routing/route_set.rb:36:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/journey-1.0.4/lib/journey/router.rb:56:in `each'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/journey-1.0.4/lib/journey/router.rb:56:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/routing/route_set.rb:608:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/warden-1.2.3/lib/warden/manager.rb:35:in `block in call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/warden-1.2.3/lib/warden/manager.rb:34:in `catch'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/warden-1.2.3/lib/warden/manager.rb:34:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/etag.rb:23:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.2.18/lib/active_record/query_cache.rb:64:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.2.18/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:405:in `_run__762575748__call__949400408__callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.18/lib/rails/rack/logger.rb:32:in `call_app'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.18/lib/rails/rack/logger.rb:16:in `block in call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/tagged_logging.rb:22:in `tagged'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.18/lib/rails/rack/logger.rb:16:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/static.rb:63:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.18/lib/rails/engine.rb:484:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.18/lib/rails/application.rb:231:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.18/lib/rails/rack/log_tailer.rb:17:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+/home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+/home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+/home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+  Rendered accounts/new.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 99.2ms
+
+ActionView::Template::Error (/home/saasbook/AccPro/app/views/accounts/new.html.erb:5: syntax error, unexpected ',', expecting ')'
+...tType.all, :id, :account_type), label: 'Account type' );@out...
+...                               ^):
+    2: 
+    3: <%= simple_form_for @account do |f| %>
+    4:   <%= f.input :account_number %>
+    5:   <%= f.collection_select(:account_type_id, AccountType.all, :id, :account_type), label: 'Account type' %>
+    6:   <%= f.button :submit %>
+    7: <% end %>
+  app/controllers/accounts_controller.rb:17:in `new'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (24.2ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2015-01-15 17:55:48 -0400
+Processing by AccountsController#new as HTML
+ERROR: compiling _app_views_accounts_new_html_erb__406942260_105801080 RAISED /home/saasbook/AccPro/app/views/accounts/new.html.erb:7: syntax error, unexpected ',', expecting ')'
+...tType.all, :id, :account_type), label: 'Account type' );@out...
+...                               ^
+Function body:           def _app_views_accounts_new_html_erb__406942260_105801080(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "accounts/new";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('<h1>New account</h1>
+
+');@output_buffer.append=  simple_form_for @account do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( f.input :account_number );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  <div>
+    ');@output_buffer.append= ( f.label :account_type_id, 'Account type' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    ');@output_buffer.append= ( f.collection_select(:account_type_id, AccountType.all, :id, :account_type), label: 'Account type' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  ');@output_buffer.append= ( f.button :submit );@output_buffer.safe_concat('
+'); end 
+@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/template.rb:297:in `module_eval'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/template.rb:297:in `compile'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/template.rb:244:in `block in compile!'
+<internal:prelude>:10:in `synchronize'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/template.rb:232:in `compile!'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/template.rb:144:in `block in render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications.rb:125:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/template.rb:143:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications.rb:123:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/template_renderer.rb:18:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/renderer.rb:17:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/rendering.rb:88:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/rendering.rb:16:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.2.18/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/responder.rb:232:in `default_render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/responder.rb:160:in `to_html'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/responder.rb:153:in `respond'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/responder.rb:146:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/mime_responds.rb:239:in `respond_with'
+/home/saasbook/AccPro/app/controllers/accounts_controller.rb:17:in `new'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/base.rb:167:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:414:in `_run__148095654__process_action__705021978__callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications.rb:123:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.2.18/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/base.rb:121:in `process'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/rendering.rb:45:in `process'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal.rb:203:in `dispatch'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal.rb:246:in `block in action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/routing/route_set.rb:73:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/routing/route_set.rb:36:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/journey-1.0.4/lib/journey/router.rb:56:in `each'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/journey-1.0.4/lib/journey/router.rb:56:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/routing/route_set.rb:608:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/warden-1.2.3/lib/warden/manager.rb:35:in `block in call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/warden-1.2.3/lib/warden/manager.rb:34:in `catch'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/warden-1.2.3/lib/warden/manager.rb:34:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/etag.rb:23:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.2.18/lib/active_record/query_cache.rb:64:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.2.18/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:405:in `_run__762575748__call__949400408__callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.18/lib/rails/rack/logger.rb:32:in `call_app'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.18/lib/rails/rack/logger.rb:16:in `block in call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/tagged_logging.rb:22:in `tagged'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.18/lib/rails/rack/logger.rb:16:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/static.rb:63:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.18/lib/rails/engine.rb:484:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.18/lib/rails/application.rb:231:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.18/lib/rails/rack/log_tailer.rb:17:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+/home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+/home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+/home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+  Rendered accounts/new.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 11.0ms
+
+ActionView::Template::Error (/home/saasbook/AccPro/app/views/accounts/new.html.erb:7: syntax error, unexpected ',', expecting ')'
+...tType.all, :id, :account_type), label: 'Account type' );@out...
+...                               ^):
+    4:   <%= f.input :account_number %>
+    5:   <div>
+    6:     <%= f.label :account_type_id, 'Account type' %>
+    7:     <%= f.collection_select(:account_type_id, AccountType.all, :id, :account_type), label: 'Account type' %>
+    8:   </div>
+    9:   <%= f.button :submit %>
+    10: <% end %>
+  app/controllers/accounts_controller.rb:17:in `new'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (24.1ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2015-01-15 17:57:15 -0400
+Processing by AccountsController#new as HTML
+ERROR: compiling _app_views_accounts_new_html_erb__406942260_100321060 RAISED /home/saasbook/AccPro/app/views/accounts/new.html.erb:7: syntax error, unexpected ',', expecting ')'
+...tType.all, :id, :account_type), label: 'Account type' );@out...
+...                               ^
+Function body:           def _app_views_accounts_new_html_erb__406942260_100321060(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "accounts/new";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('<h1>New account</h1>
+
+');@output_buffer.append=  simple_form_for @account do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( f.input :account_number );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  <div>
+    ');@output_buffer.append= ( f.label 'Account type' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    ');@output_buffer.append= ( f.collection_select(:account_type_id, AccountType.all, :id, :account_type), label: 'Account type' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  ');@output_buffer.append= ( f.button :submit );@output_buffer.safe_concat('
+'); end 
+@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/template.rb:297:in `module_eval'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/template.rb:297:in `compile'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/template.rb:244:in `block in compile!'
+<internal:prelude>:10:in `synchronize'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/template.rb:232:in `compile!'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/template.rb:144:in `block in render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications.rb:125:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/template.rb:143:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications.rb:123:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/template_renderer.rb:18:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/renderer.rb:17:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/rendering.rb:88:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/rendering.rb:16:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.2.18/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/responder.rb:232:in `default_render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/responder.rb:160:in `to_html'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/responder.rb:153:in `respond'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/responder.rb:146:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/mime_responds.rb:239:in `respond_with'
+/home/saasbook/AccPro/app/controllers/accounts_controller.rb:17:in `new'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/base.rb:167:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:414:in `_run__148095654__process_action__705021978__callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications.rb:123:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.2.18/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/base.rb:121:in `process'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/rendering.rb:45:in `process'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal.rb:203:in `dispatch'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal.rb:246:in `block in action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/routing/route_set.rb:73:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/routing/route_set.rb:36:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/journey-1.0.4/lib/journey/router.rb:56:in `each'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/journey-1.0.4/lib/journey/router.rb:56:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/routing/route_set.rb:608:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/warden-1.2.3/lib/warden/manager.rb:35:in `block in call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/warden-1.2.3/lib/warden/manager.rb:34:in `catch'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/warden-1.2.3/lib/warden/manager.rb:34:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/etag.rb:23:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.2.18/lib/active_record/query_cache.rb:64:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.2.18/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:405:in `_run__762575748__call__949400408__callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.18/lib/rails/rack/logger.rb:32:in `call_app'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.18/lib/rails/rack/logger.rb:16:in `block in call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/tagged_logging.rb:22:in `tagged'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.18/lib/rails/rack/logger.rb:16:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/static.rb:63:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.18/lib/rails/engine.rb:484:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.18/lib/rails/application.rb:231:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.18/lib/rails/rack/log_tailer.rb:17:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+/home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+/home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+/home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+  Rendered accounts/new.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 19.7ms
+
+ActionView::Template::Error (/home/saasbook/AccPro/app/views/accounts/new.html.erb:7: syntax error, unexpected ',', expecting ')'
+...tType.all, :id, :account_type), label: 'Account type' );@out...
+...                               ^):
+    4:   <%= f.input :account_number %>
+    5:   <div>
+    6:     <%= f.label 'Account type' %>
+    7:     <%= f.collection_select(:account_type_id, AccountType.all, :id, :account_type), label: 'Account type' %>
+    8:   </div>
+    9:   <%= f.button :submit %>
+    10: <% end %>
+  app/controllers/accounts_controller.rb:17:in `new'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (30.5ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2015-01-15 17:57:28 -0400
+Processing by AccountsController#new as HTML
+ERROR: compiling _app_views_accounts_new_html_erb__406942260_104731250 RAISED /home/saasbook/AccPro/app/views/accounts/new.html.erb:7: syntax error, unexpected ',', expecting ')'
+...tType.all, :id, :account_type), label: 'Account type' );@out...
+...                               ^
+Function body:           def _app_views_accounts_new_html_erb__406942260_104731250(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "accounts/new";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('<h1>New account</h1>
+
+');@output_buffer.append=  simple_form_for @account do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( f.input :account_number );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  <div>
+    ');@output_buffer.append= ( f.label :account_type_id, 'Account type' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    ');@output_buffer.append= ( f.collection_select(:account_type_id, AccountType.all, :id, :account_type), label: 'Account type' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  ');@output_buffer.append= ( f.button :submit );@output_buffer.safe_concat('
+'); end 
+@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/template.rb:297:in `module_eval'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/template.rb:297:in `compile'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/template.rb:244:in `block in compile!'
+<internal:prelude>:10:in `synchronize'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/template.rb:232:in `compile!'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/template.rb:144:in `block in render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications.rb:125:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/template.rb:143:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications.rb:123:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/template_renderer.rb:18:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_view/renderer/renderer.rb:17:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/rendering.rb:88:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/rendering.rb:16:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.2.18/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/responder.rb:232:in `default_render'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/responder.rb:160:in `to_html'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/responder.rb:153:in `respond'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/responder.rb:146:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/mime_responds.rb:239:in `respond_with'
+/home/saasbook/AccPro/app/controllers/accounts_controller.rb:17:in `new'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/base.rb:167:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:414:in `_run__148095654__process_action__705021978__callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/notifications.rb:123:in `instrument'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.2.18/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/base.rb:121:in `process'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/abstract_controller/rendering.rb:45:in `process'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal.rb:203:in `dispatch'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_controller/metal.rb:246:in `block in action'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/routing/route_set.rb:73:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/routing/route_set.rb:36:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/journey-1.0.4/lib/journey/router.rb:56:in `each'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/journey-1.0.4/lib/journey/router.rb:56:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/routing/route_set.rb:608:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/warden-1.2.3/lib/warden/manager.rb:35:in `block in call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/warden-1.2.3/lib/warden/manager.rb:34:in `catch'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/warden-1.2.3/lib/warden/manager.rb:34:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/etag.rb:23:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.2.18/lib/active_record/query_cache.rb:64:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activerecord-3.2.18/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:405:in `_run__762575748__call__949400408__callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.18/lib/rails/rack/logger.rb:32:in `call_app'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.18/lib/rails/rack/logger.rb:16:in `block in call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/tagged_logging.rb:22:in `tagged'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.18/lib/rails/rack/logger.rb:16:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.18/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/static.rb:63:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.18/lib/rails/engine.rb:484:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.18/lib/rails/application.rb:231:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/railties-3.2.18/lib/rails/rack/log_tailer.rb:17:in `call'
+/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+/home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+/home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+/home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+  Rendered accounts/new.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 15.7ms
+
+ActionView::Template::Error (/home/saasbook/AccPro/app/views/accounts/new.html.erb:7: syntax error, unexpected ',', expecting ')'
+...tType.all, :id, :account_type), label: 'Account type' );@out...
+...                               ^):
+    4:   <%= f.input :account_number %>
+    5:   <div>
+    6:     <%= f.label :account_type_id, 'Account type' %>
+    7:     <%= f.collection_select(:account_type_id, AccountType.all, :id, :account_type), label: 'Account type' %>
+    8:   </div>
+    9:   <%= f.button :submit %>
+    10: <% end %>
+  app/controllers/accounts_controller.rb:17:in `new'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (73.6ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2015-01-15 17:57:49 -0400
+Processing by AccountsController#new as HTML
+  [1m[35mAccountType Load (0.4ms)[0m  SELECT "account_types".* FROM "account_types" 
+  Rendered accounts/new.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 61.0ms (Views: 60.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-15 17:57:49 -0400
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/accounts.css?body=1" for 127.0.0.1 at 2015-01-15 17:57:49 -0400
+Served asset /accounts.css - 304 Not Modified (22ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-15 17:57:49 -0400
+Served asset /scaffolds.css - 304 Not Modified (28ms)
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-15 17:57:49 -0400
+Served asset /transactions.css - 304 Not Modified (15ms)
+
+
+Started GET "/assets/account_types.css?body=1" for 127.0.0.1 at 2015-01-15 17:57:49 -0400
+Served asset /account_types.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-15 17:57:49 -0400
+Served asset /jquery.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-15 17:57:49 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/account_types.js?body=1" for 127.0.0.1 at 2015-01-15 17:57:49 -0400
+Served asset /account_types.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-15 17:57:49 -0400
+Served asset /accounts.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-15 17:57:49 -0400
+Served asset /transactions.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-15 17:57:50 -0400
+Served asset /application.js - 304 Not Modified (22ms)
+Connecting to database specified by database.yml
+
+
+Started POST "/accounts" for 127.0.0.1 at 2015-01-15 18:01:10 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YZE6ZKe+pSU2YsZ4q1TMMcnGCqVCclObayJxxfQl3oc=", "account"=>{"account_number"=>"3344", "account_type_id"=>"1"}, "commit"=>"Create Account"}
+Completed 500 Internal Server Error in 88483.6ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: account_type_id):
+  app/controllers/accounts_controller.rb:25:in `new'
+  app/controllers/accounts_controller.rb:25:in `create'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (48.5ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2015-01-15 18:03:06 -0400
+Processing by AccountsController#index as HTML
+  [1m[36mAccount Load (0.9ms)[0m  [1mSELECT "accounts".* FROM "accounts" [0m
+  Rendered accounts/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 47.1ms (Views: 32.2ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-15 18:03:06 -0400
+Served asset /application.css - 304 Not Modified (151ms)
+
+
+Started GET "/assets/account_types.css?body=1" for 127.0.0.1 at 2015-01-15 18:03:06 -0400
+Served asset /account_types.css - 304 Not Modified (28ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-15 18:03:06 -0400
+Served asset /scaffolds.css - 304 Not Modified (15ms)
+
+
+Started GET "/assets/accounts.css?body=1" for 127.0.0.1 at 2015-01-15 18:03:06 -0400
+Served asset /accounts.css - 304 Not Modified (23ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-15 18:03:06 -0400
+Served asset /jquery.js - 304 Not Modified (26ms)
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-15 18:03:07 -0400
+Served asset /transactions.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-15 18:03:07 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/account_types.js?body=1" for 127.0.0.1 at 2015-01-15 18:03:07 -0400
+Served asset /account_types.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-15 18:03:07 -0400
+Served asset /accounts.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-15 18:03:07 -0400
+Served asset /transactions.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-15 18:03:07 -0400
+Served asset /application.js - 304 Not Modified (22ms)
+
+
+Started GET "/accounts/new" for 127.0.0.1 at 2015-01-15 18:03:09 -0400
+Processing by AccountsController#new as HTML
+  [1m[35mAccountType Load (1.2ms)[0m  SELECT "account_types".* FROM "account_types" 
+  Rendered accounts/new.html.erb within layouts/application (70.3ms)
+Completed 200 OK in 134.8ms (Views: 114.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-15 18:03:09 -0400
+Served asset /application.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/account_types.css?body=1" for 127.0.0.1 at 2015-01-15 18:03:09 -0400
+Served asset /account_types.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/accounts.css?body=1" for 127.0.0.1 at 2015-01-15 18:03:09 -0400
+Served asset /accounts.css - 304 Not Modified (64ms)
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-15 18:03:09 -0400
+Served asset /transactions.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-15 18:03:09 -0400
+Served asset /scaffolds.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-15 18:03:09 -0400
+Served asset /jquery.js - 304 Not Modified (48ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-15 18:03:09 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (25ms)
+
+
+Started GET "/assets/account_types.js?body=1" for 127.0.0.1 at 2015-01-15 18:03:09 -0400
+Served asset /account_types.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-15 18:03:10 -0400
+Served asset /application.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-15 18:03:10 -0400
+Served asset /accounts.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-15 18:03:10 -0400
+Served asset /transactions.js - 304 Not Modified (8ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2015-01-15 18:03:28 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YZE6ZKe+pSU2YsZ4q1TMMcnGCqVCclObayJxxfQl3oc=", "account"=>{"account_number"=>"10", "account_type_id"=>"1"}, "commit"=>"Create Account"}
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mAccount Exists (0.6ms)[0m  SELECT 1 AS one FROM "accounts" WHERE "accounts"."account_number" = '10' LIMIT 1
+  [1m[36mSQL (8.2ms)[0m  [1mINSERT INTO "accounts" ("account_number", "account_type_id", "balance_type", "created_at", "total_amount", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["account_number", "10"], ["account_type_id", 1], ["balance_type", nil], ["created_at", Thu, 15 Jan 2015 22:03:32 UTC +00:00], ["total_amount", nil], ["updated_at", Thu, 15 Jan 2015 22:03:32 UTC +00:00]]
+  [1m[35m (53.9ms)[0m  commit transaction
+Completed 500 Internal Server Error in 3320.8ms
+
+ActionView::MissingTemplate (Missing template accounts/create, application/create with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee, :haml]}. Searched in:
+  * "/home/saasbook/AccPro/app/views"
+  * "/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/devise-3.4.1/app/views"
+):
+  actionpack (3.2.18) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.18) lib/action_view/lookup_context.rb:122:in `find'
+  actionpack (3.2.18) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.18) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.18) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.18) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.18) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.18) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.18) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.18) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.18) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  activesupport (3.2.18) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.18) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.18) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.18) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.18) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.18) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:414:in `_run__148095654__process_action__103368902__callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.18) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.18) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.18) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.18) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.18) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.18) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.18) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:35:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.18) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `_run__762575748__call__949400408__callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.18) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.18) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.18) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.18) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.18) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.18) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.18) lib/rails/engine.rb:484:in `call'
+  railties (3.2.18) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.18) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.2ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2015-01-15 18:04:23 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YZE6ZKe+pSU2YsZ4q1TMMcnGCqVCclObayJxxfQl3oc=", "account"=>{"account_number"=>"10", "account_type_id"=>"1"}, "commit"=>"Create Account"}
+  [1m[36m (4.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mAccount Exists (0.4ms)[0m  SELECT 1 AS one FROM "accounts" WHERE "accounts"."account_number" = '10' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35mAccountType Load (0.5ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 1 LIMIT 1
+  Rendered accounts/show.html.erb within layouts/application (350.6ms)
+Completed 500 Internal Server Error in 2898.7ms
+
+ActionController::RoutingError (No route matches {:action=>"edit", :controller=>"accounts", :id=>#<Account id: nil, account_number: "10", balance_type: nil, total_amount: nil, account_type_id: 1, created_at: nil, updated_at: nil>}):
+  app/views/accounts/show.html.erb:24:in `_app_views_accounts_show_html_erb__140540269_106267410'
+  app/controllers/accounts_controller.rb:27:in `create'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+Connecting to database specified by database.yml
+SQLite3::SQLException: no such column: transactions.account_id: SELECT "transactions".* FROM "transactions"  WHERE "transactions"."account_id" = 1
+Connecting to database specified by database.yml
+
+
+Started POST "/accounts" for 127.0.0.1 at 2015-01-15 18:09:35 -0400
+Processing by AccountsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YZE6ZKe+pSU2YsZ4q1TMMcnGCqVCclObayJxxfQl3oc=", "account"=>{"account_number"=>"10", "account_type_id"=>"1"}, "commit"=>"Create Account"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mAccount Exists (1.9ms)[0m  SELECT 1 AS one FROM "accounts" WHERE "accounts"."account_number" = '10' LIMIT 1
+  [1m[36mSQL (2.8ms)[0m  [1mINSERT INTO "accounts" ("account_number", "account_type_id", "balance_type", "created_at", "total_amount", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["account_number", "10"], ["account_type_id", 1], ["balance_type", nil], ["created_at", Thu, 15 Jan 2015 22:09:40 UTC +00:00], ["total_amount", nil], ["updated_at", Thu, 15 Jan 2015 22:09:40 UTC +00:00]]
+  [1m[35m (60.7ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/accounts
+Completed 302 Found in 5140.3ms (ActiveRecord: 79.2ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2015-01-15 18:09:40 -0400
+Processing by AccountsController#index as HTML
+  [1m[36mAccount Load (0.7ms)[0m  [1mSELECT "accounts".* FROM "accounts" [0m
+  [1m[35mAccountType Load (0.4ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 1 LIMIT 1
+  Rendered accounts/index.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 67.9ms (Views: 63.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-15 18:09:40 -0400
+Served asset /application.css - 304 Not Modified (78ms)
+
+
+Started GET "/assets/account_types.css?body=1" for 127.0.0.1 at 2015-01-15 18:09:41 -0400
+Served asset /account_types.css - 304 Not Modified (16ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-15 18:09:41 -0400
+Served asset /jquery.js - 304 Not Modified (20ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-15 18:09:41 -0400
+Served asset /scaffolds.css - 304 Not Modified (26ms)
+
+
+Started GET "/assets/accounts.css?body=1" for 127.0.0.1 at 2015-01-15 18:09:41 -0400
+Served asset /accounts.css - 304 Not Modified (171ms)
+
+
+Started GET "/assets/transactions.css?body=1" for 127.0.0.1 at 2015-01-15 18:09:41 -0400
+Served asset /transactions.css - 304 Not Modified (53ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-15 18:09:41 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/account_types.js?body=1" for 127.0.0.1 at 2015-01-15 18:09:41 -0400
+Served asset /account_types.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-15 18:09:41 -0400
+Served asset /accounts.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-15 18:09:41 -0400
+Served asset /transactions.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-15 18:09:41 -0400
+Served asset /application.js - 304 Not Modified (23ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2015-01-15 18:10:21 -0400
+Processing by AccountsController#index as HTML
+  [1m[36mAccount Load (0.6ms)[0m  [1mSELECT "accounts".* FROM "accounts" [0m
+  Rendered accounts/index.html.erb within layouts/application (10.5ms)
+Completed 500 Internal Server Error in 27.6ms
+
+ActionView::Template::Error (undefined method `account_number' for #<Class:0xc7bfac8>):
+    13: 
+    14: <% @accounts.each do |account| %>
+    15:   <tr>
+    16:     <td><%= Account.account_number %></td>
+    17:     <td><%= Account.balance_type %></td>
+    18:     <td><%= Account.account_type %></td>
+    19:     <td><%= Account.user %></td>
+  app/views/accounts/index.html.erb:16:in `block in _app_views_accounts_index_html_erb___922377524_104726740'
+  app/views/accounts/index.html.erb:14:in `each'
+  app/views/accounts/index.html.erb:14:in `_app_views_accounts_index_html_erb___922377524_104726740'
+  app/controllers/accounts_controller.rb:8:in `index'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (38.9ms)

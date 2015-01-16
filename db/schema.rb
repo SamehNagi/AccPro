@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150114224916) do
+ActiveRecord::Schema.define(:version => 20150114224011) do
 
   create_table "account_types", :force => true do |t|
     t.string   "account_type"
@@ -22,24 +22,22 @@ ActiveRecord::Schema.define(:version => 20150114224916) do
   create_table "accounts", :force => true do |t|
     t.string   "account_number"
     t.string   "balance_type"
+    t.integer  "total_amount"
     t.integer  "account_type_id"
-    t.integer  "user_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end
 
   add_index "accounts", ["account_type_id"], :name => "index_accounts_on_account_type_id"
-  add_index "accounts", ["user_id"], :name => "index_accounts_on_user_id"
 
   create_table "transactions", :force => true do |t|
     t.string   "from_account"
     t.string   "to_account"
-    t.integer  "account_id"
+    t.integer  "amount"
+    t.string   "description"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
-
-  add_index "transactions", ["account_id"], :name => "index_transactions_on_account_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

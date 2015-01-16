@@ -2,7 +2,9 @@
 
 <%= simple_form_for @account do |f| %>
   <%= f.input :account_number %>
-  <%= f.input :balance_type %>
-  <%= f.association :account_type %>
+  <div>
+    <%= f.label :account_type_id, 'Account type' %>
+    <%= f.collection_select(:account_type_id, AccountType.all, :id, :account_type) %>
+  </div>
   <%= f.button :submit %>
 <% end %>

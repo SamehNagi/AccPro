@@ -24,7 +24,6 @@ class AccountsController < ApplicationController
     debugger
     @account = Account.new(params[:account])
     @account.save
-    redirect_to accounts_path
     #respond_with(@account)
   end
 
