@@ -3,9 +3,21 @@ class AccountsController < ApplicationController
 
   respond_to :html
 
-  def index
+  def index 
     @accounts = Account.all
-    respond_with(@accounts)
+    @accounts.each do |account|
+      if (account.total_amount).nil?
+        account.total_amount = 0
+      else
+      end
+      if (account.balance_type).nil?
+        account.balance_type = "N/A"
+      else
+      end
+    end
+    #@account_types = AccountType.find(params)
+    #debugger
+    #respond_with(@accounts)
   end
 
   def show
@@ -18,13 +30,17 @@ class AccountsController < ApplicationController
   end
 
   def edit
+    @account = Account.find params[:id]
   end
 
   def create
+    #@account_type = Account.find(params[:account][:account_type_id]).account_type
     debugger
-    @account = Account.new(params[:account])
-    @account.save
+    @account = Account.create!(params[:account])
+    redirect_to accounts_path
     #respond_with(@account)
+    #flash[:notice] = "#{@account.account.number} was successfully created."
+    redirect_to accounts_path
   end
 
   def update

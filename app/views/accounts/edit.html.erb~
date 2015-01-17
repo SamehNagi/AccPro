@@ -1,11 +1,13 @@
-<h1>Create New Account</h1>
+<h1>Editing account</h1>
+
 <%= form_tag accounts_path do %>
   <%= label :account, :account_number, 'Account Number' %>
   <%= text_field :account, 'account_number' %></br>
   
   <%= label :account, :account_type, 'Account Type' %>
-  <%= select :account, :account_type, ['Assets','Liabilities','Equity','Expenses'] %> </br>
+  <%= select :account, :account_type,['Assets','Liabilities','Equity','Expenses'] %> </br></br>
 
-  <%= submit_tag 'submit' %>
+  <%= submit_tag 'Update' %>
 <% end %>
 
+  <%= link_to 'Back', accounts_path %>

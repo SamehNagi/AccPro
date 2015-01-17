@@ -44,8 +44,12 @@ table#accounts th {
   font-weight: bold;
   background-color: wheat;
 }
-table#accounts th, table#accounts td {
+table#accounts th {
   padding: 4px;
+  text-align: left;
+}
+table#accounts td {
+  padding: 10px;
   text-align: left;
 }
 table#accounts th.hilite {

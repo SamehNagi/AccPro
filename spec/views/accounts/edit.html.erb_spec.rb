@@ -4,8 +4,8 @@ RSpec.describe "accounts/edit", :type => :view do
   before(:each) do
     @account = assign(:account, Account.create!(
       :account_number => "MyString",
+      :account_type => "MyString",
       :balance_type => "MyString",
-      :account_type => nil,
       :user => nil
     ))
   end
@@ -17,9 +17,9 @@ RSpec.describe "accounts/edit", :type => :view do
 
       assert_select "input#account_account_number[name=?]", "account[account_number]"
 
-      assert_select "input#account_balance_type[name=?]", "account[balance_type]"
-
       assert_select "input#account_account_type[name=?]", "account[account_type]"
+
+      assert_select "input#account_balance_type[name=?]", "account[balance_type]"
 
       assert_select "input#account_user[name=?]", "account[user]"
     end

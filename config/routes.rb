@@ -1,12 +1,9 @@
 AccPro::Application.routes.draw do
 
-  resources :transactions
-
-
   resources :accounts
 
 
-  resources :account_types
+  resources :transactions
 
 
   devise_for :users

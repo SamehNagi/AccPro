@@ -1,29 +1,38 @@
 <h1>Listing accounts</h1>
 
 <table>
-  <tr>
-    <th>Account number</th>
-    <th>Balance type</th>
-    <th>Account type</th>
-    <th>User</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Account number</th>
+      <th>Account type</th>
+      <th>Total amount</th>
+      <th>Balance type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @accounts.each do |account| %>
+    <tr>
+      <td>
+        <%= account.account_number %>
+      </td>
+      <td>
+        <%= account.account_type %>
+      </td>
+      <td>
+        <%= account.total_amount %>
+      </td>
+      <td>
+        <%= account.balance_type %>
+      </td>
 
-<% @accounts.each do |account| %>
-  <tr>
-    <td><%= account.account_number %></td>
-    <td><%= account.balance_type %></td>
-    <td><%= account.account_type %></td>
-    <td><%= account.user %></td>
-    <td><%= link_to 'Show', account %></td>
-    <td><%= link_to 'Edit', edit_account_path(account) %></td>
-    <td><%= link_to 'Destroy', account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+      <td>
+        <%= link_to 'Edit', edit_account_path(account) %>
+      </td>
+    <!--<td><%= link_to 'Destroy', account, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+    </tr>
+    <% end %>
+  </tbody>
 </table>
 
 <br />
-
 <%= link_to 'New Account', new_account_path %>

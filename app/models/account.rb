@@ -1,7 +1,5 @@
 class Account < ActiveRecord::Base
-  belongs_to :account_type
   belongs_to :user
   has_many :transactions, :dependent => :destroy
-  validates :account_number, presence: true, uniqueness: true
-  attr_accessible :account_number, :balance_type, :total_amount, :account_type_id
+ attr_accessible :account_number, :account_type, :total_amount, :balance_type, :user
 end

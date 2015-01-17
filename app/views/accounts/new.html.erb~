@@ -1,10 +1,15 @@
 <h1>New account</h1>
 
-<%= simple_form_for @account do |f| %>
-  <%= f.input :account_number %>
-  <div>
-    <%= f.label :account_type_id, 'Account type' %>
-    <%= f.collection_select(:account_type_id, AccountType.all, :id, :account_type) %>
-  </div>
-  <%= f.button :submit %>
+
+
+<h1>Create New Account</h1>
+<%= form_tag accounts_path do %>
+  <%= label :account, :account_number, 'Account Number' %>
+  <%= text_field :account, 'account_number' %></br>
+  
+  <%= label :account, :account_type, 'Account Type' %>
+  <%= select :account, :account_type, ['Assets','Liabilities','Equity','Expenses'] %> </br>
+
+  <%= submit_tag 'submit' %>
 <% end %>
+
