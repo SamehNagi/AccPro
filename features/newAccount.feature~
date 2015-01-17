@@ -1,0 +1,15 @@
+Feature: Create new account
+  In order to have a list of transactions
+  As an accountant
+  I want to add new accounts 
+
+  Scenario: Add new account
+    When I am on the accounts page
+    And I follow "New account"
+    Then I should be on the new account page
+    When I fill in "account_name" with "Bank"
+    And I select "Asset" from "account_type"
+    And I press "Create Account"
+    Then I should see "Account created successfully!"
+
+

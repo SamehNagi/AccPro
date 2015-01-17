@@ -5,7 +5,7 @@ class AccountsController < ApplicationController
 
   def index
     @accounts = Account.all
-    respond_with(@accounts)
+    #respond_with(@accounts)
   end
 
   def show
@@ -24,6 +24,7 @@ class AccountsController < ApplicationController
     debugger
     @account = Account.new(params[:account])
     @account.save
+    redirect_to accounts_path
     #respond_with(@account)
   end
 
@@ -31,11 +32,11 @@ class AccountsController < ApplicationController
     @account.update_attributes(params[:account])
     respond_with(@account)
   end
-
-  def destroy
-    @account.destroy
-    respond_with(@account)
-  end
+  # no destroy
+  #def destroy
+  #  @account.destroy
+  #  respond_with(@account)
+  #end
 
   private
     def set_account

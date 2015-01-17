@@ -1,0 +1,16 @@
+Given(/^I am in the index page$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+When(/^I press new account$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+When(/^I have a list of account types$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^I can choose from Assets, Liabilities, Equity, and Expenses$/) do
+  pending # express the regexp above with the code you wish you had
+end
+

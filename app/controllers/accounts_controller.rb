@@ -32,11 +32,11 @@ class AccountsController < ApplicationController
     @account.update_attributes(params[:account])
     respond_with(@account)
   end
-
-  def destroy
-    @account.destroy
-    respond_with(@account)
-  end
+  # no destroy
+  #def destroy
+  #  @account.destroy
+  #  respond_with(@account)
+  #end
 
   private
     def set_account

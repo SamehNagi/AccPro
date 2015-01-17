@@ -1,5 +1,17 @@
 <h1>New transaction</h1>
 
-<%= render 'form' %>
+<%= simple_form_for @transaction do |f| %>
+  <div>
+    <%= f.label :account_type_id, 'From Account' %>
+    <%= f.collection_select(:account_type_id, AccountType.all, :id, :account_type) %>
+  </div>
+  <div>
+    <%= f.label :account_type_id, 'To Account' %>
+    <%= f.collection_select(:account_type_id, AccountType.all, :id, :account_type) %>
+  </div>
+  <%= f.input :amount %>
+  <%= f.input :description %>
+  <%= f.button :submit %>
+<% end %>
 
 <%= link_to 'Back', transactions_path %>
