@@ -1,0 +1,27 @@
+Feature: Can CRUD accounts
+  In order manipulate my accounts
+  As a user
+  I can create,read, update my accounts but not delete
+
+
+  Scenario: Create account
+    Given I am logged in
+    When I am in New account page
+    And Account number is present
+    Then I can create a new account
+
+  Scenario: Read account
+    Given I am in index page
+    And I go to show account 
+    Then I can view an existing account
+
+  Scenario: Update account
+    Given I am logged in
+    When I am in All accounts page
+    And I go to show account 
+    Then I can view an existing account 
+ 
+  Scenario: Delete account
+    Given I am logged in
+    When I am in All accounts page
+    Then there is no destroy button

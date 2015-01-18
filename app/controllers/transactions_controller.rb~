@@ -13,9 +13,8 @@ class TransactionsController < ApplicationController
   end
 
   def new
-    @accounts=Account.all
     @transaction = Transaction.new
-    respond_with(@accounts)
+    respond_with(@transaction)
   end
 
   def edit
