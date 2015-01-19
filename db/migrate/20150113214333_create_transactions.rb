@@ -7,6 +7,8 @@ class CreateTransactions < ActiveRecord::Migration
       t.string :description
       #t.references :account
 
+
+
       t.timestamps
     end
     #add_index :transactions, :account_id

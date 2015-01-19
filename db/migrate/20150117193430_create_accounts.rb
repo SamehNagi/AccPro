@@ -7,6 +7,8 @@ class CreateAccounts < ActiveRecord::Migration
       t.string :balance_type
       t.references :user
 
+
+
       t.timestamps
     end
     add_index :accounts, :user_id
