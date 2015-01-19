@@ -3,7 +3,7 @@
 <table>
   <thead>
     <tr>
-      <th>Account number</th>
+      <th>Account ID</th>
       <th>Account type</th>
       <th>Total amount</th>
       <th>Balance type</th>
@@ -13,7 +13,7 @@
     <% @accounts.each do |account| %>
     <tr>
       <td>
-        <%= account.account_number %>
+        <%= account.id %>
       </td>
       <td>
         <%= account.account_type %>

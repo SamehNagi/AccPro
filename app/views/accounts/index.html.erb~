@@ -13,7 +13,7 @@
     <% @accounts.each do |account| %>
     <tr>
       <td>
-        <%= account.account_number %>
+        <%= account.id %>
       </td>
       <td>
         <%= account.account_type %>
@@ -24,9 +24,7 @@
       <td>
         <%= account.balance_type %>
       </td>
-      <td>
-        <%= link_to 'Show', account %>
-      </td>
+
       <td>
         <%= link_to 'Edit', edit_account_path(account) %>
       </td>

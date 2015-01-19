@@ -32,7 +32,7 @@ class TransactionsController < ApplicationController
     to_account   = Account.find_by_id(params[:transaction][:to_account])
     amount       = params[:transaction][:amount]
     #TODO check whether they are nil or not 
-    #TODO check zero issues in total_amount
+    #TODO will work when total_amount issue is handled
     if from_account.account_type == "Assets" || from_account.account_type == "Expenses" 
       from_account.total_amount = from_account.total_amount + amount
     elsif from_account.account_type == "Liabilities" || from_account.account_type == "Equity"   
