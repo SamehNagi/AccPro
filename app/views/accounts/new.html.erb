@@ -1,11 +1,12 @@
 <h1>Create New Account</h1>
 <%= form_tag accounts_path do %>
-  <%= label :account, :account_number, 'Account Number' %>
-  <%= text_field :account, 'account_number' %></br>
-  
+  <!--<%= label :account, :account_number, 'Account Number' %>-->
+  <!--<%= text_field :account, 'account_number' %></br> why account no and id?-->
+  Account ID to be created: <%= "#{Account.all.sort.last.id+1}" %>
   <%= label :account, :account_type, 'Account Type' %>
   <%= select :account, :account_type, ['Assets','Liabilities','Equity','Expenses'] %> </br>
-
+  
+  <%= label :amount, :amount, 'Starting Amount' %>
+  <%= text_field :amount, 'amount' %></br>
   <%= submit_tag 'submit' %>
 <% end %>
-

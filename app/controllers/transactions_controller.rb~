@@ -42,10 +42,10 @@ class TransactionsController < ApplicationController
     end 
 
     if to_account.account_type == "Assets" || to_account.account_type == "Expenses"  
-      to_account.total_amount = to_account.total_amount + amount
+      to_account.total_amount = to_account.total_amount - amount
 
     elsif to_account.account_type == "Liabilities" || to_account.account_type == "Equity"  
-      from_account.total_amount = from_account.total_amount - amount
+      from_account.total_amount = from_account.total_amount + amount
     end   
 	
     @transaction = Transaction.new(params[:transaction])

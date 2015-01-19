@@ -1,7 +1,3 @@
-<h1>New account</h1>
-
-
-
 <h1>Create New Account</h1>
 <%= form_tag accounts_path do %>
   <%= label :account, :account_number, 'Account Number' %>

@@ -32,24 +32,23 @@ class AccountsController < ApplicationController
   def edit
     @account = Account.find(params[:id])
   end
-  
+
   def create
     #@account_type = Account.find(params[:account][:account_type_id]).account_type
-    @account = Account.create!(params["account"])
     debugger
-    flash[:notice] = "#{@account.account_number} was successfully created."
+    @account = Account.create!(params[:account])
     redirect_to accounts_path
     #respond_with(@account)
-    #redirect_to accounts_path
+    #flash[:notice] = "#{@account.account.number} was successfully created."
+    redirect_to accounts_path
   end
 
   def update
-    @account.update_attributes(params[:account_number])
+    @account.update_attributes(params[:account])
     respond_with(@account)
   end
 
   def destroy
-    
     @account.destroy
     respond_with(@account)
   end

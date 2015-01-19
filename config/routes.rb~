@@ -1,13 +1,9 @@
 AccPro::Application.routes.draw do
-  get "homepage/home"
-
-  resources :transactions
-
 
   resources :accounts
 
 
-  resources :account_types
+  resources :transactions
 
 
   devise_for :users
