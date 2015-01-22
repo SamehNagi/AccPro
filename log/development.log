@@ -6516,3 +6516,163 @@ Served asset /transactions.js - 304 Not Modified (1ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-22 07:20:48 -0400
 Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-01-22 07:24:06 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.4ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 28.7ms (Views: 28.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-22 07:24:06 -0400
+Served asset /application.css - 304 Not Modified (61ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-22 07:24:06 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-22 07:24:06 -0400
+Served asset /transactions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-22 07:24:06 -0400
+Served asset /accounts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-22 07:24:06 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-22 07:24:06 -0400
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-01-22 07:24:20 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6Jrfuaz7XjEzCvCpj/myGYmf127pas8+Vv6vdSvXkt8=", "user"=>{"email"=>"nevinemgouda@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'nevinemgouda@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  UPDATE "users" SET "remember_created_at" = '2015-01-22 11:24:20.984873', "updated_at" = '2015-01-22 11:24:20.985349' WHERE "users"."id" = 1
+  [1m[36m (7.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2015-01-22 11:18:58.732589', "current_sign_in_at" = '2015-01-22 11:24:20.995014', "sign_in_count" = 3, "updated_at" = '2015-01-22 11:24:20.995486' WHERE "users"."id" = 1[0m
+  [1m[35m (4.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 146.9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-22 07:24:21 -0400
+Processing by AccountsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAccount Load (0.2ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1
+  Rendered accounts/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 9.9ms (Views: 6.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-22 07:24:21 -0400
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-22 07:24:21 -0400
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-22 07:24:21 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-22 07:24:21 -0400
+Served asset /transactions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-22 07:24:21 -0400
+Served asset /accounts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-22 07:24:21 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2015-01-22 07:24:23 -0400
+Processing by TransactionsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 3.8ms
+
+NoMethodError (undefined method `transactions' for #<User:0xb5256970>):
+  app/controllers/transactions_controller.rb:8:in `index'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.4ms)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2015-01-22 07:27:26 -0400
+Processing by TransactionsController#index as HTML
+Completed 500 Internal Server Error in 1.2ms
+
+NameError (uninitialized constant TransactionsController::Transactions):
+  app/controllers/transactions_controller.rb:7:in `index'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.0ms)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2015-01-22 07:28:26 -0400
+Processing by TransactionsController#index as HTML
+  [1m[35mTransaction Load (0.1ms)[0m  SELECT "transactions".* FROM "transactions" 
+  Rendered transactions/index.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Completed 200 OK in 35.1ms (Views: 32.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-22 07:28:26 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-22 07:28:26 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-22 07:28:26 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-22 07:28:26 -0400
+Served asset /accounts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-22 07:28:26 -0400
+Served asset /transactions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-22 07:28:26 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/transactions/new" for 127.0.0.1 at 2015-01-22 07:28:28 -0400
+Processing by TransactionsController#new as HTML
+  [1m[35mTransaction Load (0.2ms)[0m  SELECT "transactions".* FROM "transactions" 
+  Rendered transactions/new.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 17.8ms
+
+ActionView::Template::Error (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+    11:     </div>
+    12:   <% end %>
+    13: 
+    14:   <!--Transaction ID to be created: <% "#{Transaction.all.sort.last.id+1}" %>
+    15:   </br>-->
+    16:   <div class="field">
+    17:     <%= f.label :from_account %>
+  app/views/transactions/new.html.erb:14:in `block in _app_views_transactions_new_html_erb__532200651__627782358'
+  app/views/transactions/new.html.erb:1:in `_app_views_transactions_new_html_erb__532200651__627782358'
+  app/controllers/transactions_controller.rb:17:in `new'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.0ms)

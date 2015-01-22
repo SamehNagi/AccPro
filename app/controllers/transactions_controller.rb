@@ -1,11 +1,10 @@
 class TransactionsController < ApplicationController
-  before_filter :authenticate_user!
   before_filter :set_transaction, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
 
   def index
-    @transactions = current_user.transactions.all
+    @transactions = Transaction.all
     respond_with(@transactions)
   end
 
@@ -14,7 +13,7 @@ class TransactionsController < ApplicationController
   end
 
   def new
-    @transaction = current_user.transactions.new
+    @transaction = Transaction.new
     respond_with(@transaction)
   end
 
@@ -29,8 +28,8 @@ class TransactionsController < ApplicationController
     #increase from if it's a liability or equity
     #increase to   if it's an asset or expense
     #decrease to   if it's a liability or equity
-    from_account = current_user.accounts.find_by_id(params[:transaction][:from_account])
-    to_account   = current_user.accounts.find_by_id(params[:transaction][:to_account])
+    from_account = Account.find_by_id(params[:transaction][:from_account])
+    to_account   = Account.find_by_id(params[:transaction][:to_account])
     amount       = params[:transaction][:amount]
     #TODO check whether they are nil or not 
     #TODO check zero issues in total_amount
@@ -49,7 +48,7 @@ class TransactionsController < ApplicationController
       from_account.total_amount = from_account.total_amount - amount
     end   
 	
-    @transaction = current_user.transactions.new(params[:transaction])
+    @transaction = Transaction.new(params[:transaction])
     @transaction.save
     respond_with(@transaction)
   end
@@ -66,6 +65,6 @@ class TransactionsController < ApplicationController
 
   private
     def set_transaction
-      @transaction = current_user.transactions.find(params[:id])
+      @transaction = Transaction.find(params[:id])
     end
 end
