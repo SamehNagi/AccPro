@@ -15,15 +15,13 @@ ActiveRecord::Schema.define(:version => 20150117193430) do
 
   create_table "accounts", :force => true do |t|
     t.string   "account_number"
+    t.string   "account_name"
     t.string   "account_type"
     t.integer  "total_amount"
     t.string   "balance_type"
-    t.integer  "user_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
-
-  add_index "accounts", ["user_id"], :name => "index_accounts_on_user_id"
 
   create_table "transactions", :force => true do |t|
     t.string   "from_account"
