@@ -1,12 +1,11 @@
 AccPro::Application.routes.draw do
 
+  devise_for :users
+
   resources :accounts
 
 
   resources :transactions
 
-
-  devise_for :users
-
-  root :to => 'accounts#index'
+  root 'accounts#index'
 end
