@@ -7,14 +7,14 @@ Feature: manage an account
 Background: accounts in database
 
   Given the following acc exist:
-  | account_number| account_name | account_type | total_amount | balance_type 
-  | 1             | Cash         | Asset        | 5000         | Credit
-  | 2             | Bank         | Asset        | 5000         | Credit
-  | 3             | Equipment    | Asset        | 10000        | Credit
-  | 4             | Debt         | Liability    | 10000        | Debit
-  | 5             | Any Expenses | Expense      | 0            | Credit
-  | 6             | Capital      | Equity       | 10000        | Debit
-  | 7             | Revenue      | Equity       | 0            | Debit
+  | account_number| account_name | account_type | total_amount | balance_type |
+  | 1             | Cash         | Asset        | 5000         | Credit       |
+  | 2             | Bank         | Asset        | 5000         | Credit       |
+  | 3             | Equipment    | Asset        | 10000        | Credit       |
+  | 4             | Debt         | Liability    | 10000        | Debit        |
+  | 5             | Any Expenses | Expense      | 0            | Credit       |
+  | 6             | Capital      | Equity       | 10000        | Debit        |
+  | 7             | Revenue      | Equity       | 0            | Debit        |
   
 Scenario: add new account
   When I am on the accounts page
