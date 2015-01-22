@@ -1,13 +1,18 @@
 <h1>Editing account</h1>
 
-<%= form_tag accounts_path do %>
-  <%= label :account, :account_number, 'Account Number' %>
-  <%= text_field :account, 'account_number' %></br>
+<%= form_tag account_path(@account), :method => :put do %>
+  
+  <%= label :account, :account_name, 'Account Name' %>
+  <%= text_field :account, 'account_name' %></br>
   
   <%= label :account, :account_type, 'Account Type' %>
-  <%= select :account, :account_type,['Assets','Liabilities','Equity','Expenses'] %> </br></br>
+  <%= select :account, :account_type,['Asset','Liability','Equity','Expense'] %> </br>
+  
+  <%= label :account, :total_amount, 'Total Amount' %>
+  <%= text_field :account, 'total_amount' %></br>
+</br>
 
-  <%= submit_tag 'Update' %>
+  <%= submit_tag 'Update Account Info.' %>
 <% end %>
 
 <%= link_to 'Back', accounts_path %>

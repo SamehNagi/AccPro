@@ -4,9 +4,11 @@
   <thead>
     <tr>
       <th>Account ID</th>
-      <th>Account type</th>
-      <th>Total amount</th>
-      <th>Balance type</th>
+      <!--<th>Account Number</th>-->
+      <th>Account Name</th>
+      <th>Account Type</th>
+      <th>Total Amount</th>
+      <th>Balance Type</th>
     </tr>
   </thead>
   <tbody>
@@ -14,6 +16,12 @@
     <tr>
       <td>
         <%= account.id %>
+      </td>
+      <!--<td>
+        <%= account.account_number %>
+      </td>-->
+      <td>
+        <%= account.account_name %>
       </td>
       <td>
         <%= account.account_type %>
@@ -34,5 +42,7 @@
   </tbody>
 </table>
 
-<br />
-<%= link_to 'New Account', new_account_path %>
+</br>
+<%= link_to 'New Account', new_account_path %></br></br>
+
+<%= link_to 'Transactions', transactions_path %>
