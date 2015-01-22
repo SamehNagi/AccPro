@@ -7,3 +7,8 @@ Given /the following accounts exist:/ do |accounts_table|
     Account.create!(account)
   end
 end
+
+When /I fill in "Account Name" with "(.*?)"$/ do |value|
+  fill_in(:account_name, :with => value)
+end
+

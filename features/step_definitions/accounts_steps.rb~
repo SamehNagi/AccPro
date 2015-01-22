@@ -1,9 +1,14 @@
 Given /User is logged in as (.*)/ do |email|
-  :user_id=>User.find_by_email(email)
+  User.find_by_email(email)
 
 end
 Given /the following accounts exist:/ do |accounts_table|
   accounts_table.hashes.each do |account|
-    Account.create!(:user_id,account)
+    Account.create!(account)
   end
 end
+
+When /I fill in "Account Name" with "(.*?)"$/ do |value|
+  fill_in(:Account_name, :with => value)
+end
+

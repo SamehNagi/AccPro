@@ -37,7 +37,7 @@ Scenario: create new account with empty account name
 
 Scenario: edit the account name and account type for an existing account
   When I go to the edit page for "Bank"
-  And  I fill in "Account name" with "Project Expenses"
+  And  I fill in "Account Name" with "Project Expenses"
   And I select "Expense" from "Account Type"
   And  I press "Update Account Info"
   Then I should see "Account updated successfully!"
