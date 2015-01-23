@@ -33,16 +33,16 @@ class TransactionsController < ApplicationController
   end
 
   def create
-    debugger
     # Assets-Liab = equity -Expenses 
     #le3b keteer
     #decrease from if it's an asset or expense
     #increase from if it's a liability or equity
     #increase to   if it's an asset or expense
     #decrease to   if it's a liability or equity
-    from_account = Account.find_by_id(params[:transaction][:from_account])
-    to_account   = Account.find_by_id(params[:transaction][:to_account])
+    from_account = current_user.accounts.find_by_account_name(params[:transaction][:from_account])
+    to_account   = current_user.accounts.find_by_account_name(params[:transaction][:to_account])
     amount       = params[:transaction][:amount]
+    debugger
     #TODO check whether they are nil or not 
     #TODO check zero issues in total_amount
 

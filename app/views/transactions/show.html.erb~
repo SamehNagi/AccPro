@@ -11,8 +11,8 @@
 </p>
 
 <p>
-  <b>Amount:</b>
-  <%= @transaction.amount %>
+  <b>Account:</b>
+  <%= @transaction.account %>
 </p>
 
 

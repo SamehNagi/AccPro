@@ -1,5 +1,5 @@
 class AccountsController < ApplicationController
-  before_action :authenticate_user!
+  before_filter :authenticate_user!
   before_filter :set_account, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
@@ -22,6 +22,12 @@ class AccountsController < ApplicationController
   end
 
   def new
+    #generating created account ID
+    if(Account.count > 0)
+      @acc_id  = Account.all.sort.last.id+1
+    else 
+      @acc_id  = 1
+    end 
     @account = current_user.accounts.new
   end
 
@@ -32,7 +38,7 @@ class AccountsController < ApplicationController
 
   def create
     #debugger
-    @account = current_user.accounts.create!(params[:account])
+    @account = current_user.accounts.acc_new(params)
     redirect_to accounts_path
     flash[:notice] = "#{@account.account_name} was successfully created."
   end
