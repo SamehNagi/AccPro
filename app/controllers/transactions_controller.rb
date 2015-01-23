@@ -13,8 +13,20 @@ class TransactionsController < ApplicationController
   end
 
   def new
-    @transaction = Transaction.new
-    respond_with(@transaction)
+    #there should be at least two accounts to perform transactions
+    if Account.count < 2
+      redirect_to transactions_path
+      flash[:notice] = "You haven't enterred any account yet"
+    else 
+      #getting ID of the transaction
+      if Transaction.count ==0
+        @trans_id = 1
+      else
+        @trans_id = Transaction.all.sort.last.id+1
+      end
+      @transaction = Transaction.new
+      respond_with(@transaction)
+    end
   end
 
   def edit

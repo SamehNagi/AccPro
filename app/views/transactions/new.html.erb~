@@ -12,7 +12,7 @@
   <% end %>
 
   Transaction ID to be created: 
-<%= @trans_id %>
+<%= @id %>
 
   </br>
   <div class="field">
