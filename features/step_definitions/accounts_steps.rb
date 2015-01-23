@@ -14,7 +14,7 @@ end
 
 
 When /I fill in "Account Name" with "(.*?)"$/ do |value|
-  fill_in(:account_name, :with => value)
+  fill_in(:name_Account_Name, :with => value)
 end
 
 Given /I follow show on the first account on the list/ do

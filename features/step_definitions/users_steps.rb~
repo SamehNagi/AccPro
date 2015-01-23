@@ -14,7 +14,15 @@ When(/^I fill in password with "(.*?)"$/) do |value|
   fill_in(:Password, :with => value)
 end
 
+When(/^I fill in password confirmation with "(.*?)"$/) do |value|
+  fill_in(:password_confirmation, :with => value)
+end
+
 When /^(?:|I )press "([^"]*)"$/ do |button|
   click_button(button)
-  page.driver.submit :post, "/users/sign_in", {}
+  if button =='Sign up'
+    page.driver.submit :get, "/users/sign_up", {}
+  else
+    page.driver.submit :post, "/users/sign_in", {}
+  end
 end

@@ -18,11 +18,10 @@ Background: accounts in database
   | 7             | Revenue      | Equity       | 0            | Debit        | 1       |      
   
 Scenario: add new account
-  Given User is logged in as nevinemgouda@gmail.com
   When I am on the accounts page
   And I follow "New Account"
   Then I should be on the New Account page
-  When I fill in "Account Name" with "Bank"
+  When I fill in "name_Account" with "Bank"
   And I select "Asset" from "Account Type"
   And I press "Create Account"
   Then I should see "Account created successfully!"
