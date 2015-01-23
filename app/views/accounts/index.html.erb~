@@ -41,7 +41,7 @@
     <% end %>
   </tbody>
 </table>
-Current balance = <%= "#{current_user.accounts.balance(0,0,0)}" %>
+Current balance = <%= "#{current_user_accounts.balance(0,0,0)}" %>
 </br>
 <%= link_to 'New Account', new_account_path %></br></br>
 

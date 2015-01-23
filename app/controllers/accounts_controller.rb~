@@ -32,19 +32,28 @@ class AccountsController < ApplicationController
   end
 
   def edit
-    #debugger
     @account = current_user.accounts.find(params[:id])
   end
 
   def create
-    #debugger
-    @account = current_user.accounts.acc_new(params)
-    redirect_to accounts_path
-    flash[:notice] = "#{@account.account_name} was successfully created."
+    debugger
+    if (params[:name]) 
+      #avoiding duplicate accounts
+      if (Account.duplicate?(params[:name]))
+        redirect_to accounts_path
+        flash[:notice] = "#{params[:name]} is already a valid account please check it below" 
+      else 
+        @account = current_user.accounts.acc_new(params)
+        redirect_to accounts_path
+        flash[:notice] = "#{@account.account_name} was successfully created."
+      end
+    else 
+      redirect_to new_account
+      flash[:notice] = "Please enter a valid Account Name" 
+    end
   end
 
   def update
-    #debugger
     @account.update_attributes(params[:account])
     redirect_to accounts_path
   end

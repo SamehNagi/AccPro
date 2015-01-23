@@ -13,8 +13,9 @@ class TransactionsController < ApplicationController
   end
 
   def new
+    @all_accounts = current_user.accounts.all 
     #there should be at least two accounts to perform transactions
-    if Account.count < 2
+    if current_user.accounts.count < 2
       redirect_to transactions_path
       flash[:notice] = "You haven't enterred any account yet"
     else 
@@ -33,36 +34,19 @@ class TransactionsController < ApplicationController
   end
 
   def create
-    # Assets-Liab = equity -Expenses 
-    #le3b keteer
-    #decrease from if it's an asset or expense
-    #increase from if it's a liability or equity
-    #increase to   if it's an asset or expense
-    #decrease to   if it's a liability or equity
-    from_account = current_user.accounts.find_by_account_name(params[:transaction][:from_account])
-    to_account   = current_user.accounts.find_by_account_name(params[:transaction][:to_account])
-    amount       = params[:transaction][:amount]
-    debugger
-    #TODO check whether they are nil or not 
-    #TODO check zero issues in total_amount
-
-    if from_account.account_type == "Assets" || from_account.account_type == "Expenses" 
-      from_account.total_amount = from_account.total_amount - amount
-
-    elsif from_account.account_type == "Liabilities" || from_account.account_type == "Equity"   
-      from_account.total_amount = from_account.total_amount + amount
-    end 
-
-    if to_account.account_type == "Assets" || to_account.account_type == "Expenses"  
-      to_account.total_amount = to_account.total_amount + amount
-
-    elsif to_account.account_type == "Liabilities" || to_account.account_type == "Equity"  
-      from_account.total_amount = from_account.total_amount - amount
-    end   
-	
-    @transaction = Transaction.new(params[:transaction])
-    @transaction.save
-    respond_with(@transaction)
+    from_account = current_user.accounts.find_by_id(params[:transaction][:from_account].to_i)
+    to_account   = current_user.accounts.find_by_id(params[:transaction][:to_account].to_i)
+    amount       = params[:transaction][:amount].to_i
+    balance      = current_user.accounts.balance(from_account, to_account, amount);
+    if (balance == 0) 
+      current_user.accounts.transaction_account(from_account, to_account, amount)
+      @transaction = Transaction.new(params[:transaction])
+      @transaction.save
+      respond_with(@transaction)
+    else
+      redirect_to new_transaction
+      flash[:notice] = "Your accounts are unbalanced, please double check your entries"
+    end
   end
 
   def update
