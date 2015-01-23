@@ -1,6 +1,10 @@
-Given /User is logged in as (.*)/ do |email|
-  User.find_by_email(email)
-
+Given /User is logged in as (.*)/ do |arg_email|
+  visit path_to('the home page')
+  user=User.find_by_email(arg_email)
+  fill_in(:Email, :with => arg_email)
+  fill_in(:Password, :with => '12345678')
+  click_button('Log in')
+  page.driver.submit :post, "/users/sign_in", {}
 end
 Given /the following accounts exist:/ do |accounts_table|
   accounts_table.hashes.each do |account|
@@ -8,7 +12,13 @@ Given /the following accounts exist:/ do |accounts_table|
   end
 end
 
+
 When /I fill in "Account Name" with "(.*?)"$/ do |value|
   fill_in(:account_name, :with => value)
 end
+
+Given /I follow show on the first account on the list/ do
+  page.driver.submit :get, "/accounts/#{Account.first.id}", {}
+end
+
 

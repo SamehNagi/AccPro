@@ -18,6 +18,7 @@ Background: accounts in database
   | 7             | Revenue      | Equity       | 0            | Debit        | 1       |      
   
 Scenario: add new account
+  Given User is logged in as nevinemgouda@gmail.com
   When I am on the accounts page
   And I follow "New Account"
   Then I should be on the New Account page
@@ -37,12 +38,12 @@ Scenario: create new account with empty account name
 
 Scenario: edit the account name and account type for an existing account
   When I go to the edit page for "Bank"
-  And  I fill in "Account name" with "Project Expenses"
+  And  I fill in "Account Name" with "Project Expenses"
   And I select "Expense" from "Account Type"
   And  I press "Update Account Info"
   Then I should see "Account updated successfully!"
 
 Scenario: show existing account
   Given I am on the accounts page
-  And I click show on the first account on the list
+  And I follow show on the first account on the list
   Then I should see "Capital"

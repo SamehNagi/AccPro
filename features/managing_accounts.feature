@@ -44,5 +44,5 @@ Scenario: edit the account name and account type for an existing account
 
 Scenario: show existing account
   Given I am on the accounts page
-  And I click show on the first account on the list
+  And I follow show on the first account on the list
   Then I should see "Capital"
