@@ -26,6 +26,17 @@ class Account < ActiveRecord::Base
     end 
     return fromto
   end
+  
+  def self.duplicate?(name) 
+    found = false 
+    debugger
+    @acc.each do |account|
+      if account.account_name == name
+        found = true
+      end
+    end
+    found
+  end
 
   def self.acc_new(params)
     account_name = params[:name]["Account Name"]

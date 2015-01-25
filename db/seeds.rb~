@@ -15,8 +15,8 @@ accounts = [
 {:account_number => 14, :account_name => "Deyoon", :account_type => "Liability", :total_amount => 0, :balance_type => "Credit", :user_id => 2}, 
 {:account_number => 15, :account_name => "Receivable accounts", :account_type => "Asset", :total_amount => 0, :balance_type => "Debit", :user_id => 2}, 
 {:account_number => 16, :account_name => "Payable accounts", :account_type => "Liability", :total_amount => 0, :balance_type => "Credit", :user_id => 2}, 
-{:account_number => 17, :account_name => "Salaries", :account_type => "Expense", :total_amount => 0, :balance_type => "Debit", :user_id => 2}, 
-{:account_number => 18, :account_name => "New partner's share", :account_type => "Equity", :total_amount => 0, :balance_type => "Credit", :user_id => 2}
+{:account_number => 17, :account_name => "Salaries", :account_type => "Expense", :total_amount => 0, :balance_type => "Credit", :user_id => 2}, 
+{:account_number => 18, :account_name => "New partner's share", :account_type => "Equity", :total_amount => 0, :balance_type => "Debit", :user_id => 2}
 ]
 
 accounts.each do |account|

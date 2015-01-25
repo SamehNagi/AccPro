@@ -36,6 +36,7 @@ class AccountsController < ApplicationController
    
   def duplicate?(name) 
     found = false 
+    debugger
     @acc.each do |account|
       if account.account_name == name
         found = true
@@ -46,7 +47,7 @@ class AccountsController < ApplicationController
 
   def create
     @acc = current_user.accounts.all
-    #debugger
+    debugger
     if (params[:name]) 
       #avoiding duplicate accounts
       if (duplicate?(params[:name]["Account Name"]))
