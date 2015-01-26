@@ -15,7 +15,6 @@
     <td><%= current_user.accounts.find_by_id(transaction.from_account.to_i).account_name %></td>
     <td><%= current_user.accounts.find_by_id(transaction.to_account.to_i).account_name %></td>
     <td><%= transaction.amount %></td>
-    <td><%= link_to 'Destroy', transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
@@ -23,3 +22,5 @@
 <br />
 
 <%= link_to 'New Transaction', new_transaction_path %>
+<br/><br/>
+<%= link_to 'Back to accounts', accounts_path %>

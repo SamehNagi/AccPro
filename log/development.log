@@ -20570,3 +20570,2051 @@ Served asset /jquery.js - 304 Not Modified (12ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-25 15:04:20 -0400
 Served asset /application.js - 304 Not Modified (19ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-26 16:24:06 -0400
+Processing by AccountsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Completed 401 Unauthorized in 701.9ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-01-26 16:24:08 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.9ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (50.8ms)
+Completed 200 OK in 640.9ms (Views: 531.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:24:09 -0400
+Served asset /application.css - 304 Not Modified (14ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:24:09 -0400
+Served asset /jquery.js - 304 Not Modified (176ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:24:09 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (43ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:24:09 -0400
+Served asset /transactions.js - 304 Not Modified (18ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:24:09 -0400
+Served asset /accounts.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:24:09 -0400
+Served asset /application.js - 304 Not Modified (96ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-01-26 16:24:17 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3h9lhwKP0jiZhWvvBnD5DR8CZcZBkobz0fXXO+48TYI=", "user"=>{"email"=>"ahmedmosharafa@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'ahmedmosharafa@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (31.9ms)[0m  UPDATE "users" SET "current_sign_in_at" = '2015-01-26 20:24:17.635858', "sign_in_count" = 2, "updated_at" = '2015-01-26 20:24:17.645419' WHERE "users"."id" = 2
+  [1m[36m (456.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 1060.0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-26 16:24:18 -0400
+Processing by AccountsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mAccount Load (10.9ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2
+  Rendered accounts/index.html.erb within layouts/application (27.4ms)
+Completed 200 OK in 503.9ms (Views: 45.2ms | ActiveRecord: 12.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:24:19 -0400
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:24:19 -0400
+Served asset /jquery.js - 304 Not Modified (62ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:24:19 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:24:19 -0400
+Served asset /accounts.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:24:19 -0400
+Served asset /application.js - 304 Not Modified (27ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:24:19 -0400
+Served asset /transactions.js - 304 Not Modified (11ms)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2015-01-26 16:24:31 -0400
+Processing by TransactionsController#index as HTML
+  [1m[36mUser Load (9.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mTransaction Load (8.8ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 2
+Redirected to http://0.0.0.0:3000/transactions/new
+Completed 302 Found in 26.9ms (ActiveRecord: 19.1ms)
+
+
+Started GET "/transactions/new" for 127.0.0.1 at 2015-01-26 16:24:31 -0400
+Processing by TransactionsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mAccount Load (0.8ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "accounts" WHERE "accounts"."user_id" = 2[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "transactions" 
+  [1m[36mTransaction Load (0.5ms)[0m  [1mSELECT "transactions".* FROM "transactions" [0m
+  Rendered transactions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 52.2ms (Views: 32.6ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:24:32 -0400
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:24:32 -0400
+Served asset /jquery.js - 304 Not Modified (33ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:24:32 -0400
+Served asset /accounts.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:24:32 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:24:32 -0400
+Served asset /transactions.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:24:32 -0400
+Served asset /application.js - 304 Not Modified (25ms)
+
+
+Started POST "/transactions" for 127.0.0.1 at 2015-01-26 16:24:45 -0400
+Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bJ626lXf4FFF/NLVEjkTE4lu1I+3FvdSKpZspLebGk0=", "transaction"=>{"from_account"=>"14", "to_account"=>"9", "amount"=>"1000"}, "commit"=>"Create Transaction"}
+  [1m[35mUser Load (5.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mAccount Load (0.5ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1[0m
+  [1m[35mAccount Load (1.1ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 9 LIMIT 1
+  [1m[36mAccount Load (0.8ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2[0m
+  [1m[35m (4.5ms)[0m  begin transaction
+  [1m[36m (1.5ms)[0m  [1mUPDATE "accounts" SET "total_amount" = 2000, "updated_at" = '2015-01-26 20:24:45.412773' WHERE "accounts"."id" = 14[0m
+  [1m[35m (451.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  UPDATE "accounts" SET "total_amount" = 2000, "updated_at" = '2015-01-26 20:24:45.875859' WHERE "accounts"."id" = 9
+  [1m[36m (587.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (11.5ms)[0m  [1mINSERT INTO "transactions" ("amount", "created_at", "description", "from_account", "to_account", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["amount", 1000], ["created_at", Mon, 26 Jan 2015 20:24:46 UTC +00:00], ["description", nil], ["from_account", "14"], ["to_account", "9"], ["updated_at", Mon, 26 Jan 2015 20:24:46 UTC +00:00], ["user_id", 2]]
+  [1m[35m (466.4ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/transactions/4
+Completed 302 Found in 1636.8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/transactions/4" for 127.0.0.1 at 2015-01-26 16:24:47 -0400
+Processing by TransactionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mTransaction Load (9.6ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 2 AND "transactions"."id" = ? LIMIT 1  [["id", "4"]]
+  Rendered transactions/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 39.9ms (Views: 26.6ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:24:48 -0400
+Served asset /application.css - 304 Not Modified (19ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:24:48 -0400
+Served asset /jquery.js - 304 Not Modified (69ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:24:48 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:24:48 -0400
+Served asset /accounts.js - 304 Not Modified (23ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:24:48 -0400
+Served asset /application.js - 304 Not Modified (32ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:24:48 -0400
+Served asset /transactions.js - 304 Not Modified (11ms)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2015-01-26 16:24:51 -0400
+Processing by TransactionsController#index as HTML
+  [1m[36mUser Load (13.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mTransaction Load (0.4ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 2
+  [1m[36mAccount Load (0.9ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1[0m
+  [1m[35mAccount Load (0.5ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 9 LIMIT 1
+  Rendered transactions/index.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 211.7ms (Views: 193.1ms | ActiveRecord: 15.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:24:52 -0400
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:24:52 -0400
+Served asset /jquery.js - 304 Not Modified (27ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:24:52 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (31ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:24:52 -0400
+Served asset /accounts.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:24:52 -0400
+Served asset /transactions.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:24:53 -0400
+Served asset /application.js - 304 Not Modified (26ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2015-01-26 16:24:57 -0400
+Processing by AccountsController#index as HTML
+  [1m[36mUser Load (5.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mAccount Load (0.5ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2[0m
+  Rendered accounts/index.html.erb within layouts/application (46.0ms)
+Completed 200 OK in 99.6ms (Views: 90.6ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:24:57 -0400
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:24:58 -0400
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:24:58 -0400
+Served asset /accounts.js - 304 Not Modified (19ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:24:58 -0400
+Served asset /transactions.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:24:58 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:24:58 -0400
+Served asset /application.js - 304 Not Modified (38ms)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2015-01-26 16:25:06 -0400
+Processing by TransactionsController#index as HTML
+  [1m[35mUser Load (7.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mTransaction Load (0.5ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 2[0m
+  [1m[35mAccount Load (9.7ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1
+  [1m[36mAccount Load (0.4ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 9 LIMIT 1[0m
+  Rendered transactions/index.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 95.6ms (Views: 50.0ms | ActiveRecord: 18.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:25:07 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:25:07 -0400
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:25:07 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (45ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:25:07 -0400
+Served asset /transactions.js - 304 Not Modified (22ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:25:07 -0400
+Served asset /accounts.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:25:07 -0400
+Served asset /application.js - 304 Not Modified (24ms)
+
+
+Started GET "/transactions/new" for 127.0.0.1 at 2015-01-26 16:25:10 -0400
+Processing by TransactionsController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mAccount Load (0.5ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "accounts" WHERE "accounts"."user_id" = 2
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "transactions" [0m
+  [1m[35mTransaction Load (0.5ms)[0m  SELECT "transactions".* FROM "transactions" 
+  Rendered transactions/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 83.1ms (Views: 69.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:25:11 -0400
+Served asset /application.css - 304 Not Modified (22ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:25:11 -0400
+Served asset /jquery.js - 304 Not Modified (109ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:25:11 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (23ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:25:11 -0400
+Served asset /application.js - 304 Not Modified (32ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:25:11 -0400
+Served asset /transactions.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:25:11 -0400
+Served asset /accounts.js - 304 Not Modified (9ms)
+
+
+Started POST "/transactions" for 127.0.0.1 at 2015-01-26 16:25:29 -0400
+Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bJ626lXf4FFF/NLVEjkTE4lu1I+3FvdSKpZspLebGk0=", "transaction"=>{"from_account"=>"10", "to_account"=>"14", "amount"=>"1000"}, "commit"=>"Create Transaction"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mAccount Load (0.5ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 10 LIMIT 1
+  [1m[36mAccount Load (5.5ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1[0m
+  [1m[35mAccount Load (6.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  UPDATE "accounts" SET "total_amount" = -1000, "updated_at" = '2015-01-26 20:25:29.107991' WHERE "accounts"."id" = 10
+  [1m[36m (728.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (5.1ms)[0m  [1mUPDATE "accounts" SET "total_amount" = -1000, "updated_at" = '2015-01-26 20:25:29.840526' WHERE "accounts"."id" = 14[0m
+  [1m[35m (465.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (6.3ms)[0m  INSERT INTO "transactions" ("amount", "created_at", "description", "from_account", "to_account", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)  [["amount", 1000], ["created_at", Mon, 26 Jan 2015 20:25:30 UTC +00:00], ["description", nil], ["from_account", "10"], ["to_account", "14"], ["updated_at", Mon, 26 Jan 2015 20:25:30 UTC +00:00], ["user_id", 2]]
+  [1m[36m (489.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/transactions/5
+Completed 302 Found in 1764.7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/transactions/5" for 127.0.0.1 at 2015-01-26 16:25:30 -0400
+Processing by TransactionsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mTransaction Load (0.4ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 2 AND "transactions"."id" = ? LIMIT 1[0m  [["id", "5"]]
+  Rendered transactions/show.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 73.8ms (Views: 62.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:25:31 -0400
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:25:31 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (23ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:25:31 -0400
+Served asset /jquery.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:25:31 -0400
+Served asset /accounts.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:25:31 -0400
+Served asset /application.js - 304 Not Modified (31ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:25:31 -0400
+Served asset /transactions.js - 304 Not Modified (31ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2015-01-26 16:25:43 -0400
+Processing by AccountsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mAccount Load (0.5ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2
+  Rendered accounts/index.html.erb within layouts/application (45.0ms)
+Completed 200 OK in 103.7ms (Views: 95.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:25:43 -0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:25:43 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (30ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:25:43 -0400
+Served asset /jquery.js - 304 Not Modified (154ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:25:44 -0400
+Served asset /accounts.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:25:44 -0400
+Served asset /transactions.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:25:44 -0400
+Served asset /application.js - 304 Not Modified (29ms)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2015-01-26 16:26:14 -0400
+Processing by TransactionsController#index as HTML
+  [1m[36mUser Load (4.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mTransaction Load (0.4ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 2
+  [1m[36mAccount Load (0.5ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1[0m
+  [1m[35mAccount Load (0.4ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 9 LIMIT 1
+  [1m[36mAccount Load (0.5ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 10 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1
+  Rendered transactions/index.html.erb within layouts/application (46.0ms)
+Completed 200 OK in 98.6ms (Views: 87.2ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:26:15 -0400
+Served asset /application.css - 304 Not Modified (19ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:26:15 -0400
+Served asset /jquery.js - 304 Not Modified (54ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:26:15 -0400
+Served asset /transactions.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:26:15 -0400
+Served asset /accounts.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:26:15 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:26:15 -0400
+Served asset /application.js - 304 Not Modified (24ms)
+
+
+Started GET "/transactions/new" for 127.0.0.1 at 2015-01-26 16:26:18 -0400
+Processing by TransactionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mAccount Load (0.6ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "accounts" WHERE "accounts"."user_id" = 2[0m
+  [1m[35m (1.4ms)[0m  SELECT COUNT(*) FROM "transactions" 
+  [1m[36mTransaction Load (0.5ms)[0m  [1mSELECT "transactions".* FROM "transactions" [0m
+  Rendered transactions/new.html.erb within layouts/application (25.1ms)
+Completed 200 OK in 82.7ms (Views: 67.1ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:26:18 -0400
+Served asset /application.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:26:18 -0400
+Served asset /accounts.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:26:18 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:26:18 -0400
+Served asset /jquery.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:26:18 -0400
+Served asset /application.js - 304 Not Modified (21ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:26:18 -0400
+Served asset /transactions.js - 304 Not Modified (18ms)
+
+
+Started POST "/transactions" for 127.0.0.1 at 2015-01-26 16:26:26 -0400
+Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bJ626lXf4FFF/NLVEjkTE4lu1I+3FvdSKpZspLebGk0=", "transaction"=>{"from_account"=>"14", "to_account"=>"10", "amount"=>"10000"}, "commit"=>"Create Transaction"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mAccount Load (0.4ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1[0m
+  [1m[35mAccount Load (0.6ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 10 LIMIT 1
+  [1m[36mAccount Load (0.5ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (8.4ms)[0m  [1mUPDATE "accounts" SET "total_amount" = 9000, "updated_at" = '2015-01-26 20:26:27.027930' WHERE "accounts"."id" = 14[0m
+  [1m[35m (829.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  UPDATE "accounts" SET "total_amount" = 9000, "updated_at" = '2015-01-26 20:26:27.869561' WHERE "accounts"."id" = 10
+  [1m[36m (451.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (6.7ms)[0m  [1mINSERT INTO "transactions" ("amount", "created_at", "description", "from_account", "to_account", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["amount", 10000], ["created_at", Mon, 26 Jan 2015 20:26:28 UTC +00:00], ["description", nil], ["from_account", "14"], ["to_account", "10"], ["updated_at", Mon, 26 Jan 2015 20:26:28 UTC +00:00], ["user_id", 2]]
+  [1m[35m (524.3ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/transactions/6
+Completed 302 Found in 1879.1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/transactions/6" for 127.0.0.1 at 2015-01-26 16:26:29 -0400
+Processing by TransactionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mTransaction Load (12.1ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 2 AND "transactions"."id" = ? LIMIT 1  [["id", "6"]]
+  Rendered transactions/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 49.6ms (Views: 33.8ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:26:29 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:26:29 -0400
+Served asset /jquery.js - 304 Not Modified (47ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:26:29 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (27ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:26:29 -0400
+Served asset /accounts.js - 304 Not Modified (19ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:26:29 -0400
+Served asset /application.js - 304 Not Modified (22ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:26:29 -0400
+Served asset /transactions.js - 304 Not Modified (6ms)
+
+
+Started GET "/transactions/6/edit" for 127.0.0.1 at 2015-01-26 16:26:32 -0400
+Processing by TransactionsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mTransaction Load (0.4ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 2 AND "transactions"."id" = ? LIMIT 1  [["id", "6"]]
+  Rendered transactions/edit.html.erb within layouts/application (19.1ms)
+Completed 500 Internal Server Error in 50.4ms
+
+ActionView::Template::Error (Missing partial transactions/form, application/form with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee, :haml]}. Searched in:
+  * "/home/saasbook/Poject_sw/AccPro/app/views"
+  * "/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/devise-3.4.1/app/views"
+):
+    1: <h1>Editing transaction</h1>
+    2: 
+    3: <%= render 'form' %>
+    4: 
+    5: <%= link_to 'Show', @transaction %> |
+    6: <%= link_to 'Back', transactions_path %>
+  app/views/transactions/edit.html.erb:3:in `_app_views_transactions_edit_html_erb__570933032__624451038'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (81.3ms)
+
+
+Started POST "/transactions" for 127.0.0.1 at 2015-01-26 16:26:52 -0400
+Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bJ626lXf4FFF/NLVEjkTE4lu1I+3FvdSKpZspLebGk0=", "transaction"=>{"from_account"=>"10", "to_account"=>"14", "amount"=>"10000"}, "commit"=>"Create Transaction"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mAccount Load (0.4ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 10 LIMIT 1
+  [1m[36mAccount Load (0.4ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1[0m
+  [1m[35mAccount Load (0.5ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  UPDATE "accounts" SET "total_amount" = -1000, "updated_at" = '2015-01-26 20:26:52.129920' WHERE "accounts"."id" = 10
+  [1m[36m (712.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.9ms)[0m  [1mUPDATE "accounts" SET "total_amount" = -1000, "updated_at" = '2015-01-26 20:26:52.850887' WHERE "accounts"."id" = 14[0m
+  [1m[35m (441.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.2ms)[0m  INSERT INTO "transactions" ("amount", "created_at", "description", "from_account", "to_account", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)  [["amount", 10000], ["created_at", Mon, 26 Jan 2015 20:26:53 UTC +00:00], ["description", nil], ["from_account", "10"], ["to_account", "14"], ["updated_at", Mon, 26 Jan 2015 20:26:53 UTC +00:00], ["user_id", 2]]
+  [1m[36m (492.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/transactions/7
+Completed 302 Found in 1704.3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/transactions/7" for 127.0.0.1 at 2015-01-26 16:26:54 -0400
+Processing by TransactionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mTransaction Load (3.4ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 2 AND "transactions"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  Rendered transactions/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 65.0ms (Views: 58.0ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:26:54 -0400
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:26:54 -0400
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:26:54 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (19ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:26:54 -0400
+Served asset /accounts.js - 304 Not Modified (26ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:26:54 -0400
+Served asset /transactions.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:26:54 -0400
+Served asset /application.js - 304 Not Modified (31ms)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2015-01-26 16:26:56 -0400
+Processing by TransactionsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mTransaction Load (0.4ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 2[0m
+  [1m[35mAccount Load (0.5ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1
+  [1m[36mAccount Load (0.5ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 9 LIMIT 1[0m
+  [1m[35mAccount Load (0.5ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 10 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 10 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 10 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1[0m
+  Rendered transactions/index.html.erb within layouts/application (48.5ms)
+Completed 200 OK in 127.5ms (Views: 122.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:26:57 -0400
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:26:57 -0400
+Served asset /jquery.js - 304 Not Modified (31ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:26:57 -0400
+Served asset /accounts.js - 304 Not Modified (28ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:26:57 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:26:57 -0400
+Served asset /application.js - 304 Not Modified (30ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:26:57 -0400
+Served asset /transactions.js - 304 Not Modified (13ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2015-01-26 16:27:03 -0400
+Processing by AccountsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mAccount Load (0.5ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2
+  Rendered accounts/index.html.erb within layouts/application (28.8ms)
+Completed 200 OK in 96.0ms (Views: 81.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:27:04 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:04 -0400
+Served asset /jquery.js - 304 Not Modified (35ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:04 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (26ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:04 -0400
+Served asset /accounts.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:04 -0400
+Served asset /application.js - 304 Not Modified (23ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:04 -0400
+Served asset /transactions.js - 304 Not Modified (12ms)
+
+
+Started GET "/accounts/10/edit" for 127.0.0.1 at 2015-01-26 16:27:15 -0400
+Processing by AccountsController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mAccount Load (0.5ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = ? LIMIT 1  [["id", "10"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = ? LIMIT 1[0m  [["id", "10"]]
+  Rendered accounts/edit.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 75.4ms (Views: 56.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:27:16 -0400
+Served asset /application.css - 304 Not Modified (21ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:16 -0400
+Served asset /jquery.js - 304 Not Modified (35ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:16 -0400
+Served asset /accounts.js - 304 Not Modified (34ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:16 -0400
+Served asset /transactions.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:16 -0400
+Served asset /application.js - 304 Not Modified (47ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:16 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (13ms)
+
+
+Started PUT "/accounts/10" for 127.0.0.1 at 2015-01-26 16:27:22 -0400
+Processing by AccountsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bJ626lXf4FFF/NLVEjkTE4lu1I+3FvdSKpZspLebGk0=", "account"=>{"account_name"=>"Bank Deposit", "account_type"=>"Asset", "total_amount"=>"0"}, "commit"=>"Update Account Info.", "id"=>"10"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mAccount Load (9.3ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = ? LIMIT 1[0m  [["id", "10"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (5.9ms)[0m  [1mUPDATE "accounts" SET "total_amount" = 0, "updated_at" = '2015-01-26 20:27:22.516313' WHERE "accounts"."id" = 10[0m
+  [1m[35m (817.8ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/accounts
+Completed 302 Found in 857.9ms (ActiveRecord: 833.9ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2015-01-26 16:27:23 -0400
+Processing by AccountsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mAccount Load (0.5ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2[0m
+  Rendered accounts/index.html.erb within layouts/application (43.9ms)
+Completed 200 OK in 97.1ms (Views: 88.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:27:23 -0400
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:23 -0400
+Served asset /jquery.js - 304 Not Modified (55ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:24 -0400
+Served asset /accounts.js - 304 Not Modified (37ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:24 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:24 -0400
+Served asset /application.js - 304 Not Modified (26ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:24 -0400
+Served asset /transactions.js - 304 Not Modified (9ms)
+
+
+Started GET "/accounts/9/edit" for 127.0.0.1 at 2015-01-26 16:27:26 -0400
+Processing by AccountsController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mAccount Load (0.4ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = ? LIMIT 1[0m  [["id", "9"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = ? LIMIT 1  [["id", "9"]]
+  Rendered accounts/edit.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 47.3ms (Views: 38.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:27:27 -0400
+Served asset /application.css - 304 Not Modified (13ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:27 -0400
+Served asset /jquery.js - 304 Not Modified (83ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:27 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:27 -0400
+Served asset /transactions.js - 304 Not Modified (21ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:27 -0400
+Served asset /accounts.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:27 -0400
+Served asset /application.js - 304 Not Modified (29ms)
+
+
+Started PUT "/accounts/9" for 127.0.0.1 at 2015-01-26 16:27:32 -0400
+Processing by AccountsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bJ626lXf4FFF/NLVEjkTE4lu1I+3FvdSKpZspLebGk0=", "account"=>{"account_name"=>"Cash", "account_type"=>"Asset", "total_amount"=>"0"}, "commit"=>"Update Account Info.", "id"=>"9"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mAccount Load (0.4ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = ? LIMIT 1  [["id", "9"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (9.2ms)[0m  UPDATE "accounts" SET "total_amount" = 0, "updated_at" = '2015-01-26 20:27:32.168488' WHERE "accounts"."id" = 9
+  [1m[36m (569.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/accounts
+Completed 302 Found in 596.4ms (ActiveRecord: 579.9ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2015-01-26 16:27:33 -0400
+Processing by AccountsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mAccount Load (0.6ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2
+  Rendered accounts/index.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 80.0ms (Views: 66.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:27:33 -0400
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:33 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:33 -0400
+Served asset /jquery.js - 304 Not Modified (38ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:33 -0400
+Served asset /accounts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:33 -0400
+Served asset /application.js - 304 Not Modified (25ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:33 -0400
+Served asset /transactions.js - 304 Not Modified (15ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2015-01-26 16:27:36 -0400
+Processing by AccountsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mAccount Load (0.5ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2[0m
+  Rendered accounts/index.html.erb within layouts/application (47.8ms)
+Completed 200 OK in 89.7ms (Views: 77.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:27:37 -0400
+Served asset /application.css - 304 Not Modified (14ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:37 -0400
+Served asset /jquery.js - 304 Not Modified (36ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:37 -0400
+Served asset /accounts.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:37 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:37 -0400
+Served asset /transactions.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:37 -0400
+Served asset /application.js - 304 Not Modified (47ms)
+
+
+Started GET "/accounts/14/edit" for 127.0.0.1 at 2015-01-26 16:27:43 -0400
+Processing by AccountsController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mAccount Load (0.4ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = ? LIMIT 1[0m  [["id", "14"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = ? LIMIT 1  [["id", "14"]]
+  Rendered accounts/edit.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 47.3ms (Views: 43.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:27:44 -0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:44 -0400
+Served asset /jquery.js - 304 Not Modified (29ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:44 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (38ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:44 -0400
+Served asset /transactions.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:44 -0400
+Served asset /application.js - 304 Not Modified (34ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:44 -0400
+Served asset /accounts.js - 304 Not Modified (11ms)
+
+
+Started PUT "/accounts/14" for 127.0.0.1 at 2015-01-26 16:27:49 -0400
+Processing by AccountsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bJ626lXf4FFF/NLVEjkTE4lu1I+3FvdSKpZspLebGk0=", "account"=>{"account_name"=>"Deyoon", "account_type"=>"Liability", "total_amount"=>"0"}, "commit"=>"Update Account Info.", "id"=>"14"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mAccount Load (0.4ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = ? LIMIT 1  [["id", "14"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (10.3ms)[0m  UPDATE "accounts" SET "total_amount" = 0, "updated_at" = '2015-01-26 20:27:49.467957' WHERE "accounts"."id" = 14
+  [1m[36m (611.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/accounts
+Completed 302 Found in 637.2ms (ActiveRecord: 623.3ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2015-01-26 16:27:50 -0400
+Processing by AccountsController#index as HTML
+  [1m[35mUser Load (6.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mAccount Load (0.5ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2
+  Rendered accounts/index.html.erb within layouts/application (34.8ms)
+Completed 200 OK in 100.2ms (Views: 83.8ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:27:50 -0400
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:50 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (67ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:50 -0400
+Served asset /jquery.js - 304 Not Modified (33ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:51 -0400
+Served asset /accounts.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:51 -0400
+Served asset /application.js - 304 Not Modified (45ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:51 -0400
+Served asset /transactions.js - 304 Not Modified (14ms)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2015-01-26 16:27:54 -0400
+Processing by TransactionsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mTransaction Load (0.7ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 2
+  [1m[36mAccount Load (0.7ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1[0m
+  [1m[35mAccount Load (0.5ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 9 LIMIT 1
+  [1m[36mAccount Load (5.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 10 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 10 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 10 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1
+  Rendered transactions/index.html.erb within layouts/application (65.9ms)
+Completed 200 OK in 102.6ms (Views: 90.1ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:27:54 -0400
+Served asset /application.css - 304 Not Modified (28ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:54 -0400
+Served asset /jquery.js - 304 Not Modified (30ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:55 -0400
+Served asset /transactions.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:55 -0400
+Served asset /accounts.js - 304 Not Modified (24ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:55 -0400
+Served asset /application.js - 304 Not Modified (19ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:27:55 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (11ms)
+
+
+Started DELETE "/transactions/4" for 127.0.0.1 at 2015-01-26 16:27:57 -0400
+Processing by TransactionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"bJ626lXf4FFF/NLVEjkTE4lu1I+3FvdSKpZspLebGk0=", "id"=>"4"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mTransaction Load (0.5ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 2 AND "transactions"."id" = ? LIMIT 1  [["id", "4"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mAccount Load (6.5ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."transaction_id" = 4
+SQLite3::SQLException: no such column: accounts.transaction_id: SELECT "accounts".* FROM "accounts"  WHERE "accounts"."transaction_id" = 4
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 45.4ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: accounts.transaction_id: SELECT "accounts".* FROM "accounts"  WHERE "accounts"."transaction_id" = 4):
+  app/controllers/transactions_controller.rb:63:in `destroy'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (13.4ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (55.6ms)
+
+
+Started GET "/accounts/10/edit" for 127.0.0.1 at 2015-01-26 16:28:21 -0400
+Processing by AccountsController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mAccount Load (0.4ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = ? LIMIT 1[0m  [["id", "10"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = ? LIMIT 1  [["id", "10"]]
+  Rendered accounts/edit.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 47.1ms (Views: 42.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:28:22 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:28:22 -0400
+Served asset /jquery.js - 304 Not Modified (270ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:28:22 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:28:22 -0400
+Served asset /transactions.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:28:22 -0400
+Served asset /accounts.js - 304 Not Modified (18ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:28:22 -0400
+Served asset /application.js - 304 Not Modified (36ms)
+
+
+Started PUT "/accounts/10" for 127.0.0.1 at 2015-01-26 16:28:28 -0400
+Processing by AccountsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bJ626lXf4FFF/NLVEjkTE4lu1I+3FvdSKpZspLebGk0=", "account"=>{"account_name"=>"Bank Deposit", "account_type"=>"Asset", "total_amount"=>"1000"}, "commit"=>"Update Account Info.", "id"=>"10"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mAccount Load (0.4ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = ? LIMIT 1  [["id", "10"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  UPDATE "accounts" SET "total_amount" = 1000, "updated_at" = '2015-01-26 20:28:28.523495' WHERE "accounts"."id" = 10
+  [1m[36m (757.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/accounts
+Completed 302 Found in 765.8ms (ActiveRecord: 759.0ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2015-01-26 16:28:29 -0400
+Processing by AccountsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mAccount Load (0.5ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2[0m
+  [1m[35mCACHE (0.3ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2
+  Rendered accounts/index.html.erb within layouts/application (40.0ms)
+Completed 200 OK in 120.6ms (Views: 99.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:28:29 -0400
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:28:29 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (31ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:28:29 -0400
+Served asset /jquery.js - 304 Not Modified (26ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:28:30 -0400
+Served asset /transactions.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:28:30 -0400
+Served asset /accounts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:28:30 -0400
+Served asset /application.js - 304 Not Modified (41ms)
+
+
+Started GET "/accounts/10/edit" for 127.0.0.1 at 2015-01-26 16:28:34 -0400
+Processing by AccountsController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mAccount Load (0.5ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = ? LIMIT 1  [["id", "10"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = ? LIMIT 1[0m  [["id", "10"]]
+  Rendered accounts/edit.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 77.8ms (Views: 57.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:28:34 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:28:34 -0400
+Served asset /jquery.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:28:34 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (49ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:28:34 -0400
+Served asset /accounts.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:28:34 -0400
+Served asset /transactions.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:28:34 -0400
+Served asset /application.js - 304 Not Modified (37ms)
+
+
+Started PUT "/accounts/10" for 127.0.0.1 at 2015-01-26 16:28:39 -0400
+Processing by AccountsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bJ626lXf4FFF/NLVEjkTE4lu1I+3FvdSKpZspLebGk0=", "account"=>{"account_name"=>"Bank Deposit", "account_type"=>"Asset", "total_amount"=>"0"}, "commit"=>"Update Account Info.", "id"=>"10"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mAccount Load (6.6ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = ? LIMIT 1[0m  [["id", "10"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mUPDATE "accounts" SET "total_amount" = 0, "updated_at" = '2015-01-26 20:28:39.641930' WHERE "accounts"."id" = 10[0m
+  [1m[35m (695.6ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/accounts
+Completed 302 Found in 712.0ms (ActiveRecord: 704.1ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2015-01-26 16:28:40 -0400
+Processing by AccountsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mAccount Load (0.6ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2
+  [1m[36mCACHE (17.2ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2[0m
+  Rendered accounts/index.html.erb within layouts/application (44.4ms)
+Completed 200 OK in 123.3ms (Views: 97.7ms | ActiveRecord: 18.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:28:41 -0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:28:41 -0400
+Served asset /jquery.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:28:41 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (32ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:28:41 -0400
+Served asset /transactions.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:28:41 -0400
+Served asset /accounts.js - 304 Not Modified (30ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:28:41 -0400
+Served asset /application.js - 304 Not Modified (31ms)
+
+
+Started GET "/accounts/12/edit" for 127.0.0.1 at 2015-01-26 16:29:41 -0400
+Processing by AccountsController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mAccount Load (0.6ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = ? LIMIT 1[0m  [["id", "12"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = ? LIMIT 1  [["id", "12"]]
+  Rendered accounts/edit.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 430.7ms (Views: 45.8ms | ActiveRecord: 24.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:29:42 -0400
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:29:42 -0400
+Served asset /jquery.js - 304 Not Modified (67ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:29:42 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:29:42 -0400
+Served asset /application.js - 304 Not Modified (33ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:29:42 -0400
+Served asset /transactions.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:29:42 -0400
+Served asset /accounts.js - 304 Not Modified (8ms)
+
+
+Started PUT "/accounts/12" for 127.0.0.1 at 2015-01-26 16:29:48 -0400
+Processing by AccountsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bJ626lXf4FFF/NLVEjkTE4lu1I+3FvdSKpZspLebGk0=", "account"=>{"account_name"=>"Car", "account_type"=>"Asset", "total_amount"=>"1000"}, "commit"=>"Update Account Info.", "id"=>"12"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mAccount Load (0.4ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = ? LIMIT 1  [["id", "12"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  UPDATE "accounts" SET "total_amount" = 1000, "updated_at" = '2015-01-26 20:29:48.065255' WHERE "accounts"."id" = 12
+  [1m[36m (523.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/accounts
+Completed 302 Found in 550.0ms (ActiveRecord: 525.5ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2015-01-26 16:29:48 -0400
+Processing by AccountsController#index as HTML
+  [1m[35mUser Load (5.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mAccount Load (8.4ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2[0m
+  [1m[35mCACHE (4.2ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2
+  Rendered accounts/index.html.erb within layouts/application (154085.1ms)
+Completed 200 OK in 154197.0ms (Views: 154166.4ms | ActiveRecord: 18.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:32:23 -0400
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:32:23 -0400
+Served asset /jquery.js - 304 Not Modified (71ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:32:23 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:32:23 -0400
+Served asset /accounts.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:32:23 -0400
+Served asset /application.js - 304 Not Modified (36ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:32:23 -0400
+Served asset /transactions.js - 304 Not Modified (12ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2015-01-26 16:34:06 -0400
+Processing by AccountsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mAccount Load (1.3ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2[0m
+  Rendered accounts/index.html.erb within layouts/application (5040.9ms)
+Completed 200 OK in 5320.8ms (Views: 5129.9ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:34:12 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:34:12 -0400
+Served asset /jquery.js - 304 Not Modified (42ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:34:12 -0400
+Served asset /accounts.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:34:12 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:34:12 -0400
+Served asset /transactions.js - 304 Not Modified (17ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:34:12 -0400
+Served asset /application.js - 304 Not Modified (55ms)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2015-01-26 16:34:35 -0400
+Processing by TransactionsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mTransaction Load (1.0ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 2[0m
+  [1m[35mAccount Load (0.6ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1
+  [1m[36mAccount Load (11.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 9 LIMIT 1[0m
+  [1m[35mAccount Load (0.6ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 10 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 10 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 10 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1[0m
+  Rendered transactions/index.html.erb within layouts/application (130.1ms)
+Completed 200 OK in 366.4ms (Views: 292.5ms | ActiveRecord: 15.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:34:36 -0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:34:36 -0400
+Served asset /jquery.js - 304 Not Modified (25ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:34:37 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (66ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:34:37 -0400
+Served asset /accounts.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:34:37 -0400
+Served asset /transactions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:34:37 -0400
+Served asset /application.js - 304 Not Modified (53ms)
+
+
+Started GET "/transactions/new" for 127.0.0.1 at 2015-01-26 16:34:39 -0400
+Processing by TransactionsController#new as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mAccount Load (10.2ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "accounts" WHERE "accounts"."user_id" = 2
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "transactions" [0m
+  [1m[35mTransaction Load (0.7ms)[0m  SELECT "transactions".* FROM "transactions" 
+  Rendered transactions/new.html.erb within layouts/application (35.6ms)
+Completed 200 OK in 148.6ms (Views: 85.7ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:34:40 -0400
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:34:40 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (39ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:34:40 -0400
+Served asset /jquery.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:34:40 -0400
+Served asset /transactions.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:34:40 -0400
+Served asset /accounts.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:34:40 -0400
+Served asset /application.js - 304 Not Modified (34ms)
+
+
+Started POST "/transactions" for 127.0.0.1 at 2015-01-26 16:34:45 -0400
+Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bJ626lXf4FFF/NLVEjkTE4lu1I+3FvdSKpZspLebGk0=", "transaction"=>{"from_account"=>"8", "to_account"=>"8", "amount"=>"100"}, "commit"=>"Create Transaction"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mAccount Load (0.5ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 8 LIMIT 1[0m
+  [1m[35mAccount Load (0.6ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2
+Redirected to http://0.0.0.0:3000/transactions/new
+Completed 302 Found in 6068.1ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/transactions/new" for 127.0.0.1 at 2015-01-26 16:34:51 -0400
+Processing by TransactionsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mAccount Load (10.2ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "accounts" WHERE "accounts"."user_id" = 2[0m
+  [1m[35m (0.9ms)[0m  SELECT COUNT(*) FROM "transactions" 
+  [1m[36mTransaction Load (0.6ms)[0m  [1mSELECT "transactions".* FROM "transactions" [0m
+  Rendered transactions/new.html.erb within layouts/application (47.9ms)
+Completed 200 OK in 134.7ms (Views: 106.2ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:34:51 -0400
+Served asset /application.css - 304 Not Modified (40ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:34:51 -0400
+Served asset /jquery.js - 304 Not Modified (33ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:34:51 -0400
+Served asset /accounts.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:34:51 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:34:52 -0400
+Served asset /transactions.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:34:52 -0400
+Served asset /application.js - 304 Not Modified (24ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2015-01-26 16:35:50 -0400
+Processing by AccountsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mAccount Load (1.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2
+  Rendered accounts/index.html.erb within layouts/application (33.1ms)
+Completed 200 OK in 393.9ms (Views: 100.1ms | ActiveRecord: 14.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:35:50 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:35:51 -0400
+Served asset /jquery.js - 304 Not Modified (59ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:35:51 -0400
+Served asset /transactions.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:35:51 -0400
+Served asset /application.js - 304 Not Modified (21ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:35:51 -0400
+Served asset /accounts.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:35:51 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (20ms)
+
+
+Started GET "/accounts/12/edit" for 127.0.0.1 at 2015-01-26 16:36:04 -0400
+Processing by AccountsController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mAccount Load (7.8ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = ? LIMIT 1  [["id", "12"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = ? LIMIT 1[0m  [["id", "12"]]
+  Rendered accounts/edit.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 96.7ms (Views: 76.1ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:36:04 -0400
+Served asset /application.css - 304 Not Modified (29ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:36:04 -0400
+Served asset /jquery.js - 304 Not Modified (103ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:36:04 -0400
+Served asset /application.js - 304 Not Modified (32ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:36:05 -0400
+Served asset /accounts.js - 304 Not Modified (21ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:36:05 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:36:05 -0400
+Served asset /transactions.js - 304 Not Modified (7ms)
+
+
+Started PUT "/accounts/12" for 127.0.0.1 at 2015-01-26 16:36:10 -0400
+Processing by AccountsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bJ626lXf4FFF/NLVEjkTE4lu1I+3FvdSKpZspLebGk0=", "account"=>{"account_name"=>"Car", "account_type"=>"Asset", "total_amount"=>"0"}, "commit"=>"Update Account Info.", "id"=>"12"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mAccount Load (0.5ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = ? LIMIT 1[0m  [["id", "12"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.1ms)[0m  [1mUPDATE "accounts" SET "total_amount" = 0, "updated_at" = '2015-01-26 20:36:10.328725' WHERE "accounts"."id" = 12[0m
+  [1m[35m (731.8ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/accounts
+Completed 302 Found in 763.1ms (ActiveRecord: 734.0ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2015-01-26 16:36:11 -0400
+Processing by AccountsController#index as HTML
+  [1m[36mUser Load (9.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mAccount Load (0.6ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2
+  [1m[36mCACHE (6.4ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2[0m
+  Rendered accounts/index.html.erb within layouts/application (52.2ms)
+Completed 200 OK in 133.2ms (Views: 100.7ms | ActiveRecord: 16.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:36:11 -0400
+Served asset /application.css - 304 Not Modified (40ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:36:11 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (21ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:36:12 -0400
+Served asset /jquery.js - 304 Not Modified (36ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:36:12 -0400
+Served asset /accounts.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:36:12 -0400
+Served asset /transactions.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:36:12 -0400
+Served asset /application.js - 304 Not Modified (27ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2015-01-26 16:37:57 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"bJ626lXf4FFF/NLVEjkTE4lu1I+3FvdSKpZspLebGk0="}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 180.1ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-26 16:37:58 -0400
+Processing by AccountsController#index as HTML
+Completed 401 Unauthorized in 0.9ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-01-26 16:37:59 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (13.2ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (30.6ms)
+Completed 200 OK in 148.8ms (Views: 132.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:38:00 -0400
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:38:00 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (42ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:38:00 -0400
+Served asset /jquery.js - 304 Not Modified (26ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:38:01 -0400
+Served asset /accounts.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:38:01 -0400
+Served asset /transactions.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:38:01 -0400
+Served asset /application.js - 304 Not Modified (27ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-01-26 16:39:19 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gI9SrEBP13yXWPA1i+1DYH0ciDMRIEA5DCDEqy29s7M=", "user"=>{"email"=>"ahmedmosharafa@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'ahmedmosharafa@gmail.com' LIMIT 1[0m
+Completed 401 Unauthorized in 334.2ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gI9SrEBP13yXWPA1i+1DYH0ciDMRIEA5DCDEqy29s7M=", "user"=>{"email"=>"ahmedmosharafa@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 350.2ms (Views: 86.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:39:20 -0400
+Served asset /application.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:39:20 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (41ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:39:20 -0400
+Served asset /accounts.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:39:20 -0400
+Served asset /jquery.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:39:20 -0400
+Served asset /transactions.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:39:20 -0400
+Served asset /application.js - 304 Not Modified (24ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-01-26 16:39:26 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gI9SrEBP13yXWPA1i+1DYH0ciDMRIEA5DCDEqy29s7M=", "user"=>{"email"=>"ahmedmosharafa@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'ahmedmosharafa@gmail.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2015-01-26 20:24:17.635858', "current_sign_in_at" = '2015-01-26 20:39:26.944063', "sign_in_count" = 3, "updated_at" = '2015-01-26 20:39:26.947554' WHERE "users"."id" = 2
+  [1m[36m (434.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 849.6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-26 16:39:27 -0400
+Processing by AccountsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mAccount Load (0.6ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2
+  Rendered accounts/index.html.erb within layouts/application (60.8ms)
+Completed 200 OK in 121.3ms (Views: 114.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:39:28 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:39:28 -0400
+Served asset /jquery.js - 304 Not Modified (66ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:39:28 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:39:28 -0400
+Served asset /transactions.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:39:28 -0400
+Served asset /application.js - 304 Not Modified (24ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:39:28 -0400
+Served asset /accounts.js - 304 Not Modified (14ms)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2015-01-26 16:39:31 -0400
+Processing by TransactionsController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mTransaction Load (4.8ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 2
+  [1m[36mAccount Load (11.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1[0m
+  [1m[35mAccount Load (0.6ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 9 LIMIT 1
+  [1m[36mAccount Load (0.7ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 10 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 10 LIMIT 1
+  [1m[36mCACHE (3.8ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 10 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1
+  Rendered transactions/index.html.erb within layouts/application (169.5ms)
+Completed 200 OK in 320.3ms (Views: 223.4ms | ActiveRecord: 24.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:39:32 -0400
+Served asset /application.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:39:32 -0400
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:39:32 -0400
+Served asset /transactions.js - 304 Not Modified (28ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:39:32 -0400
+Served asset /accounts.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:39:32 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:39:32 -0400
+Served asset /application.js - 304 Not Modified (26ms)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2015-01-26 16:39:55 -0400
+Processing by TransactionsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mTransaction Load (19.4ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 2
+  [1m[36mAccount Load (0.6ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1[0m
+  [1m[35mAccount Load (0.5ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 9 LIMIT 1
+  [1m[36mAccount Load (0.6ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 10 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 10 LIMIT 1
+  [1m[36mCACHE (4.6ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 10 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1
+  Rendered transactions/index.html.erb within layouts/application (69.0ms)
+Completed 200 OK in 155.6ms (Views: 106.6ms | ActiveRecord: 26.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:39:56 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:39:56 -0400
+Served asset /jquery.js - 304 Not Modified (26ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:39:56 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:39:56 -0400
+Served asset /transactions.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:39:56 -0400
+Served asset /application.js - 304 Not Modified (174ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:39:56 -0400
+Served asset /accounts.js - 304 Not Modified (8ms)
+
+
+Started GET "/transactions/new" for 127.0.0.1 at 2015-01-26 16:40:00 -0400
+Processing by TransactionsController#new as HTML
+  [1m[36mUser Load (9.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mAccount Load (0.7ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2
+  [1m[36m (9.3ms)[0m  [1mSELECT COUNT(*) FROM "accounts" WHERE "accounts"."user_id" = 2[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "transactions" 
+  [1m[36mTransaction Load (0.6ms)[0m  [1mSELECT "transactions".* FROM "transactions" [0m
+  Rendered transactions/new.html.erb within layouts/application (37.7ms)
+Completed 200 OK in 157.6ms (Views: 100.8ms | ActiveRecord: 20.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:40:00 -0400
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:40:00 -0400
+Served asset /jquery.js - 304 Not Modified (108ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:40:00 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:40:01 -0400
+Served asset /transactions.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:40:01 -0400
+Served asset /accounts.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:40:01 -0400
+Served asset /application.js - 304 Not Modified (31ms)
+
+
+Started POST "/transactions" for 127.0.0.1 at 2015-01-26 16:40:14 -0400
+Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9kjKhfGV61UhNFv2YkipYyWkC2yeytk9LRKvZ8EuQ2Y=", "transaction"=>{"from_account"=>"8", "to_account"=>"8", "amount"=>"100"}, "commit"=>"Create Transaction"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mAccount Load (6.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.2ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 8 LIMIT 1
+  [1m[36mAccount Load (0.7ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.2ms)[0m  [1mUPDATE "accounts" SET "total_amount" = -100, "updated_at" = '2015-01-26 20:40:14.908000' WHERE "accounts"."id" = 8[0m
+  [1m[35m (773.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  UPDATE "accounts" SET "total_amount" = 100, "updated_at" = '2015-01-26 20:40:15.701054' WHERE "accounts"."id" = 8
+  [1m[36m (452.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "transactions" ("amount", "created_at", "description", "from_account", "to_account", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["amount", 100], ["created_at", Mon, 26 Jan 2015 20:40:16 UTC +00:00], ["description", nil], ["from_account", "8"], ["to_account", "8"], ["updated_at", Mon, 26 Jan 2015 20:40:16 UTC +00:00], ["user_id", 2]]
+  [1m[35m (457.5ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/transactions/8
+Completed 302 Found in 1764.2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/transactions/8" for 127.0.0.1 at 2015-01-26 16:40:16 -0400
+Processing by TransactionsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mTransaction Load (0.6ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 2 AND "transactions"."id" = ? LIMIT 1  [["id", "8"]]
+  Rendered transactions/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 68.5ms (Views: 52.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:40:17 -0400
+Served asset /application.css - 304 Not Modified (19ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:40:17 -0400
+Served asset /jquery.js - 304 Not Modified (57ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:40:17 -0400
+Served asset /accounts.js - 304 Not Modified (25ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:40:17 -0400
+Served asset /transactions.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:40:17 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:40:17 -0400
+Served asset /application.js - 304 Not Modified (34ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2015-01-26 16:40:22 -0400
+Processing by AccountsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mAccount Load (0.7ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2[0m
+  Rendered accounts/index.html.erb within layouts/application (57.5ms)
+Completed 200 OK in 114.5ms (Views: 99.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:40:22 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:40:22 -0400
+Served asset /jquery.js - 304 Not Modified (28ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:40:23 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (18ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:40:23 -0400
+Served asset /accounts.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:40:23 -0400
+Served asset /application.js - 304 Not Modified (38ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:40:23 -0400
+Served asset /transactions.js - 304 Not Modified (28ms)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2015-01-26 16:40:28 -0400
+Processing by TransactionsController#index as HTML
+  [1m[35mUser Load (8.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mTransaction Load (0.8ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 2[0m
+  [1m[35mAccount Load (0.6ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1
+  [1m[36mAccount Load (0.6ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 9 LIMIT 1[0m
+  [1m[35mAccount Load (0.6ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 10 LIMIT 1
+  [1m[36mCACHE (1.7ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1[0m
+  [1m[35mCACHE (6.9ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 10 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 10 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1[0m
+  [1m[35mAccount Load (0.6ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 8 LIMIT 1[0m
+  Rendered transactions/index.html.erb within layouts/application (49.3ms)
+Completed 200 OK in 151.4ms (Views: 96.1ms | ActiveRecord: 20.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:40:29 -0400
+Served asset /application.css - 304 Not Modified (32ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:40:29 -0400
+Served asset /jquery.js - 304 Not Modified (80ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:40:29 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:40:29 -0400
+Served asset /transactions.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:40:29 -0400
+Served asset /application.js - 304 Not Modified (23ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:40:30 -0400
+Served asset /accounts.js - 304 Not Modified (16ms)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2015-01-26 16:40:34 -0400
+Processing by TransactionsController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mTransaction Load (0.7ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 2[0m
+  [1m[35mAccount Load (11.6ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1
+  [1m[36mAccount Load (0.6ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 9 LIMIT 1[0m
+  [1m[35mAccount Load (4.9ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 10 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 10 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 10 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1[0m
+  [1m[35mAccount Load (0.6ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 8 LIMIT 1[0m
+  Rendered transactions/index.html.erb within layouts/application (196.7ms)
+Completed 200 OK in 299.4ms (Views: 257.9ms | ActiveRecord: 19.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:40:35 -0400
+Served asset /application.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:40:35 -0400
+Served asset /jquery.js - 304 Not Modified (33ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:40:35 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:40:35 -0400
+Served asset /accounts.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:40:35 -0400
+Served asset /transactions.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:40:35 -0400
+Served asset /application.js - 304 Not Modified (31ms)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2015-01-26 16:41:03 -0400
+Processing by TransactionsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mTransaction Load (0.6ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 2[0m
+  [1m[35mAccount Load (0.6ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1
+  [1m[36mAccount Load (0.6ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 9 LIMIT 1[0m
+  [1m[35mAccount Load (0.7ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 10 LIMIT 1
+  [1m[36mCACHE (4.6ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 10 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 10 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1[0m
+  [1m[35mAccount Load (1.5ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 8 LIMIT 1[0m
+  Rendered transactions/index.html.erb within layouts/application (71.4ms)
+Completed 200 OK in 149.5ms (Views: 115.0ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:41:03 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:41:03 -0400
+Served asset /jquery.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:41:03 -0400
+Served asset /accounts.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:41:03 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:41:04 -0400
+Served asset /application.js - 304 Not Modified (43ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:41:04 -0400
+Served asset /transactions.js - 304 Not Modified (9ms)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2015-01-26 16:41:19 -0400
+Processing by TransactionsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mTransaction Load (0.6ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 2[0m
+  [1m[35mAccount Load (0.6ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1
+  [1m[36mAccount Load (0.6ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 9 LIMIT 1[0m
+  [1m[35mAccount Load (3.8ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 10 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1[0m
+  [1m[35mCACHE (5.4ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 10 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 10 LIMIT 1
+  [1m[36mCACHE (12.2ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1[0m
+  [1m[35mAccount Load (0.6ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 8 LIMIT 1[0m
+  Rendered transactions/index.html.erb within layouts/application (95.1ms)
+Completed 200 OK in 161.0ms (Views: 127.3ms | ActiveRecord: 24.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:41:20 -0400
+Served asset /application.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:41:20 -0400
+Served asset /jquery.js - 304 Not Modified (31ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:41:20 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:41:20 -0400
+Served asset /accounts.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:41:20 -0400
+Served asset /transactions.js - 304 Not Modified (29ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:41:21 -0400
+Served asset /application.js - 304 Not Modified (22ms)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2015-01-26 16:41:33 -0400
+Processing by TransactionsController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mTransaction Load (0.8ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 2[0m
+  [1m[35mAccount Load (4.8ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1
+  [1m[36mAccount Load (0.5ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 9 LIMIT 1[0m
+  [1m[35mAccount Load (0.5ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 10 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 10 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 10 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 14 LIMIT 1[0m
+  [1m[35mAccount Load (5.6ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 2 AND "accounts"."id" = 8 LIMIT 1[0m
+  Rendered transactions/index.html.erb within layouts/application (79.2ms)
+Completed 200 OK in 174.5ms (Views: 122.1ms | ActiveRecord: 13.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-26 16:41:34 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-26 16:41:34 -0400
+Served asset /jquery.js - 304 Not Modified (24ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-26 16:41:34 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (22ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-26 16:41:34 -0400
+Served asset /accounts.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-26 16:41:34 -0400
+Served asset /transactions.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-26 16:41:34 -0400
+Served asset /application.js - 304 Not Modified (17ms)

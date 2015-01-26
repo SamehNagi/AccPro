@@ -26,17 +26,6 @@ class Account < ActiveRecord::Base
     end 
     return fromto
   end
-  
-  def self.duplicate?(name) 
-    found = false 
-    debugger
-    @acc.each do |account|
-      if account.account_name == name
-        found = true
-      end
-    end
-    found
-  end
 
   def self.acc_new(params)
     account_name = params[:name]["Account Name"]
@@ -75,10 +64,11 @@ class Account < ActiveRecord::Base
       elsif acc.balance_type == 'Credit'
         credit += acc.total_amount
       end
+      end
+      debugger
       balance = debit - credit
       return balance 
     end 
-  end
   #TODO check whether they are nil or not 
   #TODO check zero issues in total_amount
   def self.transaction_account(from_account, to_account, amount)

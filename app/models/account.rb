@@ -64,10 +64,10 @@ class Account < ActiveRecord::Base
       elsif acc.balance_type == 'Credit'
         credit += acc.total_amount
       end
+      end
       balance = debit - credit
       return balance 
     end 
-  end
   #TODO check whether they are nil or not 
   #TODO check zero issues in total_amount
   def self.transaction_account(from_account, to_account, amount)
