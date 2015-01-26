@@ -65,6 +65,7 @@ class Account < ActiveRecord::Base
         credit += acc.total_amount
       end
       end
+      debugger
       balance = debit - credit
       return balance 
     end 

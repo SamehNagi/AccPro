@@ -2,7 +2,7 @@ class TransactionsController < ApplicationController
   before_filter :set_transaction, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
- 
+  
   def index
     @transactions = current_user.transactions.all
     if @transactions.count == 0

@@ -22,5 +22,5 @@
 <br />
 
 <%= link_to 'New Transaction', new_transaction_path %>
-<br/><br/>
+<br/>
 <%= link_to 'Back to accounts', accounts_path %>
