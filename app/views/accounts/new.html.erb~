@@ -13,4 +13,3 @@
   </br>
   <%= submit_tag 'Create Account' %>
 <% end %>
-<%= link_to 'Back to Accounts', accounts_path %>
