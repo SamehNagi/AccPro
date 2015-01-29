@@ -4,7 +4,8 @@ Feature: Managing new transactions
   As an accountant
   I want to create a new transaction between accounts
 
-Background: Given User is logged in as nevinemgouda@gmail.com
+Background: User, Transactions and Accounts
+  Given I login successfully
   And the following accounts exist:
   | account_number| account_name     | account_type | total_amount | balance_type | user_id | 
   | 1             | Cash             | Asset        |              | Debit        | 1       |
@@ -30,7 +31,8 @@ Scenario: Successfully creating a new transaction
   Given I am on the new transaction page
   When I select "loan" from "from account"
   And I select "Bank" from "to account"
-  And fill in "Amount" with "10"
+  And I fill in the following:
+  And I fill in "Amount" with "10"
   Then I should be on the transaction show page
 
 
