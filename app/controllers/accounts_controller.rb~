@@ -33,24 +33,14 @@ class AccountsController < ApplicationController
   def edit
     @account = current_user.accounts.find(params[:id])
   end
-   
-  def duplicate?(name) 
-    found = false 
-    debugger
-    @acc.each do |account|
-      if account.account_name == name
-        found = true
-      end
-    end
-    found
-  end
 
   def create
-    @acc = current_user.accounts.all
     debugger
+    @acc = current_user.accounts.all
+    #debugger
     if (params[:name]) 
       #avoiding duplicate accounts
-      if (duplicate?(params[:name]["Account Name"]))
+      if (Account.duplicate?(params[:name]["Account Name"], current_user))
         redirect_to accounts_path
         flash[:notice] = "#{params[:name]["Account Name"]} is already a valid account please check it below" 
       else 

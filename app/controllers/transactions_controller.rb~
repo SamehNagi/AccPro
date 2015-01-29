@@ -2,7 +2,7 @@ class TransactionsController < ApplicationController
   before_filter :set_transaction, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
-  
+ 
   def index
     @transactions = current_user.transactions.all
     if @transactions.count == 0
@@ -14,6 +14,21 @@ class TransactionsController < ApplicationController
   end
 
   def show
+    #redirect_to transactions_path
+    #flash[:notice] = "Your transaction has been done successfully!"
+#*******Getting the from_account name to display it******#
+    # get the from_account ID as an integer
+    from_account = Transaction.find_by_id(params[:id]).from_account.to_i
+    # get the from_Account name
+    @from_account = Account.find_by_id(from_account).account_name
+#********Getting the to_account name to display it*******#
+    # get the to_account ID as an integer
+    to_account = Transaction.find_by_id(params[:id]).to_account.to_i
+    # get the from_Account name
+    @to_account = Account.find_by_id(to_account).account_name
+#******Getting the transaction amount to display it******#
+    # get the to_account ID as an integer
+    @amount = Transaction.find_by_id(params[:id]).amount
     respond_with(@transaction)
   end
 
@@ -37,20 +52,25 @@ class TransactionsController < ApplicationController
 
   def edit
   end
-
+  #validates un balanced transactions, overdraft transactions
   def create
     from_account = current_user.accounts.find_by_id(params[:transaction][:from_account].to_i)
     to_account   = current_user.accounts.find_by_id(params[:transaction][:to_account].to_i)
     amount       = params[:transaction][:amount].to_i
     balance      = current_user.accounts.balance(from_account, to_account, amount);
     if (balance == 0) 
-      current_user.accounts.transaction_account(from_account, to_account, amount)
-      @transaction = current_user.transactions.new(params[:transaction])
-      @transaction.save
-      respond_with(@transaction)
+      ret_val = current_user.accounts.transaction_account(from_account, to_account, amount)
+      if ret_val == ''
+      	@transaction = current_user.transactions.new(params[:transaction])
+        @transaction.save
+        respond_with(@transaction)
+      else
+        flash[:notice] = "#{ret_val} is initially zero so that would result in an overdraft, please check your transaction again"
+        redirect_to new_transaction_path
+      end
     else
       redirect_to new_transaction_path
-      flash[:notice] = "Your accounts are unbalanced, please double check your entries"
+      flash[:notice]  = "Your accounts are unbalanced, please double check your entries"
     end
   end
 

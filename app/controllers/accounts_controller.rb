@@ -35,7 +35,7 @@ class AccountsController < ApplicationController
   end
 
   def create
-    debugger
+    #debugger
     @acc = current_user.accounts.all
     #debugger
     if (params[:name]) 

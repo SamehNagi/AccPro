@@ -81,19 +81,30 @@ class Account < ActiveRecord::Base
     end 
   #TODO check whether they are nil or not 
   #TODO check zero issues in total_amount
+  #returns account ID for validation error, returns 0 for passing transactions
   def self.transaction_account(from_account, to_account, amount)
     from_initial = from_account.total_amount 
     to_initial   = to_account.total_amount
     fromto = Account.from_to(from_account, to_account)
+    @message = ""
     if fromto["from"] == 'sub' 
-      from_account.update_attribute(:total_amount, (from_initial-amount))
+      if from_initial == 0
+        return "from account: #{from_account.account_name}"
+      else
+      	from_account.update_attribute(:total_amount, (from_initial-amount))
+      end
     elsif fromto["from"] == 'add'   
       from_account.update_attribute(:total_amount, (from_initial+amount))   
     end 
     if fromto["to"] == 'add' 
       to_account.update_attribute(:total_amount, (from_initial+amount))
     elsif fromto["to"] == 'sub'
-      to_account.update_attribute(:total_amount, (from_initial-amount)) 
+      if to_initial == 0
+        return "to account: #{to_account.account_name}"
+      else
+        to_account.update_attribute(:total_amount, (from_initial-amount)) 
+      end
     end 
+    return ''
   end
 end
