@@ -14,6 +14,21 @@ class TransactionsController < ApplicationController
   end
 
   def show
+    #redirect_to transactions_path
+    #flash[:notice] = "Your transaction has been done successfully!"
+#*******Getting the from_account name to display it******#
+    # get the from_account ID as an integer
+    from_account = Transaction.find_by_id(params[:id]).from_account.to_i
+    # get the from_Account name
+    @from_account = Account.find_by_id(from_account).account_name
+#********Getting the to_account name to display it*******#
+    # get the to_account ID as an integer
+    to_account = Transaction.find_by_id(params[:id]).to_account.to_i
+    # get the from_Account name
+    @to_account = Account.find_by_id(to_account).account_name
+#******Getting the transaction amount to display it******#
+    # get the to_account ID as an integer
+    @amount = Transaction.find_by_id(params[:id]).amount
     respond_with(@transaction)
   end
 
