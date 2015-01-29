@@ -23364,3 +23364,1040 @@ Served asset /application.js - 304 Not Modified (28ms)
 
 Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 01:12:13 -0400
 Served asset /jquery_ujs.js - 304 Not Modified (7ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 18:01:16 -0400
+Processing by AccountsController#index as HTML
+Completed 401 Unauthorized in 6.6ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-01-29 18:01:16 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.9ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 267.9ms (Views: 143.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 18:01:16 -0400
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 18:01:16 -0400
+Served asset /jquery.js - 304 Not Modified (148ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 18:01:17 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-29 18:01:17 -0400
+Served asset /accounts.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 18:01:17 -0400
+Served asset /application.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 18:01:17 -0400
+Served asset /transactions.js - 304 Not Modified (5ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-01-29 18:01:26 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UwpI7HXvDm4VXdaLYCq1axbZeBc3IpjrcXTHkQ0m654=", "user"=>{"email"=>"nevinemgouda@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'nevinemgouda@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (2.2ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2015-01-25 18:10:26.120654', "current_sign_in_at" = '2015-01-29 22:01:26.185226', "sign_in_count" = 3, "updated_at" = '2015-01-29 22:01:26.195559' WHERE "users"."id" = 1[0m
+  [1m[35m (8.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 245.0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 18:01:26 -0400
+Processing by AccountsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAccount Load (0.6ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1[0m
+  Rendered accounts/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 169.4ms (Views: 66.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 18:01:26 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 18:01:26 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-29 18:01:26 -0400
+Served asset /accounts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 18:01:26 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 18:01:26 -0400
+Served asset /transactions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 18:01:26 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2015-01-29 18:01:32 -0400
+Processing by TransactionsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mTransaction Load (0.1ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 1[0m
+  [1m[35mAccount Load (0.2ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 4 LIMIT 1
+  [1m[36mAccount Load (0.2ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 2 LIMIT 1[0m
+  [1m[35mAccount Load (0.2ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 21 LIMIT 1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 1 LIMIT 1[0m
+  Rendered transactions/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 29.2ms (Views: 12.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 18:01:32 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 18:01:32 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 18:01:32 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-29 18:01:32 -0400
+Served asset /accounts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 18:01:32 -0400
+Served asset /transactions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 18:01:32 -0400
+Served asset /application.js - 304 Not Modified (9ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2015-01-29 18:03:00 -0400
+Processing by AccountsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAccount Load (0.3ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1
+  Rendered accounts/index.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 46.4ms (Views: 28.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 18:03:00 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 18:03:00 -0400
+Served asset /jquery.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 18:03:00 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-29 18:03:01 -0400
+Served asset /accounts.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 18:03:01 -0400
+Served asset /transactions.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 18:03:01 -0400
+Served asset /application.js - 304 Not Modified (14ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2015-01-29 18:05:35 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"rJ1isYJQ08IdnjmKY6bcoVl7X2+d9BLK9+hr6buhB3g="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "users" SET "remember_created_at" = NULL, "updated_at" = '2015-01-29 22:05:35.736465' WHERE "users"."id" = 1[0m
+  [1m[35m (11.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 96.0ms (ActiveRecord: 11.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 18:05:35 -0400
+Processing by AccountsController#index as HTML
+Completed 401 Unauthorized in 2.3ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-01-29 18:05:35 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.8ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 24.0ms (Views: 19.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 18:05:35 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 18:05:35 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 18:05:35 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 18:05:35 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 18:05:35 -0400
+Served asset /transactions.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-29 18:05:35 -0400
+Served asset /accounts.js - 304 Not Modified (0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-01-29 18:05:43 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zxxslHBSL4Z52mY6n5QkBdjkNKcn7iaP9ISMeuODnAE=", "user"=>{"email"=>"mosharafa@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'mosharafa@gmail.com' LIMIT 1[0m
+Completed 401 Unauthorized in 4.8ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zxxslHBSL4Z52mY6n5QkBdjkNKcn7iaP9ISMeuODnAE=", "user"=>{"email"=>"mosharafa@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.4ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 110.8ms (Views: 8.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 18:05:43 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 18:05:43 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 18:05:43 -0400
+Served asset /transactions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-29 18:05:43 -0400
+Served asset /accounts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 18:05:43 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 18:05:43 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-01-29 18:05:51 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zxxslHBSL4Z52mY6n5QkBdjkNKcn7iaP9ISMeuODnAE=", "user"=>{"email"=>"mosharafa@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'mosharafa@gmail.com' LIMIT 1
+Completed 401 Unauthorized in 5.8ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zxxslHBSL4Z52mY6n5QkBdjkNKcn7iaP9ISMeuODnAE=", "user"=>{"email"=>"mosharafa@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.4ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 120.9ms (Views: 12.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 18:05:51 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 18:05:51 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-29 18:05:51 -0400
+Served asset /accounts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 18:05:51 -0400
+Served asset /transactions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 18:05:51 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 18:05:51 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-01-29 18:05:56 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zxxslHBSL4Z52mY6n5QkBdjkNKcn7iaP9ISMeuODnAE=", "user"=>{"email"=>"mosharafa@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'mosharafa@gmail.com' LIMIT 1[0m
+Completed 401 Unauthorized in 1.5ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zxxslHBSL4Z52mY6n5QkBdjkNKcn7iaP9ISMeuODnAE=", "user"=>{"email"=>"mosharafa@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.4ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 116.3ms (Views: 11.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 18:05:56 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 18:05:56 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 18:05:56 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-29 18:05:56 -0400
+Served asset /accounts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 18:05:56 -0400
+Served asset /transactions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 18:05:56 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-01-29 18:06:02 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zxxslHBSL4Z52mY6n5QkBdjkNKcn7iaP9ISMeuODnAE=", "user"=>{"email"=>"mosharafa@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'mosharafa@gmail.com' LIMIT 1
+Completed 401 Unauthorized in 0.9ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zxxslHBSL4Z52mY6n5QkBdjkNKcn7iaP9ISMeuODnAE=", "user"=>{"email"=>"mosharafa@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.3ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 103.4ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 18:06:02 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 18:06:02 -0400
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-29 18:06:02 -0400
+Served asset /accounts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 18:06:02 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 18:06:02 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 18:06:02 -0400
+Served asset /transactions.js - 304 Not Modified (0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-01-29 18:06:09 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zxxslHBSL4Z52mY6n5QkBdjkNKcn7iaP9ISMeuODnAE=", "user"=>{"email"=>"mosharafa@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'mosharafa@gmail.com' LIMIT 1[0m
+Completed 401 Unauthorized in 3.9ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zxxslHBSL4Z52mY6n5QkBdjkNKcn7iaP9ISMeuODnAE=", "user"=>{"email"=>"mosharafa@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.2ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 102.6ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 18:06:09 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 18:06:09 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 18:06:09 -0400
+Served asset /transactions.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-29 18:06:09 -0400
+Served asset /accounts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 18:06:09 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 18:06:09 -0400
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-01-29 18:06:15 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zxxslHBSL4Z52mY6n5QkBdjkNKcn7iaP9ISMeuODnAE=", "user"=>{"email"=>"nevinemgouda@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'nevinemgouda@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2015-01-29 22:01:26.185226', "current_sign_in_at" = '2015-01-29 22:06:16.107528', "sign_in_count" = 4, "updated_at" = '2015-01-29 22:06:16.108328' WHERE "users"."id" = 1
+  [1m[36m (8.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 120.2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-29 18:06:16 -0400
+Processing by AccountsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAccount Load (0.2ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1
+  Rendered accounts/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 10.8ms (Views: 8.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 18:06:16 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 18:06:16 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-29 18:06:16 -0400
+Served asset /accounts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 18:06:16 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 18:06:16 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 18:06:16 -0400
+Served asset /transactions.js - 304 Not Modified (0ms)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2015-01-29 18:06:18 -0400
+Processing by TransactionsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mTransaction Load (0.2ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 1
+  [1m[36mAccount Load (0.2ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mAccount Load (0.1ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 2 LIMIT 1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 21 LIMIT 1[0m
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 1 LIMIT 1
+  Rendered transactions/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 23.6ms (Views: 13.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 18:06:18 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 18:06:18 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-29 18:06:18 -0400
+Served asset /accounts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 18:06:18 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 18:06:18 -0400
+Served asset /transactions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 18:06:18 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2015-01-29 18:06:32 -0400
+Processing by AccountsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAccount Load (2.8ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1[0m
+  Rendered accounts/index.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 59.3ms (Views: 49.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 18:06:33 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 18:06:33 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 18:06:33 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-29 18:06:33 -0400
+Served asset /accounts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 18:06:33 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 18:06:33 -0400
+Served asset /transactions.js - 304 Not Modified (1ms)
+Connecting to database specified by database.yml
+  [1m[36m (26.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (10.9ms)[0m  [1mCREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "account_number" varchar(255), "account_name" varchar(255), "account_type" varchar(255), "total_amount" integer, "balance_type" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) [0m
+  [1m[35m (4.7ms)[0m  CREATE TABLE "transactions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "from_account" varchar(255), "to_account" varchar(255), "amount" integer, "description" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) 
+  [1m[36m (7.1ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (5.8ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (3.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (2.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (3.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (3.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150125150434')[0m
+  [1m[35m (4.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150122105501')
+  [1m[36m (3.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150113214333')[0m
+  [1m[35m (3.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150122110543')
+  [1m[36m (4.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150117193430')[0m
+Connecting to database specified by database.yml
+  [1m[36m (28.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (11.2ms)[0m  [1mCREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "account_number" varchar(255), "account_name" varchar(255), "account_type" varchar(255), "total_amount" integer, "balance_type" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) [0m
+  [1m[35m (6.0ms)[0m  CREATE TABLE "transactions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "from_account" varchar(255), "to_account" varchar(255), "amount" integer, "description" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) 
+  [1m[36m (5.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (4.2ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (4.1ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (4.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (3.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (3.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150125150434')[0m
+  [1m[35m (4.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150122105501')
+  [1m[36m (4.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150113214333')[0m
+  [1m[35m (3.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150122110543')
+  [1m[36m (3.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150117193430')[0m
+Connecting to database specified by database.yml
+  [1m[36m (38.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (7.9ms)[0m  [1mCREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "account_number" varchar(255), "account_name" varchar(255), "account_type" varchar(255), "total_amount" integer, "balance_type" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) [0m
+  [1m[35m (3.4ms)[0m  CREATE TABLE "transactions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "from_account" varchar(255), "to_account" varchar(255), "amount" integer, "description" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) 
+  [1m[36m (4.7ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (4.4ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (3.6ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (3.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (3.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (3.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150125150434')[0m
+  [1m[35m (3.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150122105501')
+  [1m[36m (4.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150113214333')[0m
+  [1m[35m (3.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150122110543')
+  [1m[36m (3.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150117193430')[0m
+
+
+Started GET "/transactions" for 127.0.0.1 at 2015-01-29 18:16:26 -0400
+Processing by TransactionsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mTransaction Load (0.2ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 1[0m
+  [1m[35mAccount Load (0.2ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 4 LIMIT 1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 2 LIMIT 1[0m
+  [1m[35mAccount Load (0.1ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 21 LIMIT 1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 1 LIMIT 1[0m
+  Rendered transactions/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 23.6ms (Views: 19.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 18:16:26 -0400
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 18:16:26 -0400
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 18:16:26 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 18:16:26 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 18:16:26 -0400
+Served asset /transactions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-29 18:16:26 -0400
+Served asset /accounts.js - 304 Not Modified (0ms)
+
+
+Started GET "/transactions/new" for 127.0.0.1 at 2015-01-29 18:18:38 -0400
+Processing by TransactionsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAccount Load (0.2ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "accounts" WHERE "accounts"."user_id" = 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "transactions" [0m
+  [1m[35mTransaction Load (0.1ms)[0m  SELECT "transactions".* FROM "transactions" 
+  Rendered transactions/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 22.4ms (Views: 16.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 18:18:38 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 18:18:38 -0400
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-29 18:18:38 -0400
+Served asset /accounts.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 18:18:38 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 18:18:38 -0400
+Served asset /transactions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 18:18:38 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/transactions" for 127.0.0.1 at 2015-01-29 18:20:15 -0400
+Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Pw/W7Eu8IrIf7ZSkJKj6ZcJf1Sn7MvHCMmr3dDwqlxw=", "transaction"=>{"from_account"=>"6", "to_account"=>"3", "amount"=>"89"}, "commit"=>"Create Transaction"}
+  [1m[36mUser Load (5.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAccount Load (0.1ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 6 LIMIT 1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 3 LIMIT 1[0m
+  [1m[35mAccount Load (0.1ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  UPDATE "accounts" SET "total_amount" = 89, "updated_at" = '2015-01-29 22:20:15.178263' WHERE "accounts"."id" = 6
+  [1m[36m (9.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "accounts" SET "total_amount" = 89, "updated_at" = '2015-01-29 22:20:15.190007' WHERE "accounts"."id" = 3[0m
+  [1m[35m (7.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "transactions" ("amount", "created_at", "description", "from_account", "to_account", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)  [["amount", 89], ["created_at", Thu, 29 Jan 2015 22:20:15 UTC +00:00], ["description", nil], ["from_account", "6"], ["to_account", "3"], ["updated_at", Thu, 29 Jan 2015 22:20:15 UTC +00:00], ["user_id", 1]]
+  [1m[36m (3.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/transactions/11
+Completed 302 Found in 44.2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/transactions/11" for 127.0.0.1 at 2015-01-29 18:20:15 -0400
+Processing by TransactionsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mTransaction Load (0.2ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 1 AND "transactions"."id" = ? LIMIT 1[0m  [["id", "11"]]
+  [1m[35mTransaction Load (0.1ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = 11 LIMIT 1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = 11 LIMIT 1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = 11 LIMIT 1
+  Rendered transactions/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 12.7ms (Views: 6.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 18:20:15 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:15 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:15 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:15 -0400
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:15 -0400
+Served asset /transactions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-29 18:20:15 -0400
+Served asset /accounts.js - 304 Not Modified (0ms)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2015-01-29 18:24:37 -0400
+Processing by TransactionsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mTransaction Load (0.2ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 2 LIMIT 1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 21 LIMIT 1[0m
+  [1m[35mAccount Load (4.7ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 1 LIMIT 1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 6 LIMIT 1[0m
+  [1m[35mAccount Load (0.1ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 3 LIMIT 1
+  Rendered transactions/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 37.6ms (Views: 25.4ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 18:24:37 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 18:24:37 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 18:24:37 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-29 18:24:37 -0400
+Served asset /accounts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 18:24:37 -0400
+Served asset /transactions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 18:24:37 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+Connecting to database specified by database.yml
+  [1m[36m (26.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (11.8ms)[0m  [1mCREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "account_number" varchar(255), "account_name" varchar(255), "account_type" varchar(255), "total_amount" integer, "balance_type" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) [0m
+  [1m[35m (4.4ms)[0m  CREATE TABLE "transactions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "from_account" varchar(255), "to_account" varchar(255), "amount" integer, "description" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) 
+  [1m[36m (6.1ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (4.3ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (4.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (3.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (3.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (3.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150125150434')[0m
+  [1m[35m (3.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150122105501')
+  [1m[36m (4.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150113214333')[0m
+  [1m[35m (3.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150122110543')
+  [1m[36m (3.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150117193430')[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (34.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (9.5ms)[0m  [1mCREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "account_number" varchar(255), "account_name" varchar(255), "account_type" varchar(255), "total_amount" integer, "balance_type" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) [0m
+  [1m[35m (4.9ms)[0m  CREATE TABLE "transactions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "from_account" varchar(255), "to_account" varchar(255), "amount" integer, "description" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) 
+  [1m[36m (4.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (4.1ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (3.8ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (3.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (3.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (3.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150125150434')[0m
+  [1m[35m (3.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150122105501')
+  [1m[36m (2.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150113214333')[0m
+  [1m[35m (3.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150122110543')
+  [1m[36m (4.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150117193430')[0m
+Connecting to database specified by database.yml
+  [1m[36m (26.8ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (11.4ms)[0m  [1mCREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "account_number" varchar(255), "account_name" varchar(255), "account_type" varchar(255), "total_amount" integer, "balance_type" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) [0m
+  [1m[35m (5.0ms)[0m  CREATE TABLE "transactions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "from_account" varchar(255), "to_account" varchar(255), "amount" integer, "description" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) 
+  [1m[36m (4.0ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (4.1ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (4.0ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (3.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (3.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (3.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150125150434')[0m
+  [1m[35m (4.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150122105501')
+  [1m[36m (3.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150113214333')[0m
+  [1m[35m (4.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150122110543')
+  [1m[36m (4.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150117193430')[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (26.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (11.7ms)[0m  [1mCREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "account_number" varchar(255), "account_name" varchar(255), "account_type" varchar(255), "total_amount" integer, "balance_type" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) [0m
+  [1m[35m (5.2ms)[0m  CREATE TABLE "transactions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "from_account" varchar(255), "to_account" varchar(255), "amount" integer, "description" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) 
+  [1m[36m (6.2ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (3.3ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (3.6ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (2.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (3.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (3.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150125150434')[0m
+  [1m[35m (3.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150122105501')
+  [1m[36m (3.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150113214333')[0m
+  [1m[35m (3.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150122110543')
+  [1m[36m (4.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150117193430')[0m
+Connecting to database specified by database.yml
+  [1m[36m (27.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (12.0ms)[0m  [1mCREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "account_number" varchar(255), "account_name" varchar(255), "account_type" varchar(255), "total_amount" integer, "balance_type" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) [0m
+  [1m[35m (5.1ms)[0m  CREATE TABLE "transactions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "from_account" varchar(255), "to_account" varchar(255), "amount" integer, "description" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) 
+  [1m[36m (7.5ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (3.8ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (3.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (3.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (3.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (2.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150125150434')[0m
+  [1m[35m (4.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150122105501')
+  [1m[36m (4.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150113214333')[0m
+  [1m[35m (4.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150122110543')
+  [1m[36m (2.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150117193430')[0m
+Connecting to database specified by database.yml
+  [1m[36m (27.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (10.1ms)[0m  [1mCREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "account_number" varchar(255), "account_name" varchar(255), "account_type" varchar(255), "total_amount" integer, "balance_type" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) [0m
+  [1m[35m (5.3ms)[0m  CREATE TABLE "transactions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "from_account" varchar(255), "to_account" varchar(255), "amount" integer, "description" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) 
+  [1m[36m (7.3ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (5.0ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (4.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (3.6ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (3.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (3.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150125150434')[0m
+  [1m[35m (3.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150122105501')
+  [1m[36m (3.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150113214333')[0m
+  [1m[35m (3.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150122110543')
+  [1m[36m (4.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150117193430')[0m
+
+
+Started GET "/transactions/new" for 127.0.0.1 at 2015-01-29 18:52:59 -0400
+Processing by TransactionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAccount Load (0.2ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "accounts" WHERE "accounts"."user_id" = 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "transactions" 
+  [1m[36mTransaction Load (0.2ms)[0m  [1mSELECT "transactions".* FROM "transactions" [0m
+  Rendered transactions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 95.4ms (Views: 14.5ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 18:52:59 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 18:52:59 -0400
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 18:52:59 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-29 18:52:59 -0400
+Served asset /accounts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 18:52:59 -0400
+Served asset /transactions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 18:52:59 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+  [1m[36m (33.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (8.7ms)[0m  [1mCREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "account_number" varchar(255), "account_name" varchar(255), "account_type" varchar(255), "total_amount" integer, "balance_type" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) [0m
+  [1m[35m (3.8ms)[0m  CREATE TABLE "transactions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "from_account" varchar(255), "to_account" varchar(255), "amount" integer, "description" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) 
+  [1m[36m (3.7ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (3.0ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (3.5ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (4.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (3.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (3.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150125150434')[0m
+  [1m[35m (2.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150122105501')
+  [1m[36m (3.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150113214333')[0m
+  [1m[35m (4.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150122110543')
+  [1m[36m (3.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150117193430')[0m
+
+
+Started POST "/transactions" for 127.0.0.1 at 2015-01-29 19:03:28 -0400
+Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Pw/W7Eu8IrIf7ZSkJKj6ZcJf1Sn7MvHCMmr3dDwqlxw=", "transaction"=>{"from_account"=>"1", "to_account"=>"1", "amount"=>""}, "commit"=>"Create Transaction"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 1 LIMIT 1
+  [1m[36mAccount Load (0.2ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "transactions" ("amount", "created_at", "description", "from_account", "to_account", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["amount", nil], ["created_at", Thu, 29 Jan 2015 23:03:28 UTC +00:00], ["description", nil], ["from_account", "1"], ["to_account", "1"], ["updated_at", Thu, 29 Jan 2015 23:03:28 UTC +00:00], ["user_id", 1]]
+  [1m[35m (8.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/transactions/12
+Completed 302 Found in 39.6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/transactions/12" for 127.0.0.1 at 2015-01-29 19:03:28 -0400
+Processing by TransactionsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mTransaction Load (0.3ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 1 AND "transactions"."id" = ? LIMIT 1  [["id", "12"]]
+  [1m[36mTransaction Load (0.2ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = 12 LIMIT 1[0m
+  [1m[35mAccount Load (0.2ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = 12 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = 12 LIMIT 1[0m
+  Rendered transactions/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 23.5ms (Views: 10.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 19:03:29 -0400
+Served asset /application.css - 304 Not Modified (34ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 19:03:29 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 19:03:29 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 19:03:29 -0400
+Served asset /transactions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-29 19:03:29 -0400
+Served asset /accounts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 19:03:29 -0400
+Served asset /application.js - 304 Not Modified (10ms)
+
+
+Started GET "/transactions/12/edit" for 127.0.0.1 at 2015-01-29 19:03:32 -0400
+Processing by TransactionsController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mTransaction Load (0.1ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 1 AND "transactions"."id" = ? LIMIT 1[0m  [["id", "12"]]
+  Rendered transactions/edit.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 48.8ms
+
+ActionView::Template::Error (Missing partial transactions/form, application/form with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee, :haml]}. Searched in:
+  * "/home/saasbook/AccPro/app/views"
+  * "/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/devise-3.4.1/app/views"
+):
+    1: <h1>Editing transaction</h1>
+    2: 
+    3: <%= render 'form' %>
+    4: 
+    5: <%= link_to 'Show', @transaction %> |
+    6: <%= link_to 'Back', transactions_path %>
+  app/views/transactions/edit.html.erb:3:in `_app_views_transactions_edit_html_erb__765181340__620840408'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.7ms)
+
+
+Started POST "/transactions" for 127.0.0.1 at 2015-01-29 19:04:01 -0400
+Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Pw/W7Eu8IrIf7ZSkJKj6ZcJf1Sn7MvHCMmr3dDwqlxw=", "transaction"=>{"from_account"=>"1", "to_account"=>"1", "amount"=>"1000"}, "commit"=>"Create Transaction"}
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAccount Load (0.2ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 1 LIMIT 1
+  [1m[36mAccount Load (0.2ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mUPDATE "accounts" SET "total_amount" = -900, "updated_at" = '2015-01-29 23:04:01.515881' WHERE "accounts"."id" = 1[0m
+  [1m[35m (20.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  UPDATE "accounts" SET "total_amount" = 1100, "updated_at" = '2015-01-29 23:04:01.539130' WHERE "accounts"."id" = 1
+  [1m[36m (6.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "transactions" ("amount", "created_at", "description", "from_account", "to_account", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["amount", 1000], ["created_at", Thu, 29 Jan 2015 23:04:01 UTC +00:00], ["description", nil], ["from_account", "1"], ["to_account", "1"], ["updated_at", Thu, 29 Jan 2015 23:04:01 UTC +00:00], ["user_id", 1]]
+  [1m[35m (4.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/transactions/13
+Completed 302 Found in 62.7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/transactions/13" for 127.0.0.1 at 2015-01-29 19:04:01 -0400
+Processing by TransactionsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mTransaction Load (0.1ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 1 AND "transactions"."id" = ? LIMIT 1  [["id", "13"]]
+  [1m[36mTransaction Load (0.2ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = 13 LIMIT 1[0m
+  [1m[35mAccount Load (0.2ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = 13 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = 13 LIMIT 1[0m
+  Rendered transactions/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 30.1ms (Views: 8.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 19:04:01 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 19:04:01 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 19:04:01 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-29 19:04:01 -0400
+Served asset /accounts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 19:04:01 -0400
+Served asset /transactions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 19:04:01 -0400
+Served asset /application.js - 304 Not Modified (26ms)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2015-01-29 19:04:04 -0400
+Processing by TransactionsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mTransaction Load (0.1ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 1[0m
+  [1m[35mAccount Load (0.3ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 4 LIMIT 1
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 2 LIMIT 1[0m
+  [1m[35mAccount Load (0.3ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 21 LIMIT 1
+  [1m[36mAccount Load (0.2ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 1 LIMIT 1[0m
+  [1m[35mAccount Load (0.1ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 6 LIMIT 1
+  [1m[36mAccount Load (0.2ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 1 LIMIT 1[0m
+  Rendered transactions/index.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 30.0ms (Views: 20.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-29 19:04:04 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-29 19:04:04 -0400
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-29 19:04:04 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-29 19:04:04 -0400
+Served asset /accounts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-29 19:04:04 -0400
+Served asset /transactions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-29 19:04:04 -0400
+Served asset /application.js - 304 Not Modified (1ms)

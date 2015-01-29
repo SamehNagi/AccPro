@@ -31,7 +31,12 @@ module NavigationHelpers
     when /^the edit page for "(.*)"$/
       account=Account.find_by_account_name($1)
       edit_account_path(account)
+  
+    when /^the transactions page$/
+      transactions_path
 
+    when /^the new transaction page$/
+      new_transaction_path
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

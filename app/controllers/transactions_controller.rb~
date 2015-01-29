@@ -12,7 +12,7 @@ class TransactionsController < ApplicationController
       respond_with(@transactions)
     end
   end
-
+  
   def show
     #redirect_to transactions_path
     #flash[:notice] = "Your transaction has been done successfully!"
