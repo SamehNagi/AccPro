@@ -97,12 +97,12 @@ class Account < ActiveRecord::Base
       from_account.update_attribute(:total_amount, (from_initial+amount))   
     end 
     if fromto["to"] == 'add' 
-      to_account.update_attribute(:total_amount, (from_initial+amount))
+      to_account.update_attribute(:total_amount, (to_initial+amount))
     elsif fromto["to"] == 'sub'
       if to_initial == 0
         return "to account: #{to_account.account_name}"
       else
-        to_account.update_attribute(:total_amount, (from_initial-amount)) 
+        to_account.update_attribute(:total_amount, (to_initial-amount)) 
       end
     end 
     return ''

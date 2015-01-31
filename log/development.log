@@ -27485,3 +27485,1375 @@ Served asset /accounts.js - 304 Not Modified (0ms)
 
 Started GET "/assets/background.jpg" for 127.0.0.1 at 2015-01-31 00:03:47 -0400
 Served asset /background.jpg - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-31 13:42:25 -0400
+Processing by AccountsController#index as HTML
+Completed 401 Unauthorized in 36.4ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-01-31 13:42:26 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (2.5ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (93.2ms)
+Completed 200 OK in 514.5ms (Views: 292.6ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-31 13:42:27 -0400
+Served asset /application.css - 304 Not Modified (17ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-31 13:42:27 -0400
+Served asset /application.js - 304 Not Modified (67ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-31 13:42:27 -0400
+Served asset /accounts.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-31 13:42:27 -0400
+Served asset /jquery.js - 304 Not Modified (133ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-31 13:42:27 -0400
+Served asset /transactions.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-31 13:42:27 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (27ms)
+
+
+Started GET "/assets/background.jpg" for 127.0.0.1 at 2015-01-31 13:42:27 -0400
+Served asset /background.jpg - 304 Not Modified (25ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-01-31 13:42:40 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5+lIw0NQWzAosfkQiOByZJ+rpO/pMDFEuJUiLI90/Yw=", "user"=>{"email"=>"nevinemgouda@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'nevinemgouda@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (28.7ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2015-01-29 22:06:16.107528', "current_sign_in_at" = '2015-01-31 17:42:41.031605', "sign_in_count" = 5, "updated_at" = '2015-01-31 17:42:41.068162' WHERE "users"."id" = 1[0m
+  [1m[35m (318.9ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 1053.1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-31 13:42:41 -0400
+Processing by AccountsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAccount Load (0.3ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1[0m
+  Rendered accounts/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 283.0ms (Views: 18.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-31 13:42:42 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-31 13:42:42 -0400
+Served asset /jquery.js - 304 Not Modified (112ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-31 13:42:42 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-31 13:42:42 -0400
+Served asset /transactions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-31 13:42:42 -0400
+Served asset /accounts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-31 13:42:42 -0400
+Served asset /application.js - 304 Not Modified (30ms)
+
+
+Started GET "/assets/background.jpg" for 127.0.0.1 at 2015-01-31 13:42:42 -0400
+Served asset /background.jpg - 304 Not Modified (24ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (10.4ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (312.5ms)[0m  CREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "account_number" varchar(255), "account_name" varchar(255), "account_type" varchar(255), "total_amount" integer, "balance_type" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) 
+  [1m[36m (376.8ms)[0m  [1mCREATE TABLE "transactions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "from_account" varchar(255), "to_account" varchar(255), "amount" integer, "description" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) [0m
+  [1m[35m (362.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (443.4ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (465.6ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (455.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (515.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (7.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (459.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150125150434')
+  [1m[36m (456.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150122105501')[0m
+  [1m[35m (468.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150113214333')
+  [1m[36m (430.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150122110543')[0m
+  [1m[35m (434.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150117193430')
+  [1m[36m (10.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.9ms)[0m  [1mINSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["account_name", "Cash"], ["account_number", 1], ["account_type", "Asset"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:44:07 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:07 UTC +00:00], ["user_id", 1]]
+  [1m[35m (385.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["account_name", "Bank"], ["account_number", 2], ["account_type", "Asset"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:44:08 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:08 UTC +00:00], ["user_id", 1]]
+  [1m[36m (432.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (3.7ms)[0m  [1mINSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["account_name", "Equipment"], ["account_number", 3], ["account_type", "Asset"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:44:08 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:08 UTC +00:00], ["user_id", 1]]
+  [1m[35m (423.1ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.7ms)[0m  INSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["account_name", "loan"], ["account_number", 4], ["account_type", "Liability"], ["balance_type", "Credit"], ["created_at", Sat, 31 Jan 2015 17:44:09 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:09 UTC +00:00], ["user_id", 1]]
+  [1m[36m (422.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (3.5ms)[0m  [1mINSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["account_name", "Any Expenses"], ["account_number", 5], ["account_type", "Expense"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:44:09 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:09 UTC +00:00], ["user_id", 1]]
+  [1m[35m (421.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["account_name", "Capital"], ["account_number", 6], ["account_type", "Equity"], ["balance_type", "Credit"], ["created_at", Sat, 31 Jan 2015 17:44:09 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:09 UTC +00:00], ["user_id", 1]]
+  [1m[36m (476.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.8ms)[0m  [1mINSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["account_name", "Revenue"], ["account_number", 7], ["account_type", "Equity"], ["balance_type", "Credit"], ["created_at", Sat, 31 Jan 2015 17:44:10 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:10 UTC +00:00], ["user_id", 1]]
+  [1m[35m (471.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["account_name", "Office Assets"], ["account_number", 8], ["account_type", "Asset"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:44:10 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:10 UTC +00:00], ["user_id", 2]]
+  [1m[36m (475.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["account_name", "Cash"], ["account_number", 9], ["account_type", "Asset"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:44:11 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:11 UTC +00:00], ["user_id", 2]]
+  [1m[35m (442.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["account_name", "Bank Deposit"], ["account_number", 10], ["account_type", "Asset"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:44:11 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:11 UTC +00:00], ["user_id", 2]]
+  [1m[36m (441.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["account_name", "Equipment"], ["account_number", 11], ["account_type", "Asset"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:44:12 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:12 UTC +00:00], ["user_id", 2]]
+  [1m[35m (454.9ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.9ms)[0m  INSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["account_name", "Car"], ["account_number", 12], ["account_type", "Asset"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:44:12 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:12 UTC +00:00], ["user_id", 2]]
+  [1m[36m (443.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (3.6ms)[0m  [1mINSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["account_name", "Mshareeb"], ["account_number", 13], ["account_type", "Expense"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:44:13 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:13 UTC +00:00], ["user_id", 2]]
+  [1m[35m (469.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["account_name", "Deyoon"], ["account_number", 14], ["account_type", "Liability"], ["balance_type", "Credit"], ["created_at", Sat, 31 Jan 2015 17:44:13 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:13 UTC +00:00], ["user_id", 2]]
+  [1m[36m (487.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (6.5ms)[0m  [1mINSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["account_name", "Receivable accounts"], ["account_number", 15], ["account_type", "Asset"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:44:14 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:14 UTC +00:00], ["user_id", 2]]
+  [1m[35m (506.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  INSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["account_name", "Payable accounts"], ["account_number", 16], ["account_type", "Liability"], ["balance_type", "Credit"], ["created_at", Sat, 31 Jan 2015 17:44:14 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:14 UTC +00:00], ["user_id", 2]]
+  [1m[36m (493.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["account_name", "Salaries"], ["account_number", 17], ["account_type", "Expense"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:44:15 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:15 UTC +00:00], ["user_id", 2]]
+  [1m[35m (552.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["account_name", "New partner's share"], ["account_number", 18], ["account_type", "Equity"], ["balance_type", "Credit"], ["created_at", Sat, 31 Jan 2015 17:44:15 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:15 UTC +00:00], ["user_id", 2]]
+  [1m[36m (475.6ms)[0m  [1mcommit transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (4.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (14.0ms)[0m  [1mINSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["account_name", "Cash"], ["account_number", 1], ["account_type", "Asset"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:44:32 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:32 UTC +00:00], ["user_id", 1]]
+  [1m[35m (431.7ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["account_name", "Bank"], ["account_number", 2], ["account_type", "Asset"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:44:33 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:33 UTC +00:00], ["user_id", 1]]
+  [1m[36m (464.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["account_name", "Equipment"], ["account_number", 3], ["account_type", "Asset"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:44:33 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:33 UTC +00:00], ["user_id", 1]]
+  [1m[35m (431.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["account_name", "loan"], ["account_number", 4], ["account_type", "Liability"], ["balance_type", "Credit"], ["created_at", Sat, 31 Jan 2015 17:44:34 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:34 UTC +00:00], ["user_id", 1]]
+  [1m[36m (451.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["account_name", "Any Expenses"], ["account_number", 5], ["account_type", "Expense"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:44:34 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:34 UTC +00:00], ["user_id", 1]]
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2015-01-31 13:44:34 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"LiQW8ncw2IHmzO69vyWDLNdFkh37472ycxaFHPiaVm4="}
+  [1m[35m (433.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["account_name", "Capital"], ["account_number", 6], ["account_type", "Equity"], ["balance_type", "Credit"], ["created_at", Sat, 31 Jan 2015 17:44:35 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:35 UTC +00:00], ["user_id", 1]]
+  [1m[35mUser Load (409.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+SQLite3::CorruptException: malformed database schema (11) - near "0": syntax error: SELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1
+Completed 500 Internal Server Error in 413.1ms
+
+ActiveRecord::StatementInvalid (SQLite3::CorruptException: malformed database schema (11) - near "0": syntax error: SELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1):
+  sqlite3 (1.3.10) lib/sqlite3/statement.rb:108:in `step'
+  sqlite3 (1.3.10) lib/sqlite3/statement.rb:108:in `block in each'
+  sqlite3 (1.3.10) lib/sqlite3/statement.rb:107:in `loop'
+  sqlite3 (1.3.10) lib/sqlite3/statement.rb:107:in `each'
+  activerecord (3.2.18) lib/active_record/connection_adapters/sqlite_adapter.rb:248:in `to_a'
+  activerecord (3.2.18) lib/active_record/connection_adapters/sqlite_adapter.rb:248:in `block in exec_query'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract_adapter.rb:280:in `block in log'
+  activesupport (3.2.18) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract_adapter.rb:275:in `log'
+  activerecord (3.2.18) lib/active_record/connection_adapters/sqlite_adapter.rb:242:in `exec_query'
+  activerecord (3.2.18) lib/active_record/connection_adapters/sqlite_adapter.rb:467:in `select'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract/database_statements.rb:18:in `select_all'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract/query_cache.rb:61:in `block in select_all'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract/query_cache.rb:75:in `cache_sql'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract/query_cache.rb:61:in `select_all'
+  activerecord (3.2.18) lib/active_record/querying.rb:38:in `block in find_by_sql'
+  activerecord (3.2.18) lib/active_record/explain.rb:41:in `logging_query_plan'
+  activerecord (3.2.18) lib/active_record/querying.rb:37:in `find_by_sql'
+  activerecord (3.2.18) lib/active_record/relation.rb:171:in `exec_queries'
+  activerecord (3.2.18) lib/active_record/relation.rb:160:in `block in to_a'
+  activerecord (3.2.18) lib/active_record/explain.rb:34:in `logging_query_plan'
+  activerecord (3.2.18) lib/active_record/relation.rb:159:in `to_a'
+  activerecord (3.2.18) lib/active_record/relation/finder_methods.rb:381:in `find_first'
+  activerecord (3.2.18) lib/active_record/relation/finder_methods.rb:122:in `first'
+  orm_adapter (0.5.0) lib/orm_adapter/adapters/active_record.rb:17:in `get'
+  devise (3.4.1) lib/devise/models/authenticatable.rb:214:in `serialize_from_session'
+  devise (3.4.1) lib/devise.rb:467:in `block (2 levels) in configure_warden!'
+  warden (1.2.3) lib/warden/session_serializer.rb:34:in `fetch'
+  warden (1.2.3) lib/warden/proxy.rb:212:in `user'
+  devise (3.4.1) app/controllers/devise/sessions_controller.rb:63:in `block in all_signed_out?'
+  devise (3.4.1) app/controllers/devise/sessions_controller.rb:63:in `map'
+  devise (3.4.1) app/controllers/devise/sessions_controller.rb:63:in `all_signed_out?'
+  devise (3.4.1) app/controllers/devise/sessions_controller.rb:55:in `verify_signed_out_user'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:418:in `_run__229703002__process_action__750597263__callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.18) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.18) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.18) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.18) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.18) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.18) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.18) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  actionpack (3.2.18) lib/action_dispatch/routing/mapper.rb:43:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:35:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.18) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `_run__232115232__call__338531284__callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.18) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.18) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.18) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.18) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.18) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.18) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.18) lib/rails/engine.rb:484:in `call'
+  railties (3.2.18) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.18) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (10.6ms)
+  [1m[36m (473.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (69.8ms)
+  [1m[36mSQL (6.5ms)[0m  [1mINSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["account_name", "Revenue"], ["account_number", 7], ["account_type", "Equity"], ["balance_type", "Credit"], ["created_at", Sat, 31 Jan 2015 17:44:35 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:35 UTC +00:00], ["user_id", 1]]
+  [1m[35m (512.4ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["account_name", "Office Assets"], ["account_number", 8], ["account_type", "Asset"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:44:36 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:36 UTC +00:00], ["user_id", 2]]
+  [1m[36m (408.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["account_name", "Cash"], ["account_number", 9], ["account_type", "Asset"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:44:36 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:36 UTC +00:00], ["user_id", 2]]
+  [1m[35m (453.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["account_name", "Bank Deposit"], ["account_number", 10], ["account_type", "Asset"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:44:36 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:36 UTC +00:00], ["user_id", 2]]
+  [1m[36m (453.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.2ms)[0m  [1mINSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["account_name", "Equipment"], ["account_number", 11], ["account_type", "Asset"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:44:37 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:37 UTC +00:00], ["user_id", 2]]
+  [1m[35m (448.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["account_name", "Car"], ["account_number", 12], ["account_type", "Asset"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:44:37 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:37 UTC +00:00], ["user_id", 2]]
+  [1m[36m (463.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["account_name", "Mshareeb"], ["account_number", 13], ["account_type", "Expense"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:44:38 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:38 UTC +00:00], ["user_id", 2]]
+  [1m[35m (409.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["account_name", "Deyoon"], ["account_number", 14], ["account_type", "Liability"], ["balance_type", "Credit"], ["created_at", Sat, 31 Jan 2015 17:44:38 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:38 UTC +00:00], ["user_id", 2]]
+  [1m[36m (567.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (8.7ms)[0m  begin transaction
+  [1m[36mSQL (13.3ms)[0m  [1mINSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["account_name", "Receivable accounts"], ["account_number", 15], ["account_type", "Asset"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:44:39 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:39 UTC +00:00], ["user_id", 2]]
+  [1m[35m (405.3ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (15.0ms)[0m  INSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["account_name", "Payable accounts"], ["account_number", 16], ["account_type", "Liability"], ["balance_type", "Credit"], ["created_at", Sat, 31 Jan 2015 17:44:39 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:39 UTC +00:00], ["user_id", 2]]
+  [1m[36m (392.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["account_name", "Salaries"], ["account_number", 17], ["account_type", "Expense"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:44:40 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:40 UTC +00:00], ["user_id", 2]]
+  [1m[35m (475.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["account_name", "New partner's share"], ["account_number", 18], ["account_type", "Equity"], ["balance_type", "Credit"], ["created_at", Sat, 31 Jan 2015 17:44:40 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:44:40 UTC +00:00], ["user_id", 2]]
+  [1m[36m (510.6ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-31 13:44:45 -0400
+Processing by AccountsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+SQLite3::CorruptException: malformed database schema (11) - near "0": syntax error: SELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1
+Completed 500 Internal Server Error in 2.1ms
+
+ActiveRecord::StatementInvalid (SQLite3::CorruptException: malformed database schema (11) - near "0": syntax error: SELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1):
+  sqlite3 (1.3.10) lib/sqlite3/database.rb:91:in `initialize'
+  sqlite3 (1.3.10) lib/sqlite3/database.rb:91:in `new'
+  sqlite3 (1.3.10) lib/sqlite3/database.rb:91:in `prepare'
+  activerecord (3.2.18) lib/active_record/connection_adapters/sqlite_adapter.rb:246:in `block in exec_query'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract_adapter.rb:280:in `block in log'
+  activesupport (3.2.18) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract_adapter.rb:275:in `log'
+  activerecord (3.2.18) lib/active_record/connection_adapters/sqlite_adapter.rb:242:in `exec_query'
+  activerecord (3.2.18) lib/active_record/connection_adapters/sqlite_adapter.rb:467:in `select'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract/database_statements.rb:18:in `select_all'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract/query_cache.rb:61:in `block in select_all'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract/query_cache.rb:75:in `cache_sql'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract/query_cache.rb:61:in `select_all'
+  activerecord (3.2.18) lib/active_record/querying.rb:38:in `block in find_by_sql'
+  activerecord (3.2.18) lib/active_record/explain.rb:41:in `logging_query_plan'
+  activerecord (3.2.18) lib/active_record/querying.rb:37:in `find_by_sql'
+  activerecord (3.2.18) lib/active_record/relation.rb:171:in `exec_queries'
+  activerecord (3.2.18) lib/active_record/relation.rb:160:in `block in to_a'
+  activerecord (3.2.18) lib/active_record/explain.rb:34:in `logging_query_plan'
+  activerecord (3.2.18) lib/active_record/relation.rb:159:in `to_a'
+  activerecord (3.2.18) lib/active_record/relation/finder_methods.rb:381:in `find_first'
+  activerecord (3.2.18) lib/active_record/relation/finder_methods.rb:122:in `first'
+  orm_adapter (0.5.0) lib/orm_adapter/adapters/active_record.rb:17:in `get'
+  devise (3.4.1) lib/devise/models/authenticatable.rb:214:in `serialize_from_session'
+  devise (3.4.1) lib/devise.rb:467:in `block (2 levels) in configure_warden!'
+  warden (1.2.3) lib/warden/session_serializer.rb:34:in `fetch'
+  warden (1.2.3) lib/warden/proxy.rb:212:in `user'
+  warden (1.2.3) lib/warden/proxy.rb:318:in `_perform_authentication'
+  warden (1.2.3) lib/warden/proxy.rb:127:in `authenticate!'
+  devise (3.4.1) lib/devise/controllers/helpers.rb:112:in `authenticate_user!'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:418:in `_run__758374006__process_action__158217836__callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.18) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.18) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.18) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.18) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.18) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.18) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.18) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.18) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `_run__232115232__call__338531284__callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.18) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.18) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.18) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.18) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.18) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.18) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.18) lib/rails/engine.rb:484:in `call'
+  railties (3.2.18) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.18) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.5ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.3ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-31 13:44:55 -0400
+Processing by AccountsController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+SQLite3::CorruptException: malformed database schema (11) - near "0": syntax error: SELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1
+Completed 500 Internal Server Error in 6.8ms
+
+ActiveRecord::StatementInvalid (SQLite3::CorruptException: malformed database schema (11) - near "0": syntax error: SELECT  "users".* FROM "users"  WHERE "users"."id" = 1 LIMIT 1):
+  sqlite3 (1.3.10) lib/sqlite3/database.rb:91:in `initialize'
+  sqlite3 (1.3.10) lib/sqlite3/database.rb:91:in `new'
+  sqlite3 (1.3.10) lib/sqlite3/database.rb:91:in `prepare'
+  activerecord (3.2.18) lib/active_record/connection_adapters/sqlite_adapter.rb:246:in `block in exec_query'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract_adapter.rb:280:in `block in log'
+  activesupport (3.2.18) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract_adapter.rb:275:in `log'
+  activerecord (3.2.18) lib/active_record/connection_adapters/sqlite_adapter.rb:242:in `exec_query'
+  activerecord (3.2.18) lib/active_record/connection_adapters/sqlite_adapter.rb:467:in `select'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract/database_statements.rb:18:in `select_all'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract/query_cache.rb:61:in `block in select_all'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract/query_cache.rb:75:in `cache_sql'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract/query_cache.rb:61:in `select_all'
+  activerecord (3.2.18) lib/active_record/querying.rb:38:in `block in find_by_sql'
+  activerecord (3.2.18) lib/active_record/explain.rb:41:in `logging_query_plan'
+  activerecord (3.2.18) lib/active_record/querying.rb:37:in `find_by_sql'
+  activerecord (3.2.18) lib/active_record/relation.rb:171:in `exec_queries'
+  activerecord (3.2.18) lib/active_record/relation.rb:160:in `block in to_a'
+  activerecord (3.2.18) lib/active_record/explain.rb:34:in `logging_query_plan'
+  activerecord (3.2.18) lib/active_record/relation.rb:159:in `to_a'
+  activerecord (3.2.18) lib/active_record/relation/finder_methods.rb:381:in `find_first'
+  activerecord (3.2.18) lib/active_record/relation/finder_methods.rb:122:in `first'
+  orm_adapter (0.5.0) lib/orm_adapter/adapters/active_record.rb:17:in `get'
+  devise (3.4.1) lib/devise/models/authenticatable.rb:214:in `serialize_from_session'
+  devise (3.4.1) lib/devise.rb:467:in `block (2 levels) in configure_warden!'
+  warden (1.2.3) lib/warden/session_serializer.rb:34:in `fetch'
+  warden (1.2.3) lib/warden/proxy.rb:212:in `user'
+  warden (1.2.3) lib/warden/proxy.rb:318:in `_perform_authentication'
+  warden (1.2.3) lib/warden/proxy.rb:127:in `authenticate!'
+  devise (3.4.1) lib/devise/controllers/helpers.rb:112:in `authenticate_user!'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:418:in `_run__758374006__process_action__158217836__callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.18) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.18) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.18) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.18) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.18) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.18) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.18) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.18) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.18) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.18) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.18) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.18) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.18) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.18) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `_run__232115232__call__338531284__callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.18) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.18) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.18) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.18) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.18) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.18) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.18) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.18) lib/rails/engine.rb:484:in `call'
+  railties (3.2.18) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.18) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /home/saasbook/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (12.9ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.8ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (67.5ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (403.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (578.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (24.6ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateTransactions (20150113214333)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "transactions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "from_account" varchar(255), "to_account" varchar(255), "amount" integer, "description" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20150113214333')[0m
+  [1m[35m (438.7ms)[0m  commit transaction
+Migrating to CreateAccounts (20150117193430)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (5.8ms)[0m  CREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "account_number" varchar(255), "account_name" varchar(255), "account_type" varchar(255), "total_amount" integer, "balance_type" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20150117193430')[0m
+  [1m[35m (444.3ms)[0m  commit transaction
+Migrating to DeviseCreateUsers (20150122105501)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (6.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (22.1ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.3ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20150122105501')[0m
+  [1m[35m (430.3ms)[0m  commit transaction
+Migrating to AddUserToAccount (20150122110543)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  ALTER TABLE "accounts" ADD "user_id" integer
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20150122110543')[0m
+  [1m[35m (473.0ms)[0m  commit transaction
+Migrating to AddUserIdToTransactions (20150125150434)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "transactions" ADD "user_id" integer
+  [1m[36m (5.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20150125150434')[0m
+  [1m[35m (444.6ms)[0m  commit transaction
+  [1m[36m (0.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (4.9ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (441.4ms)[0m  [1mCREATE TABLE "accounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "account_number" varchar(255), "account_name" varchar(255), "account_type" varchar(255), "total_amount" integer, "balance_type" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) [0m
+  [1m[35m (450.2ms)[0m  CREATE TABLE "transactions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "from_account" varchar(255), "to_account" varchar(255), "amount" integer, "description" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) 
+  [1m[36m (424.0ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (475.7ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (464.6ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (414.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (455.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.9ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (510.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150125150434')[0m
+  [1m[35m (504.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150122105501')
+  [1m[36m (483.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150113214333')[0m
+  [1m[35m (477.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150122110543')
+  [1m[36m (478.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150117193430')[0m
+Connecting to database specified by database.yml
+  [1m[36m (5.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (9.8ms)[0m  [1mINSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["account_name", "Cash"], ["account_number", 1], ["account_type", "Asset"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:47:58 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:47:58 UTC +00:00], ["user_id", 1]]
+  [1m[35m (407.1ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  INSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["account_name", "Bank"], ["account_number", 2], ["account_type", "Asset"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:47:58 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:47:58 UTC +00:00], ["user_id", 1]]
+  [1m[36m (448.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["account_name", "Equipment"], ["account_number", 3], ["account_type", "Asset"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:47:59 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:47:59 UTC +00:00], ["user_id", 1]]
+  [1m[35m (474.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["account_name", "loan"], ["account_number", 4], ["account_type", "Liability"], ["balance_type", "Credit"], ["created_at", Sat, 31 Jan 2015 17:47:59 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:47:59 UTC +00:00], ["user_id", 1]]
+  [1m[36m (466.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (3.4ms)[0m  [1mINSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["account_name", "Any Expenses"], ["account_number", 5], ["account_type", "Expense"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:48:00 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:48:00 UTC +00:00], ["user_id", 1]]
+  [1m[35m (454.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["account_name", "Capital"], ["account_number", 6], ["account_type", "Equity"], ["balance_type", "Credit"], ["created_at", Sat, 31 Jan 2015 17:48:00 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:48:00 UTC +00:00], ["user_id", 1]]
+  [1m[36m (475.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["account_name", "Revenue"], ["account_number", 7], ["account_type", "Equity"], ["balance_type", "Credit"], ["created_at", Sat, 31 Jan 2015 17:48:01 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:48:01 UTC +00:00], ["user_id", 1]]
+  [1m[35m (462.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["account_name", "Office Assets"], ["account_number", 8], ["account_type", "Asset"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:48:01 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:48:01 UTC +00:00], ["user_id", 2]]
+  [1m[36m (455.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (1.5ms)[0m  begin transaction
+  [1m[36mSQL (2.3ms)[0m  [1mINSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["account_name", "Cash"], ["account_number", 9], ["account_type", "Asset"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:48:02 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:48:02 UTC +00:00], ["user_id", 2]]
+  [1m[35m (546.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["account_name", "Bank Deposit"], ["account_number", 10], ["account_type", "Asset"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:48:02 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:48:02 UTC +00:00], ["user_id", 2]]
+  [1m[36m (489.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.9ms)[0m  begin transaction
+  [1m[36mSQL (2.7ms)[0m  [1mINSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["account_name", "Equipment"], ["account_number", 11], ["account_type", "Asset"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:48:03 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:48:03 UTC +00:00], ["user_id", 2]]
+  [1m[35m (444.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["account_name", "Car"], ["account_number", 12], ["account_type", "Asset"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:48:03 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:48:03 UTC +00:00], ["user_id", 2]]
+  [1m[36m (531.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["account_name", "Mshareeb"], ["account_number", 13], ["account_type", "Expense"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:48:04 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:48:04 UTC +00:00], ["user_id", 2]]
+  [1m[35m (479.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["account_name", "Deyoon"], ["account_number", 14], ["account_type", "Liability"], ["balance_type", "Credit"], ["created_at", Sat, 31 Jan 2015 17:48:04 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:48:04 UTC +00:00], ["user_id", 2]]
+  [1m[36m (508.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["account_name", "Receivable accounts"], ["account_number", 15], ["account_type", "Asset"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:48:05 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:48:05 UTC +00:00], ["user_id", 2]]
+  [1m[35m (519.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["account_name", "Payable accounts"], ["account_number", 16], ["account_type", "Liability"], ["balance_type", "Credit"], ["created_at", Sat, 31 Jan 2015 17:48:05 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:48:05 UTC +00:00], ["user_id", 2]]
+  [1m[36m (451.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["account_name", "Salaries"], ["account_number", 17], ["account_type", "Expense"], ["balance_type", "Debit"], ["created_at", Sat, 31 Jan 2015 17:48:06 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:48:06 UTC +00:00], ["user_id", 2]]
+  [1m[35m (434.9ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (17.8ms)[0m  INSERT INTO "accounts" ("account_name", "account_number", "account_type", "balance_type", "created_at", "total_amount", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["account_name", "New partner's share"], ["account_number", 18], ["account_type", "Equity"], ["balance_type", "Credit"], ["created_at", Sat, 31 Jan 2015 17:48:06 UTC +00:00], ["total_amount", 0], ["updated_at", Sat, 31 Jan 2015 17:48:06 UTC +00:00], ["user_id", 2]]
+  [1m[36m (517.5ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-31 13:48:26 -0400
+Processing by AccountsController#index as HTML
+Completed 401 Unauthorized in 55.1ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-01-31 13:48:26 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.5ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 81.1ms (Views: 38.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-31 13:48:26 -0400
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-31 13:48:27 -0400
+Served asset /transactions.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-31 13:48:27 -0400
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-31 13:48:27 -0400
+Served asset /accounts.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-31 13:48:27 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-31 13:48:27 -0400
+Served asset /application.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/background.jpg" for 127.0.0.1 at 2015-01-31 13:48:27 -0400
+Served asset /background.jpg - 304 Not Modified (17ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2015-01-31 13:48:41 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.6ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 42.6ms (Views: 41.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-31 13:48:41 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-31 13:48:41 -0400
+Served asset /jquery.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-31 13:48:41 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-31 13:48:41 -0400
+Served asset /application.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-31 13:48:41 -0400
+Served asset /transactions.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-31 13:48:41 -0400
+Served asset /accounts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/background.jpg" for 127.0.0.1 at 2015-01-31 13:48:41 -0400
+Served asset /background.jpg - 304 Not Modified (12ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-01-31 13:48:51 -0400
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0H9wzwH1rXHqvYfajRnmVjxzJjB6Oat1CS/ZdmOSpAA=", "user"=>{"email"=>"nevinemgouda@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'nevinemgouda@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (2.7ms)[0m  [1mINSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 31 Jan 2015 17:48:51 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "nevinemgouda@gmail.com"], ["encrypted_password", "$2a$10$o1oicG9ThiXqSBSbwg33VeIZbUAaD1McvuuUz6tyTNl596jRduiY."], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Sat, 31 Jan 2015 17:48:51 UTC +00:00]]
+  [1m[35m (423.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2015-01-31 17:48:51.906482', "current_sign_in_at" = '2015-01-31 17:48:51.906482', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2015-01-31 17:48:51.907739' WHERE "users"."id" = 1
+  [1m[36m (473.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 1332.4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-31 13:48:52 -0400
+Processing by AccountsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAccount Load (0.3ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1
+  Rendered accounts/index.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 47.2ms (Views: 24.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-31 13:48:52 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-31 13:48:52 -0400
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-31 13:48:52 -0400
+Served asset /accounts.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-31 13:48:52 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-31 13:48:52 -0400
+Served asset /application.js - 304 Not Modified (21ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-31 13:48:52 -0400
+Served asset /transactions.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/background.jpg" for 127.0.0.1 at 2015-01-31 13:48:52 -0400
+Served asset /background.jpg - 304 Not Modified (13ms)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2015-01-31 13:48:57 -0400
+Processing by TransactionsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mTransaction Load (0.2ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 1
+Redirected to http://0.0.0.0:3000/transactions/new
+Completed 302 Found in 50.1ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/transactions/new" for 127.0.0.1 at 2015-01-31 13:48:57 -0400
+Processing by TransactionsController#new as HTML
+  [1m[36mUser Load (4.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAccount Load (0.3ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "accounts" WHERE "accounts"."user_id" = 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "transactions" 
+  Rendered transactions/new.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 54.4ms (Views: 35.2ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-31 13:48:57 -0400
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-31 13:48:57 -0400
+Served asset /accounts.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-31 13:48:57 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-31 13:48:57 -0400
+Served asset /jquery.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-31 13:48:57 -0400
+Served asset /transactions.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-31 13:48:57 -0400
+Served asset /application.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/background.jpg" for 127.0.0.1 at 2015-01-31 13:48:57 -0400
+Served asset /background.jpg - 304 Not Modified (15ms)
+
+
+Started POST "/transactions" for 127.0.0.1 at 2015-01-31 13:49:47 -0400
+Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0H9wzwH1rXHqvYfajRnmVjxzJjB6Oat1CS/ZdmOSpAA=", "transaction"=>{"from_account"=>"1", "to_account"=>"4", "amount"=>"100"}, "commit"=>"Create Transaction"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAccount Load (0.2ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 1 LIMIT 1
+  [1m[36mAccount Load (5.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mAccount Load (0.2ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1
+Redirected to http://0.0.0.0:3000/transactions/new
+Completed 302 Found in 23.7ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/transactions/new" for 127.0.0.1 at 2015-01-31 13:49:47 -0400
+Processing by TransactionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAccount Load (0.2ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "accounts" WHERE "accounts"."user_id" = 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "transactions" 
+  Rendered transactions/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 30.5ms (Views: 25.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-31 13:49:47 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-31 13:49:48 -0400
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-31 13:49:48 -0400
+Served asset /accounts.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-31 13:49:48 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-31 13:49:48 -0400
+Served asset /transactions.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-31 13:49:48 -0400
+Served asset /application.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/background.jpg" for 127.0.0.1 at 2015-01-31 13:49:48 -0400
+Served asset /background.jpg - 304 Not Modified (23ms)
+
+
+Started POST "/transactions" for 127.0.0.1 at 2015-01-31 13:50:21 -0400
+Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0H9wzwH1rXHqvYfajRnmVjxzJjB6Oat1CS/ZdmOSpAA=", "transaction"=>{"from_account"=>"4", "to_account"=>"1", "amount"=>"1000"}, "commit"=>"Create Transaction"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAccount Load (0.2ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 4 LIMIT 1
+  [1m[36mAccount Load (0.4ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 1 LIMIT 1[0m
+  [1m[35mAccount Load (0.3ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (3.6ms)[0m  UPDATE "accounts" SET "total_amount" = 1000, "updated_at" = '2015-01-31 17:50:21.390450' WHERE "accounts"."id" = 4
+  [1m[36m (762.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (7.5ms)[0m  [1mUPDATE "accounts" SET "total_amount" = 1000, "updated_at" = '2015-01-31 17:50:22.171713' WHERE "accounts"."id" = 1[0m
+  [1m[35m (452.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (5.9ms)[0m  INSERT INTO "transactions" ("amount", "created_at", "description", "from_account", "to_account", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)  [["amount", 1000], ["created_at", Sat, 31 Jan 2015 17:50:22 UTC +00:00], ["description", nil], ["from_account", "4"], ["to_account", "1"], ["updated_at", Sat, 31 Jan 2015 17:50:22 UTC +00:00], ["user_id", 1]]
+  [1m[36m (448.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/transactions/1
+Completed 302 Found in 1739.1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/transactions/1" for 127.0.0.1 at 2015-01-31 13:50:23 -0400
+Processing by TransactionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mTransaction Load (0.4ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 1 AND "transactions"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mTransaction Load (0.2ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = 1 LIMIT 1
+  [1m[36mAccount Load (0.2ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = 1 LIMIT 1
+  [1m[36mAccount Load (0.2ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = 1 LIMIT 1
+  Rendered transactions/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 26.5ms (Views: 12.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-31 13:50:23 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-31 13:50:23 -0400
+Served asset /jquery.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-31 13:50:23 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-31 13:50:23 -0400
+Served asset /transactions.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-31 13:50:23 -0400
+Served asset /accounts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-31 13:50:23 -0400
+Served asset /application.js - 304 Not Modified (18ms)
+
+
+Started GET "/assets/background.jpg" for 127.0.0.1 at 2015-01-31 13:50:23 -0400
+Served asset /background.jpg - 304 Not Modified (21ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2015-01-31 13:50:31 -0400
+Processing by AccountsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAccount Load (0.2ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1
+  [1m[36mCACHE (0.2ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1[0m
+  Rendered accounts/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 32.8ms (Views: 21.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-31 13:50:31 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-31 13:50:31 -0400
+Served asset /jquery.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-31 13:50:31 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-31 13:50:31 -0400
+Served asset /application.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-31 13:50:31 -0400
+Served asset /transactions.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-31 13:50:31 -0400
+Served asset /accounts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/background.jpg" for 127.0.0.1 at 2015-01-31 13:50:31 -0400
+Served asset /background.jpg - 304 Not Modified (21ms)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2015-01-31 13:50:35 -0400
+Processing by TransactionsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mTransaction Load (0.2ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 1[0m
+  [1m[35mAccount Load (0.6ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 4 LIMIT 1
+  [1m[36mAccount Load (0.2ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 1 LIMIT 1[0m
+  Rendered transactions/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 77.3ms (Views: 73.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-31 13:50:35 -0400
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-31 13:50:35 -0400
+Served asset /accounts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-31 13:50:35 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-31 13:50:35 -0400
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-31 13:50:35 -0400
+Served asset /application.js - 304 Not Modified (22ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-31 13:50:35 -0400
+Served asset /transactions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/background.jpg" for 127.0.0.1 at 2015-01-31 13:50:36 -0400
+Served asset /background.jpg - 304 Not Modified (18ms)
+
+
+Started GET "/transactions/new" for 127.0.0.1 at 2015-01-31 13:50:37 -0400
+Processing by TransactionsController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAccount Load (0.2ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1[0m
+  [1m[35m (6.4ms)[0m  SELECT COUNT(*) FROM "accounts" WHERE "accounts"."user_id" = 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "transactions" [0m
+  [1m[35mTransaction Load (0.2ms)[0m  SELECT "transactions".* FROM "transactions" 
+  Rendered transactions/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 34.9ms (Views: 21.9ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-31 13:50:38 -0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-31 13:50:38 -0400
+Served asset /accounts.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-31 13:50:38 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-31 13:50:38 -0400
+Served asset /jquery.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-31 13:50:38 -0400
+Served asset /transactions.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-31 13:50:38 -0400
+Served asset /application.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/background.jpg" for 127.0.0.1 at 2015-01-31 13:50:38 -0400
+Served asset /background.jpg - 304 Not Modified (18ms)
+
+
+Started POST "/transactions" for 127.0.0.1 at 2015-01-31 13:50:51 -0400
+Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0H9wzwH1rXHqvYfajRnmVjxzJjB6Oat1CS/ZdmOSpAA=", "transaction"=>{"from_account"=>"1", "to_account"=>"3", "amount"=>"10"}, "commit"=>"Create Transaction"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAccount Load (0.4ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 1 LIMIT 1
+  [1m[36mAccount Load (0.2ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 3 LIMIT 1[0m
+  [1m[35mAccount Load (0.2ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  UPDATE "accounts" SET "total_amount" = 990, "updated_at" = '2015-01-31 17:50:51.194730' WHERE "accounts"."id" = 1
+  [1m[36m (802.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (2.5ms)[0m  [1mUPDATE "accounts" SET "total_amount" = 1010, "updated_at" = '2015-01-31 17:50:52.013412' WHERE "accounts"."id" = 3[0m
+  [1m[35m (451.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (5.3ms)[0m  INSERT INTO "transactions" ("amount", "created_at", "description", "from_account", "to_account", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)  [["amount", 10], ["created_at", Sat, 31 Jan 2015 17:50:52 UTC +00:00], ["description", nil], ["from_account", "1"], ["to_account", "3"], ["updated_at", Sat, 31 Jan 2015 17:50:52 UTC +00:00], ["user_id", 1]]
+  [1m[36m (528.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/transactions/2
+Completed 302 Found in 1830.8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/transactions/2" for 127.0.0.1 at 2015-01-31 13:50:53 -0400
+Processing by TransactionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mTransaction Load (3.5ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 1 AND "transactions"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mTransaction Load (0.2ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = 2 LIMIT 1
+  [1m[36mAccount Load (0.2ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = 2 LIMIT 1
+  [1m[36mAccount Load (0.2ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.3ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = 2 LIMIT 1
+  Rendered transactions/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 30.9ms (Views: 20.4ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-31 13:50:53 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-31 13:50:53 -0400
+Served asset /jquery.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-31 13:50:53 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (22ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-31 13:50:53 -0400
+Served asset /accounts.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-31 13:50:53 -0400
+Served asset /application.js - 304 Not Modified (18ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-31 13:50:53 -0400
+Served asset /transactions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/background.jpg" for 127.0.0.1 at 2015-01-31 13:50:53 -0400
+Served asset /background.jpg - 304 Not Modified (22ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2015-01-31 13:50:55 -0400
+Processing by AccountsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAccount Load (0.4ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1[0m
+  Rendered accounts/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 35.4ms (Views: 28.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-31 13:50:55 -0400
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-31 13:50:55 -0400
+Served asset /jquery.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-31 13:50:55 -0400
+Served asset /accounts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-31 13:50:55 -0400
+Served asset /transactions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-31 13:50:55 -0400
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-31 13:50:55 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/background.jpg" for 127.0.0.1 at 2015-01-31 13:50:56 -0400
+Served asset /background.jpg - 304 Not Modified (13ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/accounts" for 127.0.0.1 at 2015-01-31 13:58:43 -0400
+Processing by AccountsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAccount Load (0.4ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1
+  Rendered accounts/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 103.2ms (Views: 18.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-31 13:58:43 -0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-31 13:58:43 -0400
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-31 13:58:43 -0400
+Served asset /accounts.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-31 13:58:43 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-31 13:58:43 -0400
+Served asset /transactions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-31 13:58:43 -0400
+Served asset /application.js - 304 Not Modified (17ms)
+
+
+Started GET "/assets/background.jpg" for 127.0.0.1 at 2015-01-31 13:58:43 -0400
+Served asset /background.jpg - 304 Not Modified (19ms)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2015-01-31 13:58:46 -0400
+Processing by TransactionsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mTransaction Load (0.2ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 1
+  [1m[36mAccount Load (0.2ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 4 LIMIT 1[0m
+  [1m[35mAccount Load (0.3ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 1 LIMIT 1[0m
+  [1m[35mAccount Load (0.6ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 3 LIMIT 1
+  Rendered transactions/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 34.4ms (Views: 16.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-31 13:58:47 -0400
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-31 13:58:47 -0400
+Served asset /accounts.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-31 13:58:47 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-31 13:58:47 -0400
+Served asset /jquery.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-31 13:58:47 -0400
+Served asset /transactions.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-31 13:58:47 -0400
+Served asset /application.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/background.jpg" for 127.0.0.1 at 2015-01-31 13:58:47 -0400
+Served asset /background.jpg - 304 Not Modified (18ms)
+
+
+Started GET "/transactions/new" for 127.0.0.1 at 2015-01-31 13:58:49 -0400
+Processing by TransactionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mAccount Load (0.3ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1
+  [1m[36m (3.3ms)[0m  [1mSELECT COUNT(*) FROM "accounts" WHERE "accounts"."user_id" = 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "transactions" 
+  [1m[36mTransaction Load (0.2ms)[0m  [1mSELECT "transactions".* FROM "transactions" [0m
+  Rendered transactions/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 85.1ms (Views: 68.3ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-31 13:58:50 -0400
+Served asset /application.css - 304 Not Modified (14ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-31 13:58:50 -0400
+Served asset /jquery.js - 304 Not Modified (28ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-31 13:58:50 -0400
+Served asset /accounts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-31 13:58:50 -0400
+Served asset /application.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-31 13:58:50 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-31 13:58:50 -0400
+Served asset /transactions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/background.jpg" for 127.0.0.1 at 2015-01-31 13:58:50 -0400
+Served asset /background.jpg - 304 Not Modified (23ms)
+
+
+Started POST "/transactions" for 127.0.0.1 at 2015-01-31 13:58:57 -0400
+Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0H9wzwH1rXHqvYfajRnmVjxzJjB6Oat1CS/ZdmOSpAA=", "transaction"=>{"from_account"=>"1", "to_account"=>"3", "amount"=>"10"}, "commit"=>"Create Transaction"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAccount Load (0.3ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 1 LIMIT 1[0m
+  [1m[35mAccount Load (0.3ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1 AND "accounts"."id" = 3 LIMIT 1
+  [1m[36mAccount Load (0.3ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (3.7ms)[0m  [1mUPDATE "accounts" SET "total_amount" = 980, "updated_at" = '2015-01-31 17:58:57.675492' WHERE "accounts"."id" = 1[0m
+  [1m[35m (711.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  UPDATE "accounts" SET "total_amount" = 20, "updated_at" = '2015-01-31 17:58:58.393575' WHERE "accounts"."id" = 3
+  [1m[36m (473.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "transactions" ("amount", "created_at", "description", "from_account", "to_account", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["amount", 10], ["created_at", Sat, 31 Jan 2015 17:58:58 UTC +00:00], ["description", nil], ["from_account", "1"], ["to_account", "3"], ["updated_at", Sat, 31 Jan 2015 17:58:58 UTC +00:00], ["user_id", 1]]
+  [1m[35m (462.3ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/transactions/3
+Completed 302 Found in 1692.4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/transactions/3" for 127.0.0.1 at 2015-01-31 13:58:59 -0400
+Processing by TransactionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mTransaction Load (0.2ms)[0m  SELECT "transactions".* FROM "transactions" WHERE "transactions"."user_id" = 1 AND "transactions"."id" = ? LIMIT 1  [["id", "3"]]
+  [1m[36mTransaction Load (0.3ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = 3 LIMIT 1[0m
+  [1m[35mAccount Load (0.2ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = 3 LIMIT 1[0m
+  [1m[35mAccount Load (0.2ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = 3 LIMIT 1[0m
+  Rendered transactions/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 61.0ms (Views: 42.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-31 13:58:59 -0400
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-31 13:58:59 -0400
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-31 13:58:59 -0400
+Served asset /transactions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-31 13:58:59 -0400
+Served asset /accounts.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-31 13:58:59 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-31 13:58:59 -0400
+Served asset /application.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/background.jpg" for 127.0.0.1 at 2015-01-31 13:59:00 -0400
+Served asset /background.jpg - 304 Not Modified (15ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2015-01-31 13:59:01 -0400
+Processing by AccountsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mAccount Load (0.3ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = 1
+  Rendered accounts/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 45.4ms (Views: 42.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-31 13:59:02 -0400
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-31 13:59:02 -0400
+Served asset /jquery.js - 304 Not Modified (42ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-31 13:59:02 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-31 13:59:02 -0400
+Served asset /application.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/transactions.js?body=1" for 127.0.0.1 at 2015-01-31 13:59:02 -0400
+Served asset /transactions.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/accounts.js?body=1" for 127.0.0.1 at 2015-01-31 13:59:02 -0400
+Served asset /accounts.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/background.jpg" for 127.0.0.1 at 2015-01-31 13:59:02 -0400
+Served asset /background.jpg - 304 Not Modified (24ms)

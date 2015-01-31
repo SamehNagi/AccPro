@@ -105,6 +105,6 @@ class Account < ActiveRecord::Base
         to_account.update_attribute(:total_amount, (from_initial-amount)) 
       end
     end 
-    return 0 
+    return ''
   end
 end
