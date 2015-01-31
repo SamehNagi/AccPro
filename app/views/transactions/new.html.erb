@@ -12,14 +12,14 @@
   <% end %>
 
   Transaction ID to be created: 
-<%= @id %>
+<%= @trans_id %>
 
   </br>
   <div class="field">
     <%= f.label :from_account %>
     <% options = options_from_collection_for_select(@all_accounts, 'id', 'account_name') %>
     <%= f.select :from_account,  options %>
-  </div></br></br>
+  </div>
   <div class="field">
     <%= f.label :to_account %>
     <% options = options_from_collection_for_select(@all_accounts, 'id', 'account_name') %>

@@ -36,21 +36,24 @@ h1.title {
   font-style: normal;
 }
 table#accounts {
+  border : 2px solid black
   margin: 10px;
   border-collapse: collapse;
   width: 100%;
   border-bottom: 2px solid black;
 }
 table#accounts th {
-  border: 2px solid white;
+  border: 2px solid black;
   font-weight: bold;
   background-color: wheat;
 }
 table#accounts th, table#accounts td {
+  border: 2px solid black;
   padding: 4px;
   text-align: left;
 }
 table#accounts th.hilite {
+  border: 2px solid black
   background-color: yellow;
 }
 #notice, #warning {
