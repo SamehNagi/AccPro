@@ -40,7 +40,10 @@ class AccountsController < ApplicationController
     #debugger
     if (params[:name]) 
       #avoiding duplicate accounts
-      if (Account.duplicate?(params[:name]["Account Name"], current_user))
+      if params[:name]["Account Name"] == ''
+        redirect_to accounts_path
+        flash[:notice] = "Name can not be empty"
+      elsif (Account.duplicate?(params[:name]["Account Name"], current_user))
         redirect_to accounts_path
         flash[:notice] = "#{params[:name]["Account Name"]} is already a valid account please check it below" 
       else 
@@ -57,6 +60,7 @@ class AccountsController < ApplicationController
   def update
     @account.update_attributes(params[:account])
     redirect_to accounts_path
+    flash[:notice] = "Account has been updated successfully"
   end
 
   def destroy
