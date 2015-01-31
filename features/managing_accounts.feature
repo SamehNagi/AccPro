@@ -6,7 +6,7 @@ Feature: manage an account
 
 Background: accounts in database
 
-  Given User is logged in as nevinemgouda@gmail.com
+  Given I sign in with valid credentials
   And the following accounts exist:
   | account_number| account_name | account_type | total_amount | balance_type | user_id |
   | 1             | Cash         | Asset        | 5000         | Credit       | 1       |
@@ -44,5 +44,5 @@ Scenario: edit the account name and account type for an existing account
 
 Scenario: show existing account
   Given I am on the accounts page
-  And I follow show on the first account on the list
+  And I follow Edit on the first account on the list
   Then I should see "Capital"

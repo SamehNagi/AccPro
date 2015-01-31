@@ -4,14 +4,16 @@ Feature: Managing new transactions
   As an accountant
   I want to create a new transaction between accounts
 
-Background: User, Transactions and Accounts
-  Given I login successfully
+Background: accounts and transactions in database
+  
+  Given I sign in with valid credentials
   And the following accounts exist:
   | account_number| account_name     | account_type | total_amount | balance_type | user_id | 
   | 1             | Cash             | Asset        |              | Debit        | 1       |
   | 2             | loan             | Asset        |              | Debit        | 1       |
   | 4             | loan             | Liability    | 10           | Credit       | 1       |
   | 21            | Payable accounts | Liability    | 100          | Credit       | 1       |
+  
   And the following transactions exist:
   | from_account     | to_account | amount |
   | loan             | Bank       | 10     |
