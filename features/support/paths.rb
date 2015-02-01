@@ -40,6 +40,10 @@ module NavigationHelpers
 
     when /^the new transaction page$/
       new_transaction_path
+
+    when /^the transaction page with id "(.*)"$/
+      transaction_path($1)
+      
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

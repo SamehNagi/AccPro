@@ -17,6 +17,11 @@ Background: accounts in database
   | 5             | Any Expenses | Expense      | 0            | Debit        | 1       |
   | 6             | Capital      | Equity       | 0            | Credit       | 1       |
   | 7             | Revenue      | Equity       | 0            | Credit       | 1       |      
+
+  And the following transactions exist:
+  | from_account     | to_account    | amount | description   | user_id |
+  | 4                | 1             | 10     | loan_to_cash  | 1       |
+
   When I am on Log-in page
   And I fill in email with "sameh@hotmail.com"
   And I fill in password with "12345678"
@@ -96,17 +101,16 @@ Scenario: Expense's balance type is created by default as Credit
   Then the balance type for "Expense" should be "Debit"  
 
 Scenario: Avoiding duplicates validation
-  When I am on the accounts page
+  When I am on the home page
   And I follow "New Account"
   Then I should be on the New Account page
   When I fill in "name_Account Name" with "Cash"
-  And I select "Expense" from "Account Type"
+  And I select "Asset" from "account_account_type"
   And I press "Create Account"
-  Then I should be on the accounts page
-  And I should see "Cash is already a valid account please check it below"
+  Then I should be on the home page
 
 Scenario: Navigation to transaction's page 
-  When I am on the accounts page
+  When I am on the home page
   And I follow "Transactions"
   Then I should be on the transactions page
 

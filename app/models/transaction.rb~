@@ -1,5 +1,5 @@
 class Transaction < ActiveRecord::Base
-  has_many :account, :dependent => :destroy
+  has_many :accounts, :dependent => :destroy
   belongs_to :user 
-  attr_accessible :from_account, :to_account, :amount, :description
+  attr_accessible :from_account, :to_account, :amount, :description, :user_id, :account_name
 end

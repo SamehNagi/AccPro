@@ -26,6 +26,7 @@ end
 When /^(?:|I )click "Create Account"$/ do
   
   click_button("Create Account")
+  
   #page.driver.submit :get, "/accounts", {}
 end
 
@@ -33,3 +34,12 @@ end
 When /^(?:|I )click "Update Account Info."$/ do
   click_button("Update Account Info.")
 end
+
+def ret_balance_type(acc_type)
+  @record=Account.find_by_account_type(acc_type)
+  return :balance_type
+end
+Then(/^the balance type for "(.*?)" should be "(.*?)"$/) do |acc_type, bal_type|
+  first('tr', text: acc_type).should have_content(bal_type)
+end
+
