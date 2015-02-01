@@ -88,10 +88,10 @@ class Account < ActiveRecord::Base
     fromto = Account.from_to(from_account, to_account)
     @message = ""
     if fromto["from"] == 'sub' 
-      if from_initial -= amount < 0
+      if (from_initial - amount) < 0
         return "from account: #{from_account.account_name}"
       else
-      	from_account.update_attribute(:total_amount, (from_initial-amount))
+       from_account.update_attribute(:total_amount, (from_initial-amount))
       end
     elsif fromto["from"] == 'add'   
       from_account.update_attribute(:total_amount, (from_initial+amount))   
@@ -99,7 +99,7 @@ class Account < ActiveRecord::Base
     if fromto["to"] == 'add' 
       to_account.update_attribute(:total_amount, (to_initial+amount))
     elsif fromto["to"] == 'sub'
-      if to_initial -=amount < 0
+      if (to_initial - amount) < 0
         return "to account: #{to_account.account_name}"
       else
         to_account.update_attribute(:total_amount, (to_initial-amount)) 
