@@ -16,7 +16,7 @@ end
 
 def create_user
   create_visitor
-  delete_user
+  #delete_user
   @user = FactoryGirl.create(:user, @visitor)
 end
 

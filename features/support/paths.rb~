@@ -33,7 +33,7 @@ module NavigationHelpers
       edit_account_path(account)
   
     when /^the transactions page$/
-      accounts_path
+      transactions_path
 
     when /^the new transaction page$/
       new_transaction_path

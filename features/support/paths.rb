@@ -24,6 +24,9 @@ module NavigationHelpers
 
     when /^New Account$/
       new_account_path
+   
+    when /the New Account page$/
+      new_account_path
 
     when /^accounts page$/
       accounts_path

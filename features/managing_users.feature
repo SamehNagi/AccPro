@@ -8,7 +8,7 @@ Feature: Sign Up and Sign In for users
   Scenario: Successfully Sign In
     Given I am a valid user
     When I am on Log-in page
-    And I fill in email with "nevinemgouda@gmail.com"
+    And I fill in email with "sameh@hotmail.com"
     And I fill in password with "12345678"
     And I press "Log in"
     Then I should be on the home page

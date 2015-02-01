@@ -36,7 +36,7 @@ begin
 rescue NameError
   raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
 end
-BeforeStep do
+Before do
   arg_email = 'nevinemgouda@gmail.com'
   visit path_to('the home page')
   user=User.find_by_email(arg_email)
