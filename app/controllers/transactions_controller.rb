@@ -59,22 +59,26 @@ class TransactionsController < ApplicationController
     to_account   = current_user.accounts.find_by_id(params[:transaction][:to_account].to_i)
     amount       = params[:transaction][:amount].to_i
     balance      = current_user.accounts.balance(from_account, to_account, amount);
-    if (balance == 0) 
-      ret_val = current_user.accounts.transaction_account(from_account, to_account, amount)
-      if ret_val == ''
-      	@transaction = current_user.transactions.new(params[:transaction])
-        @transaction.save
-        respond_with(@transaction)
-      else
-        flash[:notice] = "#{ret_val} is initially zero so that would result in an overdraft, please check your transaction again"
-        redirect_to new_transaction_path
-      end
-    else
+    if amount < 0 
+      flash[:notice] = "Amount has a negative sign and that's not allowed, please re-enter the amount"
       redirect_to new_transaction_path
-      flash[:notice]  = "Your accounts are unbalanced, please double check your entries"
+    else
+      if (balance == 0) 
+        ret_val = current_user.accounts.transaction_account(from_account, to_account, amount)
+        if ret_val == ''
+      	  @transaction = current_user.transactions.new(params[:transaction])
+          @transaction.save
+          respond_with(@transaction)
+        else
+          flash[:notice] = "#{ret_val} is initially zero so that would result in an overdraft, please check your transaction again"
+          redirect_to new_transaction_path
+        end
+      else
+        redirect_to new_transaction_path
+        flash[:notice]  = "Your accounts are unbalanced, please double check your entries"
+      end
     end
   end
-
   def update
     @transaction.update_attributes(params[:transaction])
     respond_with(@transaction)
