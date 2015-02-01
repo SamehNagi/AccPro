@@ -1,0 +1,14 @@
+FactoryGirl.define do
+  factory :transaction do
+    from_account "FromAccount"
+    to_account "ToAccount"
+    amount 1000
+    description "Description"
+  end
+end
+
+
+t.string   "from_account"
+    t.string   "to_account"
+    t.integer  "amount"
+    t.string   "description"

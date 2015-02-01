@@ -44,7 +44,7 @@ require 'rails_helper'
       it 'validate balance_type => Debit' do
         account2 = FactoryGirl.create(:account, :account_number => 1, :account_name => "First", :account_type => "Liability", :total_amount => 0, :balance_type => "Credit", :user_id => 1)
    
-        Account.acc_new(account2.account_type).should eq("Credit")
+        Account.acc_new(account1.account_type).should eq("Credit")
       end
     end
   end

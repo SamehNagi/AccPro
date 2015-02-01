@@ -1,0 +1,8 @@
+FactoryGirl.define do
+  factory :account do
+    account_number
+    account_name "MyString"
+    account_type "Type"
+    amount 1
+  end
+end

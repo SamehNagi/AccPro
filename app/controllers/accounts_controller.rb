@@ -35,19 +35,22 @@ class AccountsController < ApplicationController
   end
 
   def create
-    #debugger
     @acc = current_user.accounts.all
-    #debugger
-    if (params[:name]) 
+    account_name = params["name"]["Account Name"]
+    account_type = params["account"]["account_type"]
+    if (params[:name])
       #avoiding duplicate accounts
       if params[:name]["Account Name"] == ''
         redirect_to accounts_path
         flash[:notice] = "Name can not be empty"
       elsif (Account.duplicate?(params[:name]["Account Name"], current_user))
         redirect_to accounts_path
-        flash[:notice] = "#{params[:name]["Account Name"]} is already a valid account please check it below" 
+        flash[:notice] = "#{params[:name]["Account Name"]} is already a valid account please check it below"  
       else 
-        @account = current_user.accounts.acc_new(params)
+        total_amount = 0
+        balance_type = current_user.accounts.acc_new(account_type)
+        @account = current_user.accounts.create!({:account_name => account_name, :account_type => account_type, :total_amount => total_amount, :balance_type => balance_type})
+        #debugger
         redirect_to accounts_path
         flash[:notice] = "#{@account.account_name} was successfully created."
       end

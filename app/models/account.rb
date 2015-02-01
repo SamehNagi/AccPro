@@ -38,16 +38,14 @@ class Account < ActiveRecord::Base
     found
   end
 
-  def self.acc_new(params)
-    account_name = params[:name]["Account Name"]
-    account_type = params[:account]["account_type"]
+  def self.acc_new(account_type)
+    #debugger
     if (account_type == 'Asset' || account_type == 'Expense')
       balance_type = 'Debit'
     elsif (account_type == 'Equity' || account_type == 'Liability')
       balance_type = 'Credit'
     end
-    total_amount = 0 
-    create!({:account_name => account_name, :account_type => account_type, :total_amount => total_amount, :balance_type => balance_type})
+    balance_type
   end
   #used by transactions and balancing option for the DRY concept
   #in regular balancing pass 0's as parameters (0,0,0)
